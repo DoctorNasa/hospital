@@ -1,0 +1,8 @@
+.itemDropDown {
+  padding: 15px;
+  z-index: 99;
+}
+.itemDropDown:hover {
+  background-color: #00826a;
+  color: white;
+}
