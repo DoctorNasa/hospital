@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../"
-import Homepage from "../components/Homepage"
+import Articles from "../components/Articles"
 
-const HomepageContainer = () => {
+const ArticlesContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
   const [active, setActive] = useState(false)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(0)
+      _pageContainer(4)
     }
   }, [active, _pageContainer])
 
-  return <Homepage />
+  return <Articles />
 }
 
-export default HomepageContainer
+export default ArticlesContainer

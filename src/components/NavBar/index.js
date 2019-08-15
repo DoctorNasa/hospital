@@ -30,7 +30,7 @@ const styles = {
   }
 }
 
-const NavBar = () => {
+const NavBar = ({ _pageContainer, pageContainer }) => {
   return (
     <Grid
       container
@@ -63,11 +63,11 @@ const NavBar = () => {
               </Grid>
               <Grid item xs={12}>
                 <Grid container justify="center">
-                  {titles.map(x => (
+                  {titles.map((x, index) => (
                     <Grid item xs={2} style={{ paddingTop: 8 }}>
                       <div
                         style={
-                          x === "Home page"
+                          index === pageContainer
                             ? styles.titleActive
                             : styles.titleInactive
                         }

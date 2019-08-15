@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../"
-import Homepage from "../components/Homepage"
+import About from "../components/About"
 
-const HomepageContainer = () => {
+const AboutContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
   const [active, setActive] = useState(false)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(0)
+      _pageContainer(4)
     }
   }, [active, _pageContainer])
 
-  return <Homepage />
+  return <About />
 }
 
-export default HomepageContainer
+export default AboutContainer
