@@ -5,6 +5,7 @@ import BannerCarousel from "./BannerCarousel"
 import BannerMenu from "./BannerMenu"
 import YoutubeCarousel from "./YoutubeCarousel"
 import PackagesCarousel from "./PackagesCarousel"
+import AnotherBlock from "./AnotherBlock"
 import "./style.css"
 
 const styles = {}
@@ -15,13 +16,12 @@ const BrowserHomepage = () => {
       <BannerCarousel />
       <div style={{ marginTop: "35vw" }}>
         <Grid container justify="center">
-          <Grid item md={8} sm={12}>
-            <BannerMenu />
-            <CardsCarousel />
-            <YoutubeCarousel />
-            <CardsCarousel />
-            <PackagesCarousel />
-          </Grid>
+          <BannerMenu />
+          <CardsCarousel backgroundImg />
+          <YoutubeCarousel />
+          <CardsCarousel />
+          <PackagesCarousel />
+          <AnotherBlock />
         </Grid>
       </div>
     </div>

@@ -63,75 +63,77 @@ const CardsCarousel = () => {
   }
 
   return (
-    <div style={{ marginTop: 50 }}>
-      <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
-        บทความใหม่ล่าสุด
-      </h3>
-      <div style={{ position: "relative", marginTop: 50 }}>
-        <ArrowBackIos
-          onClick={handleBack}
-          style={{
-            fontSize: 50,
-            color: "#00826a",
-            position: "absolute",
-            top: 150,
-            bottom: 150,
-            left: -50,
-            cursor: "pointer"
-          }}
-        />
-        <ArrowForwardIos
-          onClick={handleNext}
-          style={{
-            fontSize: 50,
-            color: "#00826a",
-            position: "absolute",
-            top: 150,
-            right: -50,
-            cursor: "pointer"
-          }}
-        />
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents
-          style={{ width: "100%" }}
-        >
-          {slides.map((slide, index) => (
-            <div key={slide.title}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <div style={{ padding: 20 }}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
-                      <h3>{slide.title}</h3>
-                      <p>{slide.desc}</p>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <VideoPlayer vidId={slide.vidId} />
-                    </Grid>
-                  </Grid>
-                </div>
-              ) : null}
-            </div>
-          ))}
-        </SwipeableViews>
-        <div style={{ width: "100%", textAlign: "center" }}>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
+    <Grid item md={8} sm={12}>
+      <div style={{ marginTop: 50 }}>
+        <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
+          บทความใหม่ล่าสุด
+        </h3>
+        <div style={{ position: "relative", marginTop: 50 }}>
+          <ArrowBackIos
+            onClick={handleBack}
             style={{
-              color: "white",
-              fontSize: 20,
-              marginTop: 15
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              top: 150,
+              bottom: 150,
+              left: -50,
+              cursor: "pointer"
             }}
+          />
+          <ArrowForwardIos
+            onClick={handleNext}
+            style={{
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              top: 150,
+              right: -50,
+              cursor: "pointer"
+            }}
+          />
+          <SwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
+            style={{ width: "100%" }}
           >
-            something in thai
-          </Button>
+            {slides.map((slide, index) => (
+              <div key={slide.title}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <div style={{ padding: 20 }}>
+                    <Grid container spacing={4}>
+                      <Grid item xs={12} md={6}>
+                        <h3>{slide.title}</h3>
+                        <p>{slide.desc}</p>
+                      </Grid>
+                      <Grid item xs={12} md={6}>
+                        <VideoPlayer vidId={slide.vidId} />
+                      </Grid>
+                    </Grid>
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </SwipeableViews>
+          <div style={{ width: "100%", textAlign: "center" }}>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              style={{
+                color: "white",
+                fontSize: 20,
+                marginTop: 15
+              }}
+            >
+              something in thai
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </Grid>
   )
 }
 

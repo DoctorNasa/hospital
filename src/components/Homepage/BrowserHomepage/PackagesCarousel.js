@@ -1,68 +1,175 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import Carousel from "react-spring-3d-carousel"
 import uuidv4 from "uuid"
 import { config } from "react-spring"
+import Button from "@material-ui/core/Button"
+import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
+import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
+import Grid from "@material-ui/core/Grid"
 
-let slides = [
+const slidStyle = url => ({
+  backgroundImage: `url(${url})`,
+  width: 300,
+  height: 450,
+  backgroundSize: "cover",
+  display: "flex",
+  textAlign: "center",
+  flexDirection: "column",
+  zIndex: -10
+})
+
+const styles = {
+  backgroundImg: {
+    position: "absolute",
+    right: 0,
+    top: -"10%",
+    width: "100%"
+  }
+}
+
+const slideItem = (
+  <div style={slidStyle("/images/itemPackageCarousel.png")}>
+    <p
+      style={{
+        marginTop: 230,
+        paddingLeft: 40,
+        paddingRight: 40,
+        fontSize: 20
+      }}
+    >
+      โปรแกรมวัคซีนป้องกัน <br /> มะเร็งปากมดลูก
+    </p>
+    <Button
+      variant="contained"
+      color="secondary"
+      size="large"
+      style={{
+        color: "white",
+        fontSize: 20,
+        height: 50,
+        marginTop: 30,
+        marginRight: 60,
+        marginLeft: 60
+      }}
+    >
+      ดูรายละเอียด
+    </Button>
+  </div>
+)
+
+const slides = [
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="1" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="2" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="3" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="4" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="5" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="6" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="7" />
+    content: slideItem
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/400/600/?random" alt="8" />
+    content: slideItem
   }
 ]
 
-export default class Example extends Component {
-  state = {
-    goToSlide: 0,
-    offsetRadius: 4,
-    showNavigation: true,
-    config: config.gentle
-  }
+const PackagesCarousel = () => {
+  const [goToSlide, setGoToSlide] = useState(0)
+  const handleBack = () => setGoToSlide(goToSlide - 1)
 
-  onChangeInput = e => {
-    this.setState({
-      [e.target.name]: parseInt(e.target.value, 10) || 0
-    })
-  }
+  const handleNext = () => setGoToSlide(goToSlide + 1)
 
-  render() {
-    return (
-      <div style={{ width: "100%", height: "500px", margin: "0 auto" }}>
-        <Carousel
-          slides={slides}
-          goToSlide={this.state.goToSlide}
-          offsetRadius={this.state.offsetRadius}
-          showNavigation={this.state.showNavigation}
-          animationConfig={config.slow}
-        />
+  return (
+    <Grid item md={8} sm={12}>
+      <div>
+        <img src="/images/background3.png" style={styles.backgroundImg} />
+
+        <div
+          style={{
+            width: "100%",
+            height: "500px",
+            margin: "0 auto",
+            position: "relative",
+            marginBottom: 200
+          }}
+        >
+          <ArrowBackIos
+            onClick={handleBack}
+            style={{
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              bottom: 150,
+              left: -50,
+              cursor: "pointer"
+            }}
+          />
+          <ArrowForwardIos
+            onClick={handleNext}
+            style={{
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              bottom: 150,
+              right: -50,
+              cursor: "pointer"
+            }}
+          />
+          <div
+            style={{
+              marginTop: 100,
+              marginBottom: 40,
+              width: "100%",
+              textAlign: "center"
+            }}
+          >
+            <h3 style={{ fontSize: "25px" }}>บทความสำหรับคุณ</h3>
+            <p>เลือกแพคเกจและโปรโมชั่นที่คุณสนใจ</p>
+          </div>
+
+          <Carousel
+            slides={slides}
+            goToSlide={goToSlide}
+            offsetRadius={4}
+            animationConfig={config.slow}
+          />
+          <div style={{ width: "100%", textAlign: "center" }}>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              style={{
+                color: "white",
+                fontSize: 20,
+                height: 50
+              }}
+            >
+              ดูแพคเกจและโปรโมชั่นทั้งหมด
+            </Button>
+          </div>
+        </div>
       </div>
-    )
-  }
+    </Grid>
+  )
 }
+
+export default PackagesCarousel

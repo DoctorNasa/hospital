@@ -44,63 +44,67 @@ const styles = {
 
 const BannerMenu = () => {
   return (
-    <div
-      style={
-        isBrowser ? styles.containerBrowser : isTablet && styles.containerTablet
-      }
-    >
-      <Grid container spacing={2} style={{}}>
-        <Grid item md={4} sm={12} style={{ textAlign: "center" }}>
-          <div
-            style={{
-              marginBottom: 10,
-              color: "#00826a",
-              fontSize: 22,
-              marginRight: 20
-            }}
-          >
-            ใส่คำค้นหาที่คุณต้องการ
-          </div>
-          <div className="searchContainer">
-            <input style={styles.searchInput} />
-            <div className="bannerMenuSearch">
-              <Search className="bannerMenuIcon" />
+    <Grid item md={8} sm={12}>
+      <div
+        style={
+          isBrowser
+            ? styles.containerBrowser
+            : isTablet && styles.containerTablet
+        }
+      >
+        <Grid container spacing={2} style={{}}>
+          <Grid item md={4} sm={12} style={{ textAlign: "center" }}>
+            <div
+              style={{
+                marginBottom: 10,
+                color: "#00826a",
+                fontSize: 22,
+                marginRight: 20
+              }}
+            >
+              ใส่คำค้นหาที่คุณต้องการ
             </div>
-          </div>
-        </Grid>
-        <Grid item md={8} sm={12}>
-          <Grid container spacing={2}>
-            <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-              <Fab style={styles.fab} aria-label="add">
-                <img src="/images/iconLocation.png" style={styles.imgIcon} />
-              </Fab>
-              <div style={styles.ImgIconTxt}>เลือก โรงพยาบาล</div>
-            </Grid>
-            <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-              <Fab style={styles.fab} aria-label="add">
-                <img src="/images/iconBoxHeart.png" style={styles.imgIcon} />
-              </Fab>
-              <div style={styles.ImgIconTxt}>แพคเกจและ ชำระค่าบริการ</div>
-            </Grid>
-            <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-              <Fab style={styles.fab} aria-label="add">
-                <img
-                  src="/images/iconMedicProfile.png"
-                  style={styles.imgIcon}
-                />
-              </Fab>
-              <div style={styles.ImgIconTxt}>ค้นหาและ นัดหมายแพทย์</div>
-            </Grid>
-            <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-              <Fab style={styles.fab} aria-label="add">
-                <img src="/images/iconEarth.png" style={styles.imgIcon} />
-              </Fab>
-              <div style={styles.ImgIconTxt}>INTERNATIONAL PATIENTS</div>
+            <div className="searchContainer">
+              <input style={styles.searchInput} />
+              <div className="bannerMenuSearch">
+                <Search className="bannerMenuIcon" />
+              </div>
+            </div>
+          </Grid>
+          <Grid item md={8} sm={12}>
+            <Grid container spacing={2}>
+              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+                <Fab style={styles.fab} aria-label="add">
+                  <img src="/images/iconLocation.png" style={styles.imgIcon} />
+                </Fab>
+                <div style={styles.ImgIconTxt}>เลือก โรงพยาบาล</div>
+              </Grid>
+              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+                <Fab style={styles.fab} aria-label="add">
+                  <img src="/images/iconBoxHeart.png" style={styles.imgIcon} />
+                </Fab>
+                <div style={styles.ImgIconTxt}>แพคเกจและ ชำระค่าบริการ</div>
+              </Grid>
+              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+                <Fab style={styles.fab} aria-label="add">
+                  <img
+                    src="/images/iconMedicProfile.png"
+                    style={styles.imgIcon}
+                  />
+                </Fab>
+                <div style={styles.ImgIconTxt}>ค้นหาและ นัดหมายแพทย์</div>
+              </Grid>
+              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+                <Fab style={styles.fab} aria-label="add">
+                  <img src="/images/iconEarth.png" style={styles.imgIcon} />
+                </Fab>
+                <div style={styles.ImgIconTxt}>INTERNATIONAL PATIENTS</div>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </Grid>
   )
 }
 

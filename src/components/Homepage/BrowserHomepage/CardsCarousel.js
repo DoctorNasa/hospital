@@ -61,10 +61,18 @@ const styles = {
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10
+  },
+  backgroundImg: {
+    position: "absolute",
+    zIndex: -1,
+    width: window.innerWidth / 2,
+    height: 650,
+    left: "-25%",
+    top: "23%"
   }
 }
 
-const CardsCarousel = () => {
+const CardsCarousel = ({ backgroundImg }) => {
   const theme = useTheme()
   const [activeStep, setActiveStep] = React.useState(0)
 
@@ -85,104 +93,114 @@ const CardsCarousel = () => {
   }
 
   return (
-    <div style={{ marginTop: 50 }}>
-      <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
-        บทความใหม่ล่าสุด
-      </h3>
-      <div style={{ position: "relative", marginTop: 50 }}>
-        <ArrowBackIos
-          onClick={handleBack}
+    <Grid item md={8} sm={12}>
+      <div style={{ marginTop: 50 }}>
+        <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
+          บทความใหม่ล่าสุด
+        </h3>
+        <div
           style={{
-            fontSize: 50,
-            color: "#00826a",
-            position: "absolute",
-            top: 150,
-            bottom: 150,
-            left: -50,
-            cursor: "pointer"
+            position: "relative",
+            marginTop: 50
           }}
-        />
-        <ArrowForwardIos
-          onClick={handleNext}
-          style={{
-            fontSize: 50,
-            color: "#00826a",
-            position: "absolute",
-            top: 150,
-            right: -50,
-            cursor: "pointer"
-          }}
-        />
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents
-          style={{ width: "100%" }}
         >
-          {slidesBrowser.map((slide, index) => (
-            <div key={slide.title}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <div style={{ padding: 20 }}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={12} md={4}>
-                      <div style={styles.item}>
-                        <img style={{ width: "100%" }} src={slide.imgPath} />
-                        <div style={styles.itemDesc}>
-                          <h4>{slide.title}</h4>
-                          <div>{slide.subtitle}</div>
-                          <div style={{ marginTop: 30 }}>
-                            <b>Created Date: </b>01/07/2019
-                          </div>
-                        </div>
-                      </div>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <div style={styles.item}>
-                        <img style={{ width: "100%" }} src={slide.imgPath} />
-                        <div style={styles.itemDesc}>
-                          <h4>{slide.title}</h4>
-                          <div>{slide.subtitle}</div>
-                          <div style={{ marginTop: 30 }}>
-                            <b>Created Date: </b>01/07/2019
-                          </div>
-                        </div>
-                      </div>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <div style={styles.item}>
-                        <img style={{ width: "100%" }} src={slide.imgPath} />
-                        <div style={styles.itemDesc}>
-                          <h4>{slide.title}</h4>
-                          <div>{slide.subtitle}</div>
-                          <div style={{ marginTop: 30 }}>
-                            <b>Created Date: </b>01/07/2019
-                          </div>
-                        </div>
-                      </div>
-                    </Grid>
-                  </Grid>
-                </div>
-              ) : null}
-            </div>
-          ))}
-        </SwipeableViews>
-        <div style={{ width: "100%", textAlign: "center" }}>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
+          {backgroundImg && (
+            <img src="/images/background2.png" style={styles.backgroundImg} />
+          )}
+          <ArrowBackIos
+            onClick={handleBack}
             style={{
-              color: "white",
-              fontSize: 20,
-              marginTop: 15
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              top: 150,
+              bottom: 150,
+              left: -50,
+              cursor: "pointer"
             }}
+          />
+          <ArrowForwardIos
+            onClick={handleNext}
+            style={{
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              top: 150,
+              right: -50,
+              cursor: "pointer"
+            }}
+          />
+          <SwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
+            style={{ width: "100%" }}
           >
-            something in thai
-          </Button>
+            {slidesBrowser.map((slide, index) => (
+              <div key={slide.title}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <div style={{ padding: 20 }}>
+                    <Grid container spacing={4}>
+                      <Grid item xs={12} md={4}>
+                        <div style={styles.item}>
+                          <img style={{ width: "100%" }} src={slide.imgPath} />
+                          <div style={styles.itemDesc}>
+                            <h4>{slide.title}</h4>
+                            <div>{slide.subtitle}</div>
+                            <div style={{ marginTop: 30 }}>
+                              <b>Created Date: </b>01/07/2019
+                            </div>
+                          </div>
+                        </div>
+                      </Grid>
+                      <Grid item xs={12} md={4}>
+                        <div style={styles.item}>
+                          <img style={{ width: "100%" }} src={slide.imgPath} />
+                          <div style={styles.itemDesc}>
+                            <h4>{slide.title}</h4>
+                            <div>{slide.subtitle}</div>
+                            <div style={{ marginTop: 30 }}>
+                              <b>Created Date: </b>01/07/2019
+                            </div>
+                          </div>
+                        </div>
+                      </Grid>
+                      <Grid item xs={12} md={4}>
+                        <div style={styles.item}>
+                          <img style={{ width: "100%" }} src={slide.imgPath} />
+                          <div style={styles.itemDesc}>
+                            <h4>{slide.title}</h4>
+                            <div>{slide.subtitle}</div>
+                            <div style={{ marginTop: 30 }}>
+                              <b>Created Date: </b>01/07/2019
+                            </div>
+                          </div>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </SwipeableViews>
+          <div style={{ width: "100%", textAlign: "center" }}>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              style={{
+                color: "white",
+                fontSize: 20,
+                marginTop: 15
+              }}
+            >
+              something in thai
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </Grid>
   )
 }
 
