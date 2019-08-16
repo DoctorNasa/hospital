@@ -53,7 +53,11 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
     <Grid
       container
       justify="center"
-      style={{ boxShadow: " 2px 2px 52px -40px rgba(0,0,0,0.27)" }}
+      style={{
+        boxShadow: " 2px 2px 52px -40px rgba(0,0,0,0.27)",
+        position: "sticky",
+        zIndex: 90
+      }}
     >
       <Grid item md={10} sm={12}>
         <Grid container justify="center">
@@ -63,7 +67,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
               src="/images/logo.png"
             />
           </Grid>
-          <Grid item xs={9}>
+          <Grid item md={9} sm={10}>
             <Grid
               container
               spacing={2}
@@ -79,7 +83,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
               <Grid item style={{ width: 200 }}>
                 <Call />
               </Grid>
-              <Grid item xs="auto">
+              <Grid item xs="auto" xl={12}>
                 <Grid container justify="center">
                   {titles.map(({ title, link }, index) => (
                     <Grid item xs={2} style={{ paddingTop: 8 }}>

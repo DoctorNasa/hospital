@@ -11,15 +11,23 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 const slides = [
   {
     label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "/images/background-landingpage-top.jpg"
+    imgPath: "/images/background-landingpage-top.jpg",
+    title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว",
+    subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา"
   },
   {
     label: "Bird",
-    imgPath: "/images/background-landingpage-top.jpg"
+    imgPath: "/images/background-landingpage-top.jpg",
+    title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #1",
+    subtitle:
+      "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #1"
   },
   {
     label: "Bali, Indonesia",
-    imgPath: "/images/background-landingpage-top.jpg"
+    imgPath: "/images/background-landingpage-top.jpg",
+    title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #2",
+    subtitle:
+      "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
   }
 ]
 
@@ -51,7 +59,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function BannerCarousel() {
+function CardsCarousel() {
   const classes = useStyles()
   const theme = useTheme()
   const [activeStep, setActiveStep] = React.useState(0)
@@ -70,7 +78,7 @@ function BannerCarousel() {
   }
 
   return (
-    <div style={{ position: "absolute", top: 0 }}>
+    <div>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -146,4 +154,4 @@ function BannerCarousel() {
   )
 }
 
-export default BannerCarousel
+export default CardsCarousel

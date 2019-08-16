@@ -1,6 +1,6 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-
+import CardsCarousel from "./CardsCarousel"
 import BannerCarousel from "./BannerCarousel"
 import BannerMenu from "./BannerMenu"
 import "./style.css"
@@ -11,15 +11,18 @@ const BrowserHomepage = () => {
   return (
     <div>
       <BannerCarousel />
-      <Grid container justify="center">
-        <Grid item md={8} sm={12}>
-          <Grid container spacing={2}>
-            <Grid item>
-              <BannerMenu />
-            </Grid>
+      <div style={{ marginTop: "35vw" }}>
+        <Grid container justify="center">
+          <Grid item md={8} sm={12}>
+            <BannerMenu />
+            <CardsCarousel />
+            <div>lol</div>
+            <div>lol</div>
+            <div>lol</div>
+            <div>lol</div>
           </Grid>
         </Grid>
-      </Grid>
+      </div>
     </div>
   )
 }
