@@ -4,12 +4,12 @@ import Services from "../components/Services"
 
 const ServicesContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(4)
+      _pageContainer(1)
     }
   }, [active, _pageContainer])
 

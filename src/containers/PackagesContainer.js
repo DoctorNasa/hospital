@@ -4,12 +4,12 @@ import Packages from "../components/Packages"
 
 const PackagesContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(4)
+      _pageContainer(2)
     }
   }, [active, _pageContainer])
 

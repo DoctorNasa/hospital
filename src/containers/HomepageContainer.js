@@ -4,7 +4,7 @@ import Homepage from "../components/Homepage"
 
 const HomepageContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {

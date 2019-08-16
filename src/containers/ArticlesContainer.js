@@ -4,12 +4,12 @@ import Articles from "../components/Articles"
 
 const ArticlesContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(4)
+      _pageContainer(3)
     }
   }, [active, _pageContainer])
 

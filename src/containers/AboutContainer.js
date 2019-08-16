@@ -4,7 +4,7 @@ import About from "../components/About"
 
 const AboutContainer = () => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
