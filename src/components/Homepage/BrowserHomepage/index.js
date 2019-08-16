@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid"
 import CardsCarousel from "./CardsCarousel"
 import BannerCarousel from "./BannerCarousel"
 import BannerMenu from "./BannerMenu"
+import VideoPlayer from "./VideoPlayer"
 import "./style.css"
 
 const styles = {}
@@ -20,6 +21,7 @@ const BrowserHomepage = () => {
             <div>lol</div>
             <div>lol</div>
             <div>lol</div>
+            <VideoPlayer />
           </Grid>
         </Grid>
       </div>

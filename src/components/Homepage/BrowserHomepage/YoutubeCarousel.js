@@ -11,6 +11,13 @@ import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
+const slides = [
+  {
+    title: "หดหู่ หงุดหงิดง่าย หลับไม่สนิท สัญญาณ “โรคซึมเศร้า” ที่ต้องรีบร",
+    desc: "ความผิดปกติเกี่ยวกับ “กระดูกสันหลัง” มีความเกี่ยวข้องกับหลากหลา"
+  }
+]
+
 const slideBrowser1 = [
   {
     imgPath: "/images/cardCarousel.png",
@@ -48,9 +55,6 @@ const slideMobile3 = {
   title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #2",
   subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
 }
-
-const slidesBrowser = slideBrowser1
-const slidesMobile = [slideMobile1, slideMobile2, slideMobile3]
 
 const styles = {
   item: {

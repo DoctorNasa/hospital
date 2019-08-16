@@ -56,7 +56,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
       style={{
         boxShadow: " 2px 2px 52px -40px rgba(0,0,0,0.27)",
         position: "sticky",
-        zIndex: 90
+        zIndex: 99
       }}
     >
       <Grid item md={10} sm={12}>
