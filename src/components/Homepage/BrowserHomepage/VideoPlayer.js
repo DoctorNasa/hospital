@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react"
 import YouTube from "react-youtube"
+import PlayCircleFilledWhite from "@material-ui/icons/PlayCircleFilledWhite"
 
 const opts = {
-  height: "390",
-  width: "640",
+  height: "300",
+  width: "100%",
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0
   }
 }
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ vidId }) => {
   const [player, setPlayer] = useState(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
@@ -29,36 +30,40 @@ const VideoPlayer = () => {
   const statePlayer = e => console.log(e.target.getPlayerState())
 
   return (
-    <div>
-      <div onClick={() => _onStart()}>{isPlaying ? "pause" : "start"}</div>
-      <button onClick={_onStart}>{isPlaying ? "pause" : "start"}>CLICK</button>
-      <div style={{ position: "relative" }}>
-        {player !== null && player.getPlayerState() !== 1 && (
-          <div style={{ position: "absolute" }}>
-            <div
+    <div style={{ position: "relative" }}>
+      {!isPlaying && (
+        <div
+          style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}
+        >
+          <div
+            style={{
+              height: 300,
+              width: 400,
+              color: "white",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+            onClick={() => _onStart()}
+          >
+            <PlayCircleFilledWhite
               style={{
-                height: 390,
-                width: 640,
-                color: "white",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: 50
+                fontSize: 150,
+                color: "#30bfc5",
+                backgroundColor: "white",
+                borderRadius: 100
               }}
-              onClick={() => _onStart()}
-            >
-              Play
-            </div>
+            />
           </div>
-        )}
+        </div>
+      )}
 
-        <YouTube
-          videoId={"2g811Eo7K8U"}
-          opts={opts}
-          onReady={_onReady}
-          onStateChange={statePlayer}
-        />
-      </div>
+      <YouTube
+        videoId={vidId}
+        opts={opts}
+        onReady={_onReady}
+        onStateChange={statePlayer}
+      />
     </div>
   )
 }

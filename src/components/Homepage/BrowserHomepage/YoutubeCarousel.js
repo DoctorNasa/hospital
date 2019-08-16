@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import { autoPlay } from "react-swipeable-views-utils"
+import VideoPlayer from "./VideoPlayer"
 import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 
@@ -13,48 +14,21 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
 const slides = [
   {
-    title: "หดหู่ หงุดหงิดง่าย หลับไม่สนิท สัญญาณ “โรคซึมเศร้า” ที่ต้องรีบร",
+    vidId: "3bkZhGexTII",
+    title: "หดหู่ หงุดหงิดง่าย หลับไม่สนิท สัญญาณ “โรคซึมเศร้า” ที่ต้องรีบร 1 ",
+    desc: "ความผิดปกติเกี่ยวกับ “กระดูกสันหลัง” มีความเกี่ยวข้องกับหลากหลา"
+  },
+  {
+    vidId: "bC9fJ-19LZY",
+    title: "หดหู่ หงุดหงิดง่าย หลับไม่สนิท สัญญาณ “โรคซึมเศร้า” ที่ต้องรีบร 2",
+    desc: "ความผิดปกติเกี่ยวกับ “กระดูกสันหลัง” มีความเกี่ยวข้องกับหลากหลา"
+  },
+  {
+    vidId: "97nyYTBPJi4",
+    title: "หดหู่ หงุดหงิดง่าย หลับไม่สนิท สัญญาณ “โรคซึมเศร้า” ที่ต้องรีบร 3",
     desc: "ความผิดปกติเกี่ยวกับ “กระดูกสันหลัง” มีความเกี่ยวข้องกับหลากหลา"
   }
 ]
-
-const slideBrowser1 = [
-  {
-    imgPath: "/images/cardCarousel.png",
-    title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว",
-    subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา"
-  },
-  {
-    imgPath: "/images/cardCarousel.png",
-    title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #1",
-    subtitle:
-      "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #1"
-  },
-  {
-    imgPath: "/images/cardCarousel.png",
-    title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #2",
-    subtitle:
-      "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
-  }
-]
-
-const slideMobile1 = {
-  imgPath: "/images/cardCarousel.png",
-  title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว",
-  subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา"
-}
-
-const slideMobile2 = {
-  imgPath: "/images/cardCarousel.png",
-  title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #1",
-  subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #1"
-}
-
-const slideMobile3 = {
-  imgPath: "/images/cardCarousel.png",
-  title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #2",
-  subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
-}
 
 const styles = {
   item: {
@@ -124,46 +98,17 @@ const CardsCarousel = () => {
           enableMouseEvents
           style={{ width: "100%" }}
         >
-          {slidesBrowser.map((slide, index) => (
+          {slides.map((slide, index) => (
             <div key={slide.title}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <div style={{ padding: 20 }}>
                   <Grid container spacing={4}>
-                    <Grid item xs={12} md={4}>
-                      <div style={styles.item}>
-                        <img style={{ width: "100%" }} src={slide.imgPath} />
-                        <div style={styles.itemDesc}>
-                          <h4>{slide.title}</h4>
-                          <div>{slide.subtitle}</div>
-                          <div style={{ marginTop: 30 }}>
-                            <b>Created Date: </b>01/07/2019
-                          </div>
-                        </div>
-                      </div>
+                    <Grid item xs={12} md={6}>
+                      <h3>{slide.title}</h3>
+                      <p>{slide.desc}</p>
                     </Grid>
-                    <Grid item xs={12} md={4}>
-                      <div style={styles.item}>
-                        <img style={{ width: "100%" }} src={slide.imgPath} />
-                        <div style={styles.itemDesc}>
-                          <h4>{slide.title}</h4>
-                          <div>{slide.subtitle}</div>
-                          <div style={{ marginTop: 30 }}>
-                            <b>Created Date: </b>01/07/2019
-                          </div>
-                        </div>
-                      </div>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <div style={styles.item}>
-                        <img style={{ width: "100%" }} src={slide.imgPath} />
-                        <div style={styles.itemDesc}>
-                          <h4>{slide.title}</h4>
-                          <div>{slide.subtitle}</div>
-                          <div style={{ marginTop: 30 }}>
-                            <b>Created Date: </b>01/07/2019
-                          </div>
-                        </div>
-                      </div>
+                    <Grid item xs={12} md={6}>
+                      <VideoPlayer vidId={slide.vidId} />
                     </Grid>
                   </Grid>
                 </div>
