@@ -2,6 +2,7 @@ import React from "react"
 import { Switch, Route } from "react-router-dom"
 import Empty from "./components/Empty"
 import NavbarContainer from "./containers/NavbarContainer"
+import FooterContainer from "./containers/FooterContainer"
 import Loadable from "react-loadable"
 
 const Loading = () => <div style={{ height: "1000px" }} />
@@ -42,7 +43,7 @@ const Router = () => (
       <Route exact path="/aboutus" component={AboutContainer} />
       <Route component={Empty} />
     </Switch>
-    {/* <Footer /> */}
+    <FooterContainer />
   </div>
 )
 

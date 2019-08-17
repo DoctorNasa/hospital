@@ -21,21 +21,33 @@ const styles = {
 const slides = [
   {
     imgPath: "/images/testiImage-background.jpg",
-    title: "จากใจผู้ใช้บริการ",
+    title: "1จากใจผู้ใช้บริการ",
     testimonial:
       "Lorem ipsuma quis sem luctus interdum vestibulum id quam. Sed justo sem, rhoncus sed nibh in, malesuada ultricies lacus. Nam tempor, dolor nec congue lacinia, nibh magna vulputate ligula, molestie viverra dolor est quis enim. Donec sit amet convallis sem. Morbi ut erat nec tortor ultricies rhoncus condimentum ut nulla. Sed vitae nisi ac nunc molestie tempor. Class aptent taciti sociosqu"
   },
   {
     imgPath: "/images/testiImage-background.jpg",
-    title: "จากใจผู้ใช้บริการ #1",
+    title: "2จากใจผู้ใช้บริการ",
     testimonial:
-      "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #1"
+      "Lorem ipsuma quis sem luctus interdum vestibulum id quam. Sed justo sem, rhoncus sed nibh in, malesuada ultricies lacus. Nam tempor, dolor nec congue lacinia, nibh magna vulputate ligula, molestie viverra dolor est quis enim. Donec sit amet convallis sem. Morbi ut erat nec tortor ultricies rhoncus condimentum ut nulla. Sed vitae nisi ac nunc molestie tempor. Class aptent taciti sociosqu"
   },
   {
     imgPath: "/images/testiImage-background.jpg",
-    title: "จากใจผู้ใช้บริการ #2",
+    title: "3จากใจผู้ใช้บริการ",
     testimonial:
-      "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
+      "Lorem ipsuma quis sem luctus interdum vestibulum id quam. Sed justo sem, rhoncus sed nibh in, malesuada ultricies lacus. Nam tempor, dolor nec congue lacinia, nibh magna vulputate ligula, molestie viverra dolor est quis enim. Donec sit amet convallis sem. Morbi ut erat nec tortor ultricies rhoncus condimentum ut nulla. Sed vitae nisi ac nunc molestie tempor. Class aptent taciti sociosqu"
+  },
+  {
+    imgPath: "/images/testiImage-background.jpg",
+    title: "4จากใจผู้ใช้บริการ",
+    testimonial:
+      "Lorem ipsuma quis sem luctus interdum vestibulum id quam. Sed justo sem, rhoncus sed nibh in, malesuada ultricies lacus. Nam tempor, dolor nec congue lacinia, nibh magna vulputate ligula, molestie viverra dolor est quis enim. Donec sit amet convallis sem. Morbi ut erat nec tortor ultricies rhoncus condimentum ut nulla. Sed vitae nisi ac nunc molestie tempor. Class aptent taciti sociosqu"
+  },
+  {
+    imgPath: "/images/testiImage-background.jpg",
+    title: "5จากใจผู้ใช้บริการ",
+    testimonial:
+      "Lorem ipsuma quis sem luctus interdum vestibulum id quam. Sed justo sem, rhoncus sed nibh in, malesuada ultricies lacus. Nam tempor, dolor nec congue lacinia, nibh magna vulputate ligula, molestie viverra dolor est quis enim. Donec sit amet convallis sem. Morbi ut erat nec tortor ultricies rhoncus condimentum ut nulla. Sed vitae nisi ac nunc molestie tempor. Class aptent taciti sociosqu"
   }
 ]
 
@@ -44,15 +56,15 @@ const TestimonialCarousel = () => {
   const [activeStep, setActiveStep] = React.useState(0)
 
   const handleNext = () => {
-    if (activeStep !== 2)
+    if (activeStep !== slides.length - 1)
       return setActiveStep(prevActiveStep => prevActiveStep + 1)
-    if (activeStep === 2) return setActiveStep(0)
+    if (activeStep === slides.length - 1) return setActiveStep(0)
   }
 
   const handleBack = () => {
     if (activeStep !== 0)
       return setActiveStep(prevActiveStep => prevActiveStep - 1)
-    if (activeStep === 0) return setActiveStep(2)
+    if (activeStep === 0) return setActiveStep(slides.length - 1)
   }
 
   const handleStepChange = step => {
@@ -115,22 +127,47 @@ const TestimonialCarousel = () => {
                       </Button>
                     </div>
 
-                    <div style={{ position: "relative" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        width: "100%",
+                        marginTop: 50,
+                        justifyContent: "center"
+                      }}
+                    >
                       <ArrowBackIos
                         onClick={handleBack}
                         style={{
-                          fontSize: 50,
+                          fontSize: 25,
                           color: "#00826a",
-                          position: "absolute",
                           cursor: "pointer"
                         }}
                       />
+                      <div
+                        style={{
+                          display: "flex",
+                          marginLeft: 40,
+                          marginRight: 40,
+                          alignItems: "center"
+                        }}
+                      >
+                        {slides.map((x, i) => (
+                          <div
+                            onClick={() => handleStepChange(i)}
+                            className={
+                              i === activeStep
+                                ? "bulletactive"
+                                : "bulletinactive"
+                            }
+                          />
+                        ))}
+                      </div>
+
                       <ArrowForwardIos
                         onClick={handleNext}
                         style={{
-                          fontSize: 50,
+                          fontSize: 25,
                           color: "#00826a",
-                          position: "absolute",
                           cursor: "pointer"
                         }}
                       />
