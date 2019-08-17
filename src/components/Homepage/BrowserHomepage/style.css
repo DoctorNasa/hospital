@@ -56,3 +56,17 @@
   background-color: #00826a;
   margin-right: 6px;
 }
+
+.itemInHover {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 13px;
+  text-align: start;
+}
+
+.itemInHover:hover {
+  background-color: #30bfc5;
+  color: white;
+}

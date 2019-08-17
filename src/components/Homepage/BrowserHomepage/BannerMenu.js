@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { isBrowser, isTablet } from "react-device-detect"
 import Search from "@material-ui/icons/Search"
 import Grid from "@material-ui/core/Grid"
 import Fab from "@material-ui/core/Fab"
+import Paper from "@material-ui/core/Paper"
 
 const styles = {
   containerBrowser: {
@@ -38,11 +39,40 @@ const styles = {
   fab: {
     backgroundColor: "white",
     width: "80px",
-    height: "80px"
+    height: "80px",
+    position: "relative",
+    textTransform: "capitalize"
+  },
+  hoverPaper: {
+    position: "absolute",
+    width: 150,
+    left: 87,
+    top: -7,
+    zIndex: 95
+  },
+  triangle: {
+    width: 10,
+    height: 0,
+    borderStyle: "solid",
+    borderWidth: "15px 20px 15px 0",
+    left: -30,
+    top: "calc(50% - 15px)",
+    borderColor: "transparent white transparent transparent",
+    position: "absolute",
+    zIndex: 90
+  },
+  itemInHover: {
+    paddingLeft: 25,
+    paddingRight: 25,
+    paddingBottom: 5,
+    paddingTop: 5,
+    fontSize: 13,
+    textAlign: "start"
   }
 }
 
 const BannerMenu = () => {
+  const [menuActive, setMenuActive] = useState(null)
   return (
     <Grid item md={8} sm={12}>
       <div
@@ -74,19 +104,69 @@ const BannerMenu = () => {
           <Grid item md={8} sm={12}>
             <Grid container spacing={2}>
               <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-                <Fab style={styles.fab} aria-label="add">
+                <Fab
+                  style={styles.fab}
+                  aria-label="add"
+                  onMouseOver={() => setMenuActive(0)}
+                  onMouseLeave={() => setMenuActive(null)}
+                >
+                  {menuActive === 0 && (
+                    <Paper style={styles.hoverPaper}>
+                      <div style={{ position: "relative" }}>
+                        <div
+                          className="itemInHover"
+                          onClick={() => console.log("roger")}
+                        >
+                          phayathai 1
+                        </div>
+                        <div className="itemInHover">phayathai 2</div>
+                        <div className="itemInHover">phayathai ---- 3</div>
+                        <div style={styles.triangle} />
+                      </div>
+                    </Paper>
+                  )}
                   <img src="/images/iconLocation.png" style={styles.imgIcon} />
                 </Fab>
                 <div style={styles.ImgIconTxt}>เลือก โรงพยาบาล</div>
               </Grid>
               <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-                <Fab style={styles.fab} aria-label="add">
+                <Fab
+                  style={styles.fab}
+                  aria-label="add"
+                  onMouseOver={() => setMenuActive(1)}
+                  onMouseLeave={() => setMenuActive(null)}
+                >
+                  {menuActive === 1 && (
+                    <Paper style={styles.hoverPaper}>
+                      <div style={{ position: "relative" }}>
+                        <div className="itemInHover">phayathai 1</div>
+                        <div className="itemInHover">phayathai 2</div>
+                        <div className="itemInHover">phayathai ---- 3</div>
+                        <div style={styles.triangle} />
+                      </div>
+                    </Paper>
+                  )}
+
                   <img src="/images/iconBoxHeart.png" style={styles.imgIcon} />
                 </Fab>
                 <div style={styles.ImgIconTxt}>แพคเกจและ ชำระค่าบริการ</div>
               </Grid>
               <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-                <Fab style={styles.fab} aria-label="add">
+                <Fab
+                  style={styles.fab}
+                  onMouseOver={() => setMenuActive(2)}
+                  onMouseLeave={() => setMenuActive(null)}
+                >
+                  {menuActive === 2 && (
+                    <Paper style={styles.hoverPaper}>
+                      <div style={{ position: "relative" }}>
+                        <div className="itemInHover">phayathai 1</div>
+                        <div className="itemInHover">phayathai 2</div>
+                        <div className="itemInHover">phayathai ---- 3</div>
+                        <div style={styles.triangle} />
+                      </div>
+                    </Paper>
+                  )}
                   <img
                     src="/images/iconMedicProfile.png"
                     style={styles.imgIcon}
@@ -95,7 +175,22 @@ const BannerMenu = () => {
                 <div style={styles.ImgIconTxt}>ค้นหาและ นัดหมายแพทย์</div>
               </Grid>
               <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-                <Fab style={styles.fab} aria-label="add">
+                <Fab
+                  style={styles.fab}
+                  onMouseOver={() => setMenuActive(3)}
+                  onMouseLeave={() => setMenuActive(null)}
+                >
+                  {menuActive === 3 && (
+                    <Paper style={styles.hoverPaper}>
+                      <div style={{ position: "relative" }}>
+                        <div className="itemInHover">phayathai 1</div>
+                        <div className="itemInHover">phayathai 2</div>
+                        <div className="itemInHover">phayathai ---- 3</div>
+                        <div style={styles.triangle} />
+                      </div>
+                    </Paper>
+                  )}
+
                   <img src="/images/iconEarth.png" style={styles.imgIcon} />
                 </Fab>
                 <div style={styles.ImgIconTxt}>INTERNATIONAL PATIENTS</div>

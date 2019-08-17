@@ -1,7 +1,15 @@
 import React from "react"
-// TODO BUBBLE TO BANNER
+import Paper from "@material-ui/core/Paper"
+
 const BubbleBanner = () => {
-  return <div>buuble</div>
+  return (
+    <div>
+      <Paper>
+        <div>first</div>
+        <div>second</div>
+      </Paper>
+    </div>
+  )
 }
 
 export default BubbleBanner
