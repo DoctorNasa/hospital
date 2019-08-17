@@ -35,3 +35,21 @@
   margin-top: 12px;
   margin-left: 2px;
 }
+
+.bulletinactive {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: #00826a;
+  opacity: 0.3;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.bulletactive {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: #00826a;
+  margin-right: 6px;
+}

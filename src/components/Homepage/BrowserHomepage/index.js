@@ -6,6 +6,8 @@ import BannerMenu from "./BannerMenu"
 import YoutubeCarousel from "./YoutubeCarousel"
 import PackagesCarousel from "./PackagesCarousel"
 import AnotherBlock from "./AnotherBlock"
+import FormBlock from "./FormBlock"
+import TestimonialCarousel from "./TestimonialCarousel"
 import "./style.css"
 
 const styles = {}
@@ -22,6 +24,8 @@ const BrowserHomepage = () => {
           <CardsCarousel />
           <PackagesCarousel />
           <AnotherBlock />
+          <FormBlock />
+          <TestimonialCarousel />
         </Grid>
       </div>
     </div>
