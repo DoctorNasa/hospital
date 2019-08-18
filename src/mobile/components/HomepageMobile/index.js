@@ -10,7 +10,7 @@ const styles = {
   }
 }
 
-const MobileHomepage = () => {
+const HomepageMobile = () => {
   return (
     <div style={styles.bannerMobile}>
       <Box display="flex" alignItems="center" flexDirection="column">
@@ -39,4 +39,4 @@ const MobileHomepage = () => {
   )
 }
 
-export default MobileHomepage
+export default HomepageMobile
