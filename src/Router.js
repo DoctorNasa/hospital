@@ -7,11 +7,6 @@ import Loadable from "react-loadable"
 
 const Loading = () => <div style={{ height: "1000px" }} />
 
-const HomepageContainer = Loadable({
-  loader: () => import("./containers/HomepageContainer"),
-  loading: Loading
-})
-
 const ServicesContainer = Loadable({
   loader: () => import("./containers/ServicesContainer"),
   loading: Loading
@@ -49,6 +44,16 @@ const NavbarContainer = isMobile
     })
   : Loadable({
       loader: () => import("./containers/NavbarContainer"),
+      loading: Loading
+    })
+
+const HomepageContainer = isMobile
+  ? Loadable({
+      loader: () => import("./mobile/containers/HomepageMobileContainer"),
+      loading: Loading
+    })
+  : Loadable({
+      loader: () => import("./containers/HomepageContainer"),
       loading: Loading
     })
 

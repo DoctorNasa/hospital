@@ -1,8 +1,8 @@
 import React from "react"
-import NavBarMobile from "../components/NavBarMobile"
+import HomepageMobile from "../components/HomepageMobile"
 
 const NavBarMobileContainer = () => {
-  return <NavBarMobile />
+  return <HomepageMobile />
 }
 
 export default NavBarMobileContainer
