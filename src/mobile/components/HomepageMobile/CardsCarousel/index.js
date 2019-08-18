@@ -7,20 +7,6 @@ import { autoPlay } from "react-swipeable-views-utils"
 import Box from "@material-ui/core/Box"
 import DotsCarousel from "../DotsCarousel"
 
-const styles = {
-  containerMobile: {
-    paddingTop: 70,
-    marginRight: 10,
-    marginLeft: 10
-  }
-}
-
-const styleSlide = url => ({
-  background: `url(${url})`,
-  backgroundSize: "100% 250px",
-  backgroundRepeat: "no-repeat"
-})
-
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
 const slides = [
