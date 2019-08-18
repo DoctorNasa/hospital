@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "kill": "kill $(lsof -t -i:3000)"
+    "kill": "kill $(lsof -t -i:3000)",
+    "ngrok": "cd && cd Downloads && ./ngrok http 3000"
   },
   "eslintConfig": {
     "extends": "react-app"
