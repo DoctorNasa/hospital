@@ -3,20 +3,7 @@ import "./style.css"
 import BannerCarousel from "./BannerCarousel"
 import SearchBar from "./SearchBar"
 import Fabs from "./Fabs"
-
-const styles = {
-  bannerMobile: {
-    background: "url(/images/mobile-background-landingpage-top.jpg)",
-    backgroundSize: "100% 80%",
-    backgroundRepeat: "no-repeat",
-    height: 600
-  },
-  containerMobile: {
-    paddingTop: 100,
-    marginRight: 5,
-    marginLeft: 5
-  }
-}
+import CardsCarousel from "./CardsCarousel"
 
 const HomepageMobile = () => {
   return (
@@ -26,6 +13,7 @@ const HomepageMobile = () => {
         <SearchBar style={{ marginTop: 20 }} />
         <Fabs />
       </div>
+      <CardsCarousel />
     </div>
   )
 }

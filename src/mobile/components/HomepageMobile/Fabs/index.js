@@ -72,7 +72,14 @@ const listFabs = [
 const Fabs = () => {
   const [menuActive, setMenuActive] = useState(null)
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", marginTop: 40 }}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        marginTop: 40,
+        marginBottom: 40
+      }}
+    >
       {listFabs.map(({ title, imgSrc }) => (
         <div style={{ flex: " 0 50%", textAlign: "center" }}>
           <Fab
