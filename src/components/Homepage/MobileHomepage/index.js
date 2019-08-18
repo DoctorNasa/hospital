@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box"
 const styles = {
   bannerMobile: {
     background: "url(/images/mobile-background-landingpage-top.jpg)",
-    backgroundSize: "cover",
+    backgroundSize: "100%",
     height: 500
   }
 }
@@ -13,12 +13,7 @@ const styles = {
 const MobileHomepage = () => {
   return (
     <div style={styles.bannerMobile}>
-      <Box
-        display="flex"
-        alignItems="center"
-        flexDirection="column"
-        style={{ marginLeft: 30, marginRight: 30 }}
-      >
+      <Box display="flex" alignItems="center" flexDirection="column">
         <h1>หยุดทุกอาการป่วย ช่วยให้คุณไปต่อ</h1>
         <h2
           style={{

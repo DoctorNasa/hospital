@@ -1,8 +1,9 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
+import { isBrowser, isMobile, isTablet } from "react-device-detect"
 import Empty from "./components/Empty"
 import NavbarContainer from "./containers/NavbarContainer"
-import FooterContainer from "./containers/FooterContainer"
+
 import Loadable from "react-loadable"
 
 const Loading = () => <div style={{ height: "1000px" }} />
@@ -31,6 +32,16 @@ const AboutContainer = Loadable({
   loader: () => import("./containers/AboutContainer"),
   loading: Loading
 })
+
+const FooterContainer = isMobile
+  ? Loadable({
+      loader: () => import("./mobile/containers/FooterMobileContainer"),
+      loading: Loading
+    })
+  : Loadable({
+      loader: () => import("./containers/FooterContainer"),
+      loading: Loading
+    })
 
 const Router = () => (
   <div>

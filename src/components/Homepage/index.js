@@ -1,8 +1,20 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import { isBrowser, isMobile, isTablet } from "react-device-detect"
-import BrowserHomepage from "./BrowserHomepage"
-import MobileHomepage from "./MobileHomepage"
+import Loadable from "react-loadable"
+
+const Loading = () => <div style={{ height: "1000px" }} />
+
+const BrowserHomepage = Loadable({
+  loader: () => import("./BrowserHomepage"),
+  loading: Loading
+})
+
+const MobileHomepage = Loadable({
+  loader: () => import("./MobileHomepage"),
+  loading: Loading
+})
+
 
 const Homepage = () => {
   if (isBrowser) {
