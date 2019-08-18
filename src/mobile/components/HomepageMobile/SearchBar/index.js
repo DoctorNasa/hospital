@@ -4,7 +4,7 @@ import "./style.css"
 
 const SearchBar = () => {
   return (
-    <div style={{ marginTop: 20 }}>
+    <div style={{ paddingTop: 20, paddingBottom: 20 }}>
       <div className="searchContainer">
         <input className="searchInput" />
         <div className="bannerMenuSearch">

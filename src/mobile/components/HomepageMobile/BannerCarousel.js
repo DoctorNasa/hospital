@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
-import Button from "@material-ui/core/Button"
+import BtnBlue from "./BtnBlue"
 import { autoPlay } from "react-swipeable-views-utils"
 import Box from "@material-ui/core/Box"
 import DotsCarousel from "./DotsCarousel"
@@ -81,18 +81,7 @@ function BannerCarousel() {
             >
               เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
             </h2>
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              style={{
-                color: "white",
-                fontSize: 20,
-                marginTop: 15
-              }}
-            >
-              ดูรายละเอียดเพิ่มเติม
-            </Button>
+            <BtnBlue text="ดูรายละเอียดเพิ่มเติม" />
             <DotsCarousel
               color="#71c6a2"
               handleStepChange={handleStepChange}

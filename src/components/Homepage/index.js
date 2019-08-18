@@ -13,6 +13,10 @@ import "./style.css"
 const styles = {}
 
 const BrowserHomepage = () => {
+  React.useEffect(() => {
+    // Update the document title using the browser API
+    console.log("shit")
+  }, [])
   return (
     <div>
       <BannerCarousel />

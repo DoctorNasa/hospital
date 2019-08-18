@@ -76,8 +76,8 @@ const Fabs = () => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        marginTop: 40,
-        marginBottom: 40
+        marginTop: 20,
+        marginBottom: 20
       }}
     >
       {listFabs.map(({ title, imgSrc }) => (

@@ -46,68 +46,66 @@ function CardsCarousel() {
   }
 
   return (
-    <AutoPlaySwipeableViews
-      axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-      index={activeStep}
-      onChangeIndex={handleStepChange}
-      enableMouseEvents
-    >
-      {slides.map(({ imgPath, title, subtitle }, index) => (
-        <div>
-          <div
-            style={{
-              backgroundColor: "#ffd1db"
-            }}
-          >
-            <img src={imgPath} style={{ width: "100%" }} />
+    <div style={{ paddingTop: 20, paddingBottom: 20 }}>
+      <SwipeableViews
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {slides.map(({ imgPath, title, subtitle }, index) => (
+          <div>
             <div
               style={{
-                paddingLeft: 15,
-                paddingRight: 15
+                backgroundColor: "#ffd1db"
               }}
             >
+              <img src={imgPath} style={{ width: "100%" }} />
               <div
                 style={{
-                  marginTop: 15,
-                  marginBottom: 15,
-                  textAlign: "center",
-                  color: "#4d4d4d",
-                  fontSize: 20,
-                  fontWeight: 600
+                  paddingLeft: 15,
+                  paddingRight: 15
                 }}
               >
-                {title}
-              </div>
-              <div
-                style={{
-                  color: "grey",
-                  textAlign: "center",
-                  color: "#818385"
-                }}
-              >
-                {subtitle}
-              </div>
-              <div style={{ textAlign: "right" }}>
                 <div
-                  style={{ paddingTop: 30, paddingBottom: 30, fontSize: 20 }}
+                  style={{
+                    marginTop: 15,
+                    marginBottom: 15,
+                    color: "#4d4d4d",
+                    fontSize: 20,
+                    fontWeight: 600
+                  }}
                 >
-                  อ่านต่อ <ArrowForwardIos style={{ fontSize: 14 }} />
+                  {title}
+                </div>
+                <div
+                  style={{
+                    color: "#818385"
+                  }}
+                >
+                  {subtitle}
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div
+                    style={{ paddingTop: 30, paddingBottom: 30, fontSize: 20 }}
+                  >
+                    อ่านต่อ <ArrowForwardIos style={{ fontSize: 14 }} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <DotsCarousel
-            color="#71c6a2"
-            handleStepChange={handleStepChange}
-            slidesLength={slides.length}
-            activeIndex={index}
-            marginTop={30}
-            marginBottom={30}
-          />
-        </div>
-      ))}
-    </AutoPlaySwipeableViews>
+            <DotsCarousel
+              handleStepChange={handleStepChange}
+              slidesLength={slides.length}
+              activeIndex={index}
+              marginTop={30}
+              marginBottom={30}
+            />
+          </div>
+        ))}
+      </SwipeableViews>
+    </div>
   )
 }
 
