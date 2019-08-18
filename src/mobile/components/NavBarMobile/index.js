@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import "./style.css"
 import Hamburger from "react-hamburger-menu"
 
-const MobileNavBar = () => {
+const NavBarMobile = () => {
   const [open, setOpen] = useState(false)
   return (
     <div>
@@ -24,4 +24,4 @@ const MobileNavBar = () => {
   )
 }
 
-export default MobileNavBar
+export default NavBarMobile
