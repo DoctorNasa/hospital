@@ -2,6 +2,37 @@ import React, { useState } from "react"
 import "./style.css"
 import Hamburger from "react-hamburger-menu"
 
+const menu = [
+  {
+    main: "homepage",
+    sub: []
+  },
+  {
+    main: "hospital service",
+    sub: []
+  },
+  {
+    main: "promotion packages",
+    sub: []
+  },
+  {
+    main: "health article",
+    sub: ["medical articles", "videos", "staff", "innovation"]
+  },
+  {
+    main: "innovation",
+    sub: []
+  },
+  {
+    main: "about us",
+    sub: []
+  },
+  {
+    main: "member",
+    sub: []
+  }
+]
+
 const NavBarMobile = () => {
   const [open, setOpen] = useState(false)
   return (
