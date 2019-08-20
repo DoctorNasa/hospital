@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import "./style.css"
 import Hamburger from "react-hamburger-menu"
+import MenuMobile from "./MenuMobile"
 
-const menu = [
+const menuDB = [
   {
     main: "homepage",
     sub: []
@@ -34,15 +35,15 @@ const menu = [
 ]
 
 const NavBarMobile = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(null)
   return (
-    <div>
+    <>
       <div className="hamburger">
         <Hamburger
           isOpen={open}
           menuClicked={() => setOpen(!open)}
-          width={33}
-          height={30}
+          width={35}
+          height={35}
           strokeWidth={2}
           rotate={0}
           color="black"
@@ -50,8 +51,8 @@ const NavBarMobile = () => {
           animationDuration={0.3}
         />
       </div>
-      <div className={open ? "container" : "slide-in-left-reverse"} />
-    </div>
+      <MenuMobile menuDB={menuDB} open={open} />
+    </>
   )
 }
 
