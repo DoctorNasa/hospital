@@ -27,14 +27,13 @@ const MenuMobile = ({ open, menuDB }) => {
         style={{
           position: "fixed",
           bottom: 0,
-          marginLeft: 15,
-          marginRight: 15
+          marginLeft: 15
         }}
       >
         <SearchBarMobile />
         <PopUpCountry />
         <img
-          style={{ width: "calc(100% - 55px)", padding: 20 }}
+          style={{ width: "calc(100% - 55px)", marginTop: 20 }}
           src="/images/bottom-mobile.jpg"
         />
       </div>
