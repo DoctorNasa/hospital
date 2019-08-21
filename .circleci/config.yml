@@ -56,7 +56,7 @@ jobs:
           command: ls -ltr
       - run:
           name: Deploy Master to Firebase
-          command: npm run firebase-deploy -- --token=$FIREBASE_DEPLOY_TOKEN
+          command: npm run firebase deploy -- --token=$FIREBASE_DEPLOY_TOKEN
 
 workflows:
   version: 2
