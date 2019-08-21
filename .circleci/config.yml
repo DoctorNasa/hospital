@@ -2,22 +2,26 @@ version: 2
 jobs:
   build:
     docker:
-      - image: "circleci/node:8"
-    working_directory: ~/repo
+      - image: circleci/node:10
+    working_directory: ~/gatsby-site
     steps:
       - checkout
       - restore_cache:
           keys:
-            - 'v1-dependencies-{{ checksum "package.json" }}'
-            - v1-dependencies-
-      - run: "yarn install"
+            # Find a cache corresponding to this specific package-lock.json
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            # Fallback cache to be used
+            - v1-npm-deps-
+      - run:
+          name: Install Dependencies
+          command: npm install
       - save_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
           paths:
-            - node_modules
-          key: 'v1-dependencies-{{ checksum "package.json" }}'
+            - ./node_modules
       - run:
-        name: "Build Project"
-        command: "yarn build"
+          name: Build
+          command: npm run build
       - run:
-          name: "Deploy to Firebase Hosting"
-          command: "./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
+          name: Firebase Deploy
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
