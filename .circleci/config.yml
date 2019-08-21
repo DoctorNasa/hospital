@@ -45,15 +45,15 @@ jobs:
       - restore_cache:
           keys:
             - v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-      #  - run:
-      #      name: show directory
-      #      command: pwd
-      #  - run:
-      #      name: Install Firebase
-      #      command: npm install --save-dev firebase-tools
-      #  - run:
-      #      name: look in directory
-      #      command: ls -ltr
+      - run:
+          name: show directory
+          command: pwd
+      - run:
+          name: Install Firebase
+          command: npm install --save-dev firebase-tools
+      - run:
+          name: look in directory
+          command: ls -ltr
       - run:
           name: Deploy Master to Firebase
           command: npm run firebase-deploy -- --token=$FIREBASE_DEPLOY_TOKEN
