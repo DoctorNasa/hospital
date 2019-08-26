@@ -85,8 +85,8 @@ const Fabs = () => {
           <Fab
             style={styles.fab}
             aria-label="add"
-            onMouseOver={() => setMenuActive(0)}
-            onMouseLeave={() => setMenuActive(null)}
+            // onMouseOver={() => setMenuActive(0)}
+            // onMouseLeave={() => setMenuActive(null)}
           >
             {menuActive === 0 && (
               <Paper style={styles.hoverPaper}>

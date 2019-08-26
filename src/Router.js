@@ -57,11 +57,17 @@ const HomepageContainer = isMobile
       loading: Loading
     })
 
+const BranchContainer = Loadable({
+  loader: () => import("./containers/BranchContainer"),
+  loading: Loading
+})
+
 const Router = () => (
   <div>
     <NavbarContainer />
     <Switch>
       <Route exact path="/" component={HomepageContainer} />
+      <Route exact path="/branch/:branch" component={BranchContainer} />
       <Route exact path="/services" component={ServicesContainer} />
       <Route exact path="/packages" component={PackagesContainer} />
       <Route exact path="/articles" component={ArticlesContainer} />
