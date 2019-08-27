@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 import Grid from "@material-ui/core/Grid"
 import BranchBannerCarousel from "./BranchBannerCarousel"
+import BranchCarouselCard from "./BranchCarouselCard"
+import BranchContent from "./BranchContent"
 
 const Branch = ({ match }) => {
   useEffect(() => {
@@ -11,9 +13,8 @@ const Branch = ({ match }) => {
     <>
       <BranchBannerCarousel match={match} />
       <div style={{ marginTop: "35vw" }}>
-        <Grid container justify="center">
-          hi
-        </Grid>
+        <BranchCarouselCard />
+        <BranchContent match={match} />
       </div>
     </>
   )
