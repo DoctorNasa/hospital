@@ -15,7 +15,7 @@ const styles = {}
 const BrowserHomepage = () => {
   React.useEffect(() => {
     // Update the document title using the browser API
-    console.log("shit")
+    console.log("-")
   }, [])
   return (
     <div>

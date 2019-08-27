@@ -1,10 +1,10 @@
 import React from "react"
-import Branch from "./components/Branch"
+import Branch from "../components/Branch"
 
-const BranchContainer = () => {
+const BranchContainer = props => {
   return (
     <>
-      <Branch />
+      <Branch {...props} />
     </>
   )
 }

@@ -57,10 +57,12 @@ const HomepageContainer = isMobile
       loading: Loading
     })
 
-const BranchContainer = Loadable({
-  loader: () => import("./containers/BranchContainer"),
-  loading: Loading
-})
+const BranchContainer =
+  isBrowser &&
+  Loadable({
+    loader: () => import("./containers/BranchContainer"),
+    loading: Loading
+  })
 
 const Router = () => (
   <div>
