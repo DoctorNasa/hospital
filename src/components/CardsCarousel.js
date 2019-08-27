@@ -11,7 +11,7 @@ import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
-const slideBrowser1 = [
+const slides = [
   {
     imgPath: "/images/cardCarousel.png",
     title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว",
@@ -30,27 +30,6 @@ const slideBrowser1 = [
       "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
   }
 ]
-
-const slideMobile1 = {
-  imgPath: "/images/cardCarousel.png",
-  title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว",
-  subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา"
-}
-
-const slideMobile2 = {
-  imgPath: "/images/cardCarousel.png",
-  title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #1",
-  subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #1"
-}
-
-const slideMobile3 = {
-  imgPath: "/images/cardCarousel.png",
-  title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #2",
-  subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
-}
-
-const slidesBrowser = slideBrowser1
-const slidesMobile = [slideMobile1, slideMobile2, slideMobile3]
 
 const styles = {
   item: {
@@ -77,9 +56,9 @@ const CardsCarousel = ({ backgroundImg }) => {
   const [activeStep, setActiveStep] = React.useState(0)
 
   const handleNext = () => {
-    if (activeStep !== 2)
+    if (activeStep !== slides.length - 1)
       return setActiveStep(prevActiveStep => prevActiveStep + 1)
-    if (activeStep === 2) return setActiveStep(0)
+    if (activeStep === slides.length - 1) return setActiveStep(0)
   }
 
   const handleBack = () => {
@@ -137,9 +116,9 @@ const CardsCarousel = ({ backgroundImg }) => {
             enableMouseEvents
             style={{ width: "100%" }}
           >
-            {slidesBrowser.map((slide, index) => (
+            {slides.map((slide, index) => (
               <div key={slide.title}>
-                {Math.abs(activeStep - index) <= 2 ? (
+                {Math.abs(activeStep - index) <= slides.length - 1 ? (
                   <div style={{ padding: 20 }}>
                     <Grid container spacing={4}>
                       <Grid item xs={12} md={4}>

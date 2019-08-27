@@ -10,16 +10,16 @@ const BranchContent = ({ match }) => {
           src="/images/branch/bg1.jpg"
           style={{
             position: "absolute",
-            width: window.innerWidth / 2.5,
+            height: "80vh",
             right: 0,
-            top: 40,
+            top: "5vh",
             zIndex: -1
           }}
         />
         <Grid container justify="center">
           <Grid item sm={8}>
             <Grid container>
-              <Grid item sm={12} style={{ marginTop: 50 }}>
+              <Grid item sm={12} style={{ marginTop: "5vh" }}>
                 <div
                   style={{ paddingTop: 20, paddingBottom: 20, fontWeight: 500 }}
                 >
@@ -28,7 +28,7 @@ const BranchContent = ({ match }) => {
                 <DropDownBranch match={match} />
               </Grid>
 
-              <Grid item sm={6} style={{ marginTop: 50 }}>
+              <Grid item sm={6} style={{ marginTop: "5vh" }}>
                 <h3 className="titles">เกี่ยวกับเรา</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -45,14 +45,14 @@ const BranchContent = ({ match }) => {
           </Grid>
         </Grid>
       </div>
-      <div style={{ position: "relative", marginTop: 200 }}>
+      <div style={{ position: "relative", marginTop: "35vh" }}>
         <img
           src="/images/branch/bg2.jpg"
           style={{
             position: "absolute",
-            width: window.innerWidth / 2.5,
+            height: "80vh",
             left: 0,
-            top: -150,
+            top: "-30vh",
             zIndex: -1
           }}
         />

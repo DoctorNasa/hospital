@@ -11,9 +11,10 @@ const slidStyle = url => ({
   backgroundImage: `url(${url})`,
   width: 300,
   height: 450,
-  backgroundSize: "cover",
+  backgroundSize: "300px 450px",
   display: "flex",
   textAlign: "center",
+  backgroundRepeat: "no-repeat",
   flexDirection: "column",
   zIndex: -10
 })
@@ -29,31 +30,38 @@ const styles = {
 
 const slideItem = (
   <div style={slidStyle("/images/itemPackageCarousel.png")}>
-    <p
+    <div
       style={{
         marginTop: 230,
-        paddingLeft: 40,
-        paddingRight: 40,
-        fontSize: 20
+        background: "white",
+        height: "100%"
       }}
     >
-      โปรแกรมวัคซีนป้องกัน <br /> มะเร็งปากมดลูก
-    </p>
-    <Button
-      variant="contained"
-      color="secondary"
-      size="large"
-      style={{
-        color: "white",
-        fontSize: 20,
-        height: 50,
-        marginTop: 30,
-        marginRight: 60,
-        marginLeft: 60
-      }}
-    >
-      ดูรายละเอียด
-    </Button>
+      <p
+        style={{
+          paddingLeft: 40,
+          paddingRight: 40,
+          fontSize: 20
+        }}
+      >
+        โปรแกรมวัคซีนป้องกัน <br /> มะเร็งปากมดลูก
+      </p>
+      <Button
+        variant="contained"
+        color="secondary"
+        size="large"
+        style={{
+          color: "white",
+          fontSize: 20,
+          height: 50,
+          marginTop: 30,
+          marginRight: 60,
+          marginLeft: 60
+        }}
+      >
+        ดูรายละเอียด
+      </Button>
+    </div>
   </div>
 )
 
@@ -120,7 +128,8 @@ const PackagesCarousel = () => {
               position: "absolute",
               bottom: 150,
               left: -50,
-              cursor: "pointer"
+              cursor: "pointer",
+              zIndex: 99
             }}
           />
           <ArrowForwardIos
@@ -131,7 +140,8 @@ const PackagesCarousel = () => {
               position: "absolute",
               bottom: 150,
               right: -50,
-              cursor: "pointer"
+              cursor: "pointer",
+              zIndex: 99
             }}
           />
           <div

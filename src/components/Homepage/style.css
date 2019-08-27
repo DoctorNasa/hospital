@@ -69,4 +69,5 @@
 .itemInHover:hover {
   background-color: #30bfc5;
   color: white;
+  font-weight: 700;
 }

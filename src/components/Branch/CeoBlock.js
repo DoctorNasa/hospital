@@ -1,10 +1,12 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
+import BlueBtn from "../BlueBtn"
 
 const styles = {
   container: {
-    marginTop: 250,
-    position: "relative"
+    paddingTop: "30vh",
+    position: "relative",
+    paddingBottom: 70
   }
 }
 
@@ -15,13 +17,13 @@ const CeoBlock = () => {
         src="/images/branch/branch-ceo.jpg"
         style={{
           position: "absolute",
-          width: window.innerWidth / 2,
-          top: -150,
+          height: "80vh",
           right: 0,
+          bottom: 0,
           zIndex: -1
         }}
       />
-      <Grid container justify="center" style={{ height: 1000 }}>
+      <Grid container justify="center">
         <Grid item md={8}>
           <Grid item md={6}>
             <h3 className="titles">
@@ -54,6 +56,10 @@ const CeoBlock = () => {
                 </div>
               </Grid>
             </Grid>
+            <Grid item md={8}></Grid>
+            <div style={{ width: "100%", textAlign: "center", marginTop: 20 }}>
+              <BlueBtn text="ดูทั้งหมด" />
+            </div>
           </Grid>
         </Grid>
       </Grid>

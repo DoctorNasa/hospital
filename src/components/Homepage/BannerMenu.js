@@ -4,6 +4,7 @@ import Search from "@material-ui/icons/Search"
 import Grid from "@material-ui/core/Grid"
 import Fab from "@material-ui/core/Fab"
 import Paper from "@material-ui/core/Paper"
+import { Link } from "react-router-dom"
 
 const styles = {
   containerBrowser: {
@@ -68,6 +69,11 @@ const styles = {
     paddingTop: 5,
     fontSize: 13,
     textAlign: "start"
+  },
+  nostyle: {
+    textDecoration: "none",
+    color: "black",
+    fontWeight: 400
   }
 }
 
@@ -113,14 +119,15 @@ const BannerMenu = () => {
                   {menuActive === 0 && (
                     <Paper style={styles.hoverPaper}>
                       <div style={{ position: "relative" }}>
-                        <div
-                          className="itemInHover"
-                          onClick={() => console.log("roger")}
-                        >
-                          phayathai 1
-                        </div>
-                        <div className="itemInHover">phayathai 2</div>
-                        <div className="itemInHover">phayathai ---- 3</div>
+                        <Link to="/branch/phyathai1" style={styles.nostyle}>
+                          <div className="itemInHover">phyathai 1</div>
+                        </Link>
+                        <Link to="/branch/phyathai2" style={styles.nostyle}>
+                          <div className="itemInHover">phyathai 2</div>
+                        </Link>
+                        <Link to="/branch/phyathai3" style={styles.nostyle}>
+                          <div className="itemInHover">phyathai 3</div>
+                        </Link>
                         <div style={styles.triangle} />
                       </div>
                     </Paper>
