@@ -2,7 +2,7 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import DropDownBranch from "./DropDownBranch"
 
-const BranchContent = ({ match }) => {
+const BranchContent = ({ match, dnBranch }) => {
   return (
     <div>
       <div style={{ position: "relative" }}>
@@ -25,7 +25,7 @@ const BranchContent = ({ match }) => {
                 >
                   เลือกโรงพยาบาล
                 </div>
-                <DropDownBranch match={match} />
+                <DropDownBranch match={match} dnBranch={dnBranch} />
               </Grid>
 
               <Grid item sm={6} style={{ marginTop: "5vh" }}>

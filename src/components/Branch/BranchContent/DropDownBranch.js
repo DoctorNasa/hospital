@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const DropDownBranch = ({ match }) => {
+const DropDownBranch = ({ match, dnBranch }) => {
   const classes = useStyles()
   const [values, setValues] = React.useState({
     age: "",
@@ -58,7 +58,11 @@ const DropDownBranch = ({ match }) => {
               ? 1
               : match.params.branch === "phyathai2"
               ? 2
-              : match.params.branch === "phyathai3" && 3
+              : match.params.branch === "phyathai3"
+              ? 3
+              : match.params.branch === "พญาไทศรีราชา"
+              ? 4
+              : match.params.branch === "พญาไทนวมินทร์" && 5
           }
           input={
             <OutlinedInput
@@ -68,15 +72,11 @@ const DropDownBranch = ({ match }) => {
             />
           }
         >
-          <MenuItem value={1} component={Link} to="/branch/phyathai1">
-            phyathai 1
-          </MenuItem>
-          <MenuItem value={2} component={Link} to="/branch/phyathai2">
-            phyathai 2
-          </MenuItem>
-          <MenuItem value={3} component={Link} to="/branch/phyathai3">
-            phyathai 3
-          </MenuItem>
+          {dnBranch.map((x, index) => (
+            <MenuItem value={index + 1} component={Link} to={`/branch/${x.id}`}>
+              {x.name}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </form>

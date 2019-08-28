@@ -48,7 +48,7 @@ const styles = {
     position: "absolute",
     width: 150,
     left: 87,
-    top: -7,
+    top: -38,
     zIndex: 95
   },
   triangle: {
@@ -127,6 +127,12 @@ const BannerMenu = () => {
                         </Link>
                         <Link to="/branch/phyathai3" style={styles.nostyle}>
                           <div className="itemInHover">phyathai 3</div>
+                        </Link>
+                        <Link to="/branch/พญาไทศรีราชา" style={styles.nostyle}>
+                          <div className="itemInHover">พญาไท ศรีราชา</div>
+                        </Link>
+                        <Link to="/branch/พญาไทนวมินทร์" style={styles.nostyle}>
+                          <div className="itemInHover">พญาไท นวมินทร์</div>
                         </Link>
                         <div style={styles.triangle} />
                       </div>

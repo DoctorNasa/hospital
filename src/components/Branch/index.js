@@ -41,12 +41,20 @@ const dnBranch = [
       "111 Phet Kasem Rd, Khwaeng Pak Khlong Phasi Charoen, Khet Phasi Charoen, Krung Thep Maha Nakhon 10160"
   },
   {
-    id: "empty",
-    name: "",
-    lat: 10,
-    lng: 100,
-    tel: "null",
-    address: "null"
+    id: "พญาไทศรีราชา",
+    name: "พญาไท ศรีราชา",
+    lat: 13.75648,
+    lng: 100.539204,
+    tel: "02 201 4600",
+    address: "364/1 ถ. ศรีอยุธยา แขวง ถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400"
+  },
+  {
+    id: "พญาไทนวมินทร์",
+    name: "พญาไท นวมินทร์",
+    lat: 13.75648,
+    lng: 100.539204,
+    tel: "02 201 4600",
+    address: "364/1 ถ. ศรีอยุธยา แขวง ถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400"
   }
 ]
 
@@ -60,13 +68,20 @@ const Branch = ({ match }) => {
       <BranchBannerCarousel match={match} />
       <div style={{ marginTop: "35vw" }}>
         <BranchCarouselCard />
-        <BranchContent match={match} />
+        <BranchContent match={match} dnBranch={dnBranch} />
         <CeoBlock />
         <MapBlock
           info={
             dnBranch.filter(x => x.id === match.params.branch)[0]
               ? dnBranch.filter(x => x.id === match.params.branch)[0]
-              : dnBranch.filter(x => x.id === "empty")[0]
+              : {
+                  id: "empty",
+                  name: "",
+                  lat: 10,
+                  lng: 100,
+                  tel: "null",
+                  address: "null"
+                }
           }
         />
         <div
