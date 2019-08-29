@@ -9,6 +9,7 @@ import { autoPlay } from "react-swipeable-views-utils"
 import VideoPlayer from "./VideoPlayer"
 import BtnBlue from "../BtnBlue"
 import DotsCarousel from "../DotsCarousel"
+import YoutubeModal from "./YoutubeModal"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -85,7 +86,7 @@ const VideosCarousel = () => {
           <div key={slide.title}>
             {Math.abs(activeStep - index) <= 2 ? (
               <div>
-                <VideoPlayer vidId={slide.vidId} />
+                <YoutubeModal vidId={slide.vidId} />
                 <div style={{ paddingLeft: 10, paddingRight: 10 }}>
                   <div
                     style={{

@@ -1,7 +1,7 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 
-const BlueBtn = ({ text }) => {
+const BlueBtn = ({ text, fullWidth }) => {
   return (
     <Button
       variant="contained"
@@ -12,6 +12,7 @@ const BlueBtn = ({ text }) => {
         fontSize: 20,
         marginTop: 15
       }}
+      fullWidth={fullWidth === true}
     >
       {text}
     </Button>

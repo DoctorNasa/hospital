@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import { isBrowser, isMobile, isTablet } from "react-device-detect"
 import SwipeableViews from "react-swipeable-views"
@@ -6,9 +6,10 @@ import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import { autoPlay } from "react-swipeable-views-utils"
-import VideoPlayer from "./VideoPlayer"
+
 import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
+import YoutubeModal from "./YoutubeModal"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -44,7 +45,7 @@ const styles = {
 
 const CardsCarousel = () => {
   const theme = useTheme()
-  const [activeStep, setActiveStep] = React.useState(0)
+  const [activeStep, setActiveStep] = useState(0)
 
   const handleNext = () => {
     if (activeStep !== 2)
@@ -92,7 +93,7 @@ const CardsCarousel = () => {
               cursor: "pointer"
             }}
           />
-          <SwipeableViews
+          <AutoPlaySwipeableViews
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
             index={activeStep}
             onChangeIndex={handleStepChange}
@@ -109,14 +110,14 @@ const CardsCarousel = () => {
                         <p>{slide.desc}</p>
                       </Grid>
                       <Grid item xs={12} md={6}>
-                        <VideoPlayer vidId={slide.vidId} />
+                        <YoutubeModal vidId={slide.vidId} />
                       </Grid>
                     </Grid>
                   </div>
                 ) : null}
               </div>
             ))}
-          </SwipeableViews>
+          </AutoPlaySwipeableViews>
           <div style={{ width: "100%", textAlign: "center" }}>
             <Button
               variant="contained"

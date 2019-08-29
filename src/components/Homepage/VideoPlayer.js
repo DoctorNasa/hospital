@@ -3,7 +3,7 @@ import YouTube from "react-youtube"
 import PlayCircleFilledWhite from "@material-ui/icons/PlayCircleFilledWhite"
 
 const opts = {
-  height: "300",
+  height: "500",
   width: "100%",
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
@@ -37,8 +37,8 @@ const VideoPlayer = ({ vidId }) => {
         >
           <div
             style={{
-              height: 300,
-              width: 400,
+              height: "100%",
+              width: "100%",
               color: "white",
               display: "flex",
               justifyContent: "center",
