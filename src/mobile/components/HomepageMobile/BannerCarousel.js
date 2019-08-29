@@ -6,17 +6,22 @@ import { autoPlay } from "react-swipeable-views-utils"
 import Box from "@material-ui/core/Box"
 import DotsCarousel from "./DotsCarousel"
 
+const styleMobileBanner = img => ({
+  background: `url(${img})`,
+  backgroundSize: "100% 100%",
+  backgroundRepeat: "no-repeat",
+  height: "100%"
+})
+
 const styles = {
-  bannerMobile: {
-    background: "url(/images/mobile-background-landingpage-top.jpg)",
-    backgroundSize: "100% 100%",
-    backgroundRepeat: "no-repeat",
-    height: "100%"
-  },
   containerMobile: {
-    paddingTop: 70,
+    paddingTop: 380,
     marginRight: 10,
-    marginLeft: 10
+    marginLeft: 10,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column"
   }
 }
 
@@ -25,15 +30,15 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 const slides = [
   {
     label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "/images/mobile-background-landingpage-top.jpg"
+    imgPath: "/images/mobile/img-banner.jpg"
   },
   {
     label: "Bird",
-    imgPath: "/images/mobile-background-landingpage-top.jpg"
+    imgPath: "/images/mobile/img-banner.jpg"
   },
   {
     label: "Bali, Indonesia",
-    imgPath: "/images/mobile-background-landingpage-top.jpg"
+    imgPath: "/images/mobile/img-banner.jpg"
   }
 ]
 
@@ -49,8 +54,8 @@ function BannerCarousel() {
     setActiveStep(prevActiveStep => prevActiveStep - 1)
   }
 
-  const handleStepChange = step => {
-    setActiveStep(step)
+  const handleStepChange = x => {
+    setActiveStep(x)
   }
 
   return (
@@ -60,23 +65,32 @@ function BannerCarousel() {
       onChangeIndex={handleStepChange}
       enableMouseEvents
     >
-      {slides.map((step, index) => (
-        <div key={step.label} style={styles.bannerMobile}>
-          <Box
+      {slides.map((x, index) => (
+        <div key={x.label} style={styleMobileBanner(x.imgPath)}>
+          <div
             display="flex"
             alignItems="center"
             justifyContent="center"
             flexDirection="column"
             style={styles.containerMobile}
           >
-            <h1 style={{ textAlign: "center", color: "#4d4d4d" }}>
+            <h1
+              style={{
+                textAlign: "center",
+                color: "#4d4d4d",
+                marginTop: 0,
+                marginBottom: 0
+              }}
+            >
               ครอบครัวมีความสุขหยุด ทุกอาการป่วยช่วยให้คุณไปต่อ
             </h1>
             <h2
               style={{
                 color: "grey",
                 textAlign: "center",
-                color: "#818385"
+                color: "#818385",
+                marginTop: 0,
+                marginBottom: 0
               }}
             >
               เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
@@ -87,10 +101,8 @@ function BannerCarousel() {
               handleStepChange={handleStepChange}
               slidesLength={slides.length}
               activeIndex={index}
-              marginTop={30}
-              marginBottom={30}
             />
-          </Box>
+          </div>
         </div>
       ))}
     </AutoPlaySwipeableViews>

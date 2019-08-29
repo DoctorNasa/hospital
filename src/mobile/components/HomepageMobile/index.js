@@ -7,6 +7,7 @@ import CardsCarousel from "./CardsCarousel"
 import BtnBlue from "./BtnBlue"
 import VideosCarousel from "./VideosCarousel"
 import PackagesCarousel from "./PackagesCarousel"
+import AnotherCarousel from "./AnotherCarousel"
 
 const styles = {
   margins: {
@@ -40,13 +41,15 @@ const HomepageMobile = () => {
         </div>
       </div>
       <PackagesCarousel />
+      <div style={{ textAlign: "center", paddingBottom: 15 }}>
+        <BtnBlue text="ดูทั้งหมด" />
+      </div>
       <img
         src="images/mobile/homepage-mobile-another.jpg"
         style={{ width: "100%" }}
       />
-      <div style={{ textAlign: "center" }}>
-        <BtnBlue text="ดูทั้งหมด" />
-      </div>
+
+      <AnotherCarousel />
     </div>
   )
 }

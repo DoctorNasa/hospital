@@ -8,12 +8,13 @@ import DotsCarousel from "../DotsCarousel"
 const slidStyle = url => ({
   backgroundImage: `url(${url})`,
   backgroundRepeat: "no-repeat",
-  height: 400,
+  height: "100%",
   width: 250,
   marginLeft: -30,
   marginRight: -30,
-  backgroundSize: "100% 80%",
-  zIndex: -10
+  backgroundSize: "100% 400px",
+  zIndex: -10,
+  boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)"
 })
 
 const styles = {
@@ -27,16 +28,21 @@ const styles = {
 
 const slideItem = (
   <div style={slidStyle("/images/itemPackageCarousel.png")}>
-    <p
+    <div
       style={{
-        marginTop: 100,
+        marginTop: 160,
+        paddingTop: 5,
         fontSize: 18,
-        textAlign: "center"
+        textAlign: "center",
+        background: "white",
+        height: 150,
+        paddingBottom: 20,
+        boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)"
       }}
     >
-      โปรแกรมวัคซีนป้องกัน <br /> มะเร็งปากมดลูก
-    </p>
-    <div style={{ textAlign: "center" }}>
+      <p>
+        โปรแกรมวัคซีนป้องกัน <br /> มะเร็งปากมดลูก
+      </p>
       <Button
         variant="contained"
         color="secondary"
@@ -96,7 +102,10 @@ const PackagesCarousel = () => {
 
   return (
     <div style={{ marginTop: 20 }}>
-      <img src="/images/background3.png" style={styles.backgroundImg} />
+      <img
+        src="/images/mobile/home-bubbleBg.jpg"
+        style={styles.backgroundImg}
+      />
 
       <div
         style={{
@@ -109,7 +118,7 @@ const PackagesCarousel = () => {
       >
         <div
           style={{
-            marginBottom: 120,
+            marginBottom: 30,
             width: "100%",
             textAlign: "center"
           }}
@@ -129,14 +138,12 @@ const PackagesCarousel = () => {
           animationConfig={config.slow}
         />
       </div>
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", marginTop: 40 }}>
         <div style={{ position: "absolute", top: -20, zIndex: 99 }} />
         <DotsCarousel
           handleStepChange={handleStepChange}
           slidesLength={slides.length}
           activeIndex={goToSlide}
-          marginTop={30}
-          marginBottom={30}
         />
       </div>
     </div>

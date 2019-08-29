@@ -4,7 +4,18 @@ import "./style.css"
 
 const SearchBar = () => {
   return (
-    <div style={{ paddingTop: 20, paddingBottom: 20 }}>
+    <div style={{ paddingBottom: 20 }}>
+      <div
+        style={{
+          textAlign: "center",
+          color: "#1f858a",
+          fontSize: 25,
+          marginBottom: 20,
+          fontWeight: 600
+        }}
+      >
+        Search
+      </div>
       <div className="searchContainer">
         <input className="searchInput" />
         <div className="bannerMenuSearch">
