@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     overflowY: "scroll",
     height: "calc(100% - 250px)",
-    color: "#00826a"
+    color: "#00826a",
+    marginTop: 75
   },
   nested: {
     paddingLeft: theme.spacing(4)

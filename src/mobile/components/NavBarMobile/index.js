@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./style.css"
 import Hamburger from "react-hamburger-menu"
 import MenuMobile from "./MenuMobile"
+import useScrollPosition from "use-scroll-position"
 
 const menuDB = [
   {
@@ -34,22 +35,44 @@ const menuDB = [
   }
 ]
 
-const NavBarMobile = () => {
+const styleBgLight = scrollPosition => ({
+  backgroundColor: `rgba(255, 255, 255, ${(1 / 250) * scrollPosition})`
+})
+
+const NavBarMobile = ({ pageContainer }) => {
   const [open, setOpen] = useState(null)
+  const scrollPosition = useScrollPosition()
   return (
     <>
-      <div className="hamburger">
-        <Hamburger
-          isOpen={open}
-          menuClicked={() => setOpen(!open)}
-          width={35}
-          height={35}
-          strokeWidth={2}
-          rotate={0}
-          color="black"
-          borderRadius={0}
-          animationDuration={0.3}
-        />
+      <div
+        className={pageContainer === 0 ? "headerLight" : "headerDark"}
+        style={styleBgLight(scrollPosition)}
+        onScroll={() => console.log("lol")}
+      >
+        <div style={{ flex: 1 }}>
+          <img src="/images/logo-mobile.png" style={{ width: "100%" }} />
+        </div>
+
+        <div
+          style={{
+            flex: 1,
+            direction: "rtl",
+            paddingRight: 30,
+            marginTop: 9
+          }}
+        >
+          <Hamburger
+            isOpen={open}
+            menuClicked={() => setOpen(!open)}
+            width={30}
+            height={30}
+            strokeWidth={4}
+            rotate={0}
+            color="#00826a"
+            borderRadius={10}
+            animationDuration={0.3}
+          />
+        </div>
       </div>
       <MenuMobile menuDB={menuDB} open={open} />
     </>

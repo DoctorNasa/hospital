@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
+import { GlobalContext } from "../../"
 import NavBarMobile from "../components/NavBarMobile"
 
 const NavBarMobileContainer = () => {
-  return <NavBarMobile />
+  const { pageContainer } = useContext(GlobalContext)
+  return <NavBarMobile pageContainer={pageContainer} />
 }
 
 export default NavBarMobileContainer

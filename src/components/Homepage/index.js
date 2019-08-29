@@ -26,7 +26,7 @@ const BrowserHomepage = () => {
           <CardsCarousel />
           <PackagesCarousel />
           <img
-            style={{ zIndex: 99, marginTop: 90 }}
+            style={{ zIndex: 99, marginTop: 90, width: "100%" }}
             src="/images/banner-img-del.jpg"
           />
           <AnotherCarousel />

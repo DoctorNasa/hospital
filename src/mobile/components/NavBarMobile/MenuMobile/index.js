@@ -10,18 +10,6 @@ const MenuMobile = ({ open, menuDB }) => {
         open === null ? "menuInit" : open ? "menuSlideIn" : "menuSlideOut"
       }
     >
-      <div style={{ height: 60, background: "white", textAlign: "right" }}>
-        <img
-          src="/images/mobile-logo.jpg"
-          style={{
-            width: "40%",
-            marginLeft: 10,
-            marginRight: 30,
-            marginTop: 10,
-            marginBottom: 10
-          }}
-        />
-      </div>
       <ListMenu menuDB={menuDB} />
       <div
         style={{

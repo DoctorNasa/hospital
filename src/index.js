@@ -9,10 +9,6 @@ import * as serviceWorker from "./serviceWorker"
 
 const initState = {
   pageContainer: 0
-  // userInfo: {
-  //   country: "Thailand",
-  //   currency: "THB"
-  // }
 }
 
 const reducer = (state, action) => {
@@ -20,10 +16,6 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "pageContainer":
       return { ...state, pageContainer: payload }
-    // case "changeCurrency": {
-    //   console.log(state, payload)
-    //   return { ...state, ...{ userInfo: { currency: payload } } }
-    // }
 
     default:
       throw new Error()

@@ -37,6 +37,10 @@ const HomepageMobile = () => {
         <BtnBlue text="ดูทั้งหมด" />
       </div>
       <PackagesCarousel />
+      <img
+        src="images/mobile/homepage-mobile-another.jpg"
+        style={{ width: "100%" }}
+      />
       <div style={styles.btn}>
         <BtnBlue text="ดูทั้งหมด" />
       </div>
