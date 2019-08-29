@@ -57,10 +57,20 @@ function CardsCarousel() {
           <div>
             <div
               style={{
-                backgroundColor: "#ffd1db"
+                backgroundColor: "#ffd1db",
+                borderRadius: 5,
+                boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)"
               }}
             >
-              <img src={imgPath} style={{ width: "100%" }} />
+              <img
+                src={imgPath}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderTopLeftRadius: 5,
+                  borderTopRightRadius: 5
+                }}
+              />
               <div
                 style={{
                   paddingLeft: 15,

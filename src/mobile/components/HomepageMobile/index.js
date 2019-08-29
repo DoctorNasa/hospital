@@ -9,10 +9,9 @@ import VideosCarousel from "./VideosCarousel"
 import PackagesCarousel from "./PackagesCarousel"
 
 const styles = {
-  btn: {
+  margins: {
     marginLeft: 15,
-    marginRight: 15,
-    textAlign: "center"
+    marginRight: 15
   }
 }
 
@@ -20,28 +19,32 @@ const HomepageMobile = () => {
   return (
     <div>
       <BannerCarousel />
-      <div style={styles.btn}>
+      <div style={styles.margins}>
         <SearchBar style={{ marginTop: 20, marginBottom: 20 }} />
         <Fabs />
       </div>
-      <CardsCarousel />
-      <div style={styles.btn}>
-        <BtnBlue text="ดูทั้งหมด" />
-      </div>
-      <VideosCarousel />
-      <div style={styles.btn}>
-        <BtnBlue text="ดูทั้งหมด" />
-      </div>
-      <CardsCarousel />
-      <div style={styles.btn}>
-        <BtnBlue text="ดูทั้งหมด" />
+
+      <div style={styles.margins}>
+        <CardsCarousel />
+        <div style={{ textAlign: "center" }}>
+          <BtnBlue text="ดูทั้งหมด" />
+        </div>
+
+        <VideosCarousel />
+        <div style={{ textAlign: "center" }}>
+          <BtnBlue text="ดูทั้งหมด" />
+        </div>
+        <CardsCarousel />
+        <div style={{ textAlign: "center" }}>
+          <BtnBlue text="ดูทั้งหมด" />
+        </div>
       </div>
       <PackagesCarousel />
       <img
         src="images/mobile/homepage-mobile-another.jpg"
         style={{ width: "100%" }}
       />
-      <div style={styles.btn}>
+      <div style={{ textAlign: "center" }}>
         <BtnBlue text="ดูทั้งหมด" />
       </div>
     </div>

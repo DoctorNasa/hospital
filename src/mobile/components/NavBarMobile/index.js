@@ -72,6 +72,7 @@ const NavBarMobile = ({ pageContainer }) => {
             borderRadius={10}
             animationDuration={0.3}
           />
+          {open && <div style={{ color: "#32bfc6", fontSize: 12 }}>Close</div>}
         </div>
       </div>
       <MenuMobile menuDB={menuDB} open={open} />
