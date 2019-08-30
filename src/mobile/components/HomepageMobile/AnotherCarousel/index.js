@@ -46,8 +46,8 @@ const AnotherCarousel = () => {
   }
 
   return (
-    <div style={{ paddingTop: 20, paddingBottom: 20 }}>
-      <SwipeableViews
+    <div style={{ paddingTop: 20 }}>
+      <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
@@ -60,7 +60,7 @@ const AnotherCarousel = () => {
                 src={imgPath}
                 style={{
                   width: "100%",
-                  height: "600px",
+                  height: "650px",
                   borderTopLeftRadius: 5,
                   borderTopRightRadius: 5
                 }}
@@ -89,17 +89,14 @@ const AnotherCarousel = () => {
                 </div>
               </div>
             </div>
-
-            <DotsCarousel
-              handleStepChange={handleStepChange}
-              slidesLength={slides.length}
-              activeIndex={index}
-              marginTop={30}
-              marginBottom={30}
-            />
           </div>
         ))}
-      </SwipeableViews>
+      </AutoPlaySwipeableViews>
+      <DotsCarousel
+        handleStepChange={handleStepChange}
+        slidesLength={slides.length}
+        activeIndex={activeStep}
+      />
     </div>
   )
 }

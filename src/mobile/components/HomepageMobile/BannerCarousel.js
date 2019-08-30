@@ -59,53 +59,55 @@ function BannerCarousel() {
   }
 
   return (
-    <AutoPlaySwipeableViews
-      axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-      index={activeStep}
-      onChangeIndex={handleStepChange}
-      enableMouseEvents
-    >
-      {slides.map((x, index) => (
-        <div key={x.label} style={styleMobileBanner(x.imgPath)}>
-          <div
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            flexDirection="column"
-            style={styles.containerMobile}
-          >
-            <h1
-              style={{
-                textAlign: "center",
-                color: "#4d4d4d",
-                marginTop: 0,
-                marginBottom: 0
-              }}
+    <div>
+      <AutoPlaySwipeableViews
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {slides.map((x, index) => (
+          <div key={x.label} style={styleMobileBanner(x.imgPath)}>
+            <div
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              flexDirection="column"
+              style={styles.containerMobile}
             >
-              ครอบครัวมีความสุขหยุด ทุกอาการป่วยช่วยให้คุณไปต่อ
-            </h1>
-            <h2
-              style={{
-                color: "grey",
-                textAlign: "center",
-                color: "#818385",
-                marginTop: 0,
-                marginBottom: 0
-              }}
-            >
-              เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
-            </h2>
-            <BtnBlue text="ดูรายละเอียดเพิ่มเติม" />
-            <DotsCarousel
-              color="#71c6a2"
-              handleStepChange={handleStepChange}
-              slidesLength={slides.length}
-              activeIndex={index}
-            />
+              <h1
+                style={{
+                  textAlign: "center",
+                  color: "#4d4d4d",
+                  marginTop: 0,
+                  marginBottom: 0
+                }}
+              >
+                ครอบครัวมีความสุขหยุด ทุกอาการป่วยช่วยให้คุณไปต่อ
+              </h1>
+              <h2
+                style={{
+                  color: "grey",
+                  textAlign: "center",
+                  color: "#818385",
+                  marginTop: 0,
+                  marginBottom: 0
+                }}
+              >
+                เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
+              </h2>
+              <BtnBlue text="ดูรายละเอียดเพิ่มเติม" />
+            </div>
           </div>
-        </div>
-      ))}
-    </AutoPlaySwipeableViews>
+        ))}
+      </AutoPlaySwipeableViews>
+      <DotsCarousel
+        color="#71c6a2"
+        handleStepChange={handleStepChange}
+        slidesLength={slides.length}
+        activeIndex={activeStep}
+      />
+    </div>
   )
 }
 

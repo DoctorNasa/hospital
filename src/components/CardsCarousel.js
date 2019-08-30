@@ -174,7 +174,7 @@ const CardsCarousel = ({ backgroundImg }) => {
                 marginTop: 15
               }}
             >
-              something in thai
+              ดูทั้งหมด
             </Button>
           </div>
         </div>

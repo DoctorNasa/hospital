@@ -129,7 +129,7 @@ const CardsCarousel = () => {
                 marginTop: 15
               }}
             >
-              something in thai
+              อ่านต่อ
             </Button>
           </div>
         </div>

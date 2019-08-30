@@ -47,7 +47,7 @@ function CardsCarousel() {
 
   return (
     <div style={{ paddingTop: 20 }}>
-      <SwipeableViews
+      <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
@@ -102,16 +102,15 @@ function CardsCarousel() {
                 </div>
               </div>
             </div>
-
-            <DotsCarousel
-              handleStepChange={handleStepChange}
-              slidesLength={slides.length}
-              activeIndex={index}
-              marginTop={30}
-            />
           </div>
         ))}
-      </SwipeableViews>
+      </AutoPlaySwipeableViews>
+      <DotsCarousel
+        handleStepChange={handleStepChange}
+        slidesLength={slides.length}
+        activeIndex={activeStep}
+        marginTop={30}
+      />
     </div>
   )
 }

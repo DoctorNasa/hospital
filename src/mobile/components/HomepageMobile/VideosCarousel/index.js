@@ -73,7 +73,7 @@ const VideosCarousel = () => {
           color: "#4d4d4d"
         }}
       >
-        Phayathai channel
+        Phyathai channel
       </h3>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -107,17 +107,17 @@ const VideosCarousel = () => {
                     {slide.desc}
                   </div>
                 </div>
-                <DotsCarousel
-                  handleStepChange={handleStepChange}
-                  slidesLength={slides.length}
-                  activeIndex={index}
-                  marginTop={30}
-                />
               </div>
             ) : null}
           </div>
         ))}
       </AutoPlaySwipeableViews>
+      <DotsCarousel
+        handleStepChange={handleStepChange}
+        slidesLength={slides.length}
+        activeIndex={activeStep}
+        marginTop={30}
+      />
     </div>
   )
 }

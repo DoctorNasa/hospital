@@ -120,52 +120,6 @@ const TestimonialCarousel = () => {
                         อ่านต่อ
                       </Button>
                     </div>
-
-                    <div
-                      style={{
-                        display: "flex",
-                        width: "100%",
-                        marginTop: 50,
-                        justifyContent: "center"
-                      }}
-                    >
-                      <ArrowBackIos
-                        onClick={handleBack}
-                        style={{
-                          fontSize: 25,
-                          color: "#00826a",
-                          cursor: "pointer"
-                        }}
-                      />
-                      <div
-                        style={{
-                          display: "flex",
-                          marginLeft: 40,
-                          marginRight: 40,
-                          alignItems: "center"
-                        }}
-                      >
-                        {slides.map((x, i) => (
-                          <div
-                            onClick={() => handleStepChange(i)}
-                            className={
-                              i === activeStep
-                                ? "bulletactive"
-                                : "bulletinactive"
-                            }
-                          />
-                        ))}
-                      </div>
-
-                      <ArrowForwardIos
-                        onClick={handleNext}
-                        style={{
-                          fontSize: 25,
-                          color: "#00826a",
-                          cursor: "pointer"
-                        }}
-                      />
-                    </div>
                   </Grid>
                 </Grid>
               </Grid>
@@ -173,6 +127,48 @@ const TestimonialCarousel = () => {
           </div>
         ))}
       </SwipeableViews>
+      <Grid item xs={12} sm={5}></Grid>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          marginTop: 50,
+          justifyContent: "center"
+        }}
+      >
+        <ArrowBackIos
+          onClick={handleBack}
+          style={{
+            fontSize: 25,
+            color: "#00826a",
+            cursor: "pointer"
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            marginLeft: 40,
+            marginRight: 40,
+            alignItems: "center"
+          }}
+        >
+          {slides.map((x, i) => (
+            <div
+              onClick={() => handleStepChange(i)}
+              className={i === activeStep ? "bulletactive" : "bulletinactive"}
+            />
+          ))}
+        </div>
+
+        <ArrowForwardIos
+          onClick={handleNext}
+          style={{
+            fontSize: 25,
+            color: "#00826a",
+            cursor: "pointer"
+          }}
+        />
+      </div>
     </Grid>
   )
 }
