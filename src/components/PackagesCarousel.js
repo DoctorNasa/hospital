@@ -107,7 +107,7 @@ const PackagesCarousel = () => {
   const handleNext = () => setGoToSlide(goToSlide + 1)
 
   return (
-    <Grid item md={8} sm={12}>
+    <Grid item sm={8} xs={12}>
       <div>
         <img src="/images/background3.png" style={styles.backgroundImg} />
 

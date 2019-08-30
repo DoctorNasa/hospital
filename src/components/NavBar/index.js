@@ -68,12 +68,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
             />
           </Grid>
           <Grid item md={9} sm={10}>
-            <Grid
-              container
-              spacing={2}
-              justify="flex-end"
-              style={{ paddingTop: 20 }}
-            >
+            <Grid container justify="flex-end" style={{ paddingTop: 20 }}>
               <Grid style={{ minWidth: 280 }}>
                 <SearchBar />
               </Grid>

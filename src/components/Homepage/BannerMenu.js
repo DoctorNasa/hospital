@@ -15,7 +15,7 @@ const styles = {
   },
   containerTablet: {
     position: "absolute",
-    marginTop: "-10vh",
+    marginTop: "-5vh",
     zIndex: 99
   },
   searchInput: {
@@ -42,6 +42,13 @@ const styles = {
     backgroundColor: "white",
     width: "80px",
     height: "80px",
+    position: "relative",
+    textTransform: "capitalize"
+  },
+  fabTablet: {
+    backgroundColor: "white",
+    width: "60px",
+    height: "60px",
     position: "relative",
     textTransform: "capitalize"
   },
@@ -81,7 +88,7 @@ const styles = {
 const BannerMenu = () => {
   const [menuActive, setMenuActive] = useState(null)
   return (
-    <Grid item md={8} sm={12}>
+    <Grid item sm={8} style={{ paddingBottom: 50, height: "100%" }}>
       <div
         style={
           isBrowser
@@ -89,8 +96,8 @@ const BannerMenu = () => {
             : isTablet && styles.containerTablet
         }
       >
-        <Grid container spacing={2} style={{}}>
-          <Grid item md={4} sm={12} style={{ textAlign: "center" }}>
+        <Grid container justify="space-evenly">
+          <Grid item sm={4} style={{ textAlign: "center" }}>
             <div
               style={{
                 marginBottom: 10,
@@ -108,12 +115,14 @@ const BannerMenu = () => {
               </div>
             </div>
           </Grid>
-          <Grid item md={8} sm={12}>
-            <Grid container spacing={2}>
-              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+          <Grid item md={8} sm={6}>
+            <Grid container>
+              <Grid item sm={3} style={{ textAlign: "center" }}>
                 <ClickAwayListener onClickAway={() => setMenuActive(null)}>
                   <Fab
-                    style={styles.fab}
+                    style={
+                      isBrowser ? styles.fab : isTablet && styles.fabTablet
+                    }
                     aria-label="add"
                     onMouseOver={() => setMenuActive(0)}
                     onMouseLeave={() => setMenuActive(null)}
@@ -154,9 +163,9 @@ const BannerMenu = () => {
                 </ClickAwayListener>
                 <div style={styles.ImgIconTxt}>เลือก โรงพยาบาล</div>
               </Grid>
-              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+              <Grid item sm={3} style={{ textAlign: "center" }}>
                 <Fab
-                  style={styles.fab}
+                  style={isBrowser ? styles.fab : isTablet && styles.fabTablet}
                   aria-label="add"
                   onMouseOver={() => setMenuActive(1)}
                   onMouseLeave={() => setMenuActive(null)}
@@ -176,9 +185,9 @@ const BannerMenu = () => {
                 </Fab>
                 <div style={styles.ImgIconTxt}>แพคเกจและ ชำระค่าบริการ</div>
               </Grid>
-              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+              <Grid item sm={3} style={{ textAlign: "center" }}>
                 <Fab
-                  style={styles.fab}
+                  style={isBrowser ? styles.fab : isTablet && styles.fabTablet}
                   onMouseOver={() => setMenuActive(2)}
                   onMouseLeave={() => setMenuActive(null)}
                 >
@@ -199,9 +208,9 @@ const BannerMenu = () => {
                 </Fab>
                 <div style={styles.ImgIconTxt}>ค้นหาและ นัดหมายแพทย์</div>
               </Grid>
-              <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
+              <Grid item md={3} sm={3} style={{ textAlign: "center" }}>
                 <Fab
-                  style={styles.fab}
+                  style={isBrowser ? styles.fab : isTablet && styles.fabTablet}
                   onMouseOver={() => setMenuActive(3)}
                   onMouseLeave={() => setMenuActive(null)}
                 >

@@ -64,7 +64,7 @@ const CardsCarousel = () => {
   }
 
   return (
-    <Grid item md={8} sm={12}>
+    <Grid item sm={8} xs={12}>
       <div style={{ marginTop: 50 }}>
         <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
           บทความใหม่ล่าสุด
@@ -109,7 +109,7 @@ const CardsCarousel = () => {
                         <h3>{slide.title}</h3>
                         <p>{slide.desc}</p>
                       </Grid>
-                      <Grid item xs={12} md={6}>
+                      <Grid item xs={12} sm={6}>
                         <YoutubeModal vidId={slide.vidId} />
                       </Grid>
                     </Grid>

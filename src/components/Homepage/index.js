@@ -14,7 +14,7 @@ const BrowserHomepage = () => {
   return (
     <div>
       <BannerCarousel />
-      <div style={{ marginTop: "35vw" }}>
+      <div style={{ marginTop: "40%" }}>
         <Grid container justify="center">
           <BannerMenu />
           <CardsCarousel backgroundImg />

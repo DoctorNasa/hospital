@@ -23,7 +23,7 @@ const FormBlock = () => {
       md={12}
       sm={12}
       style={{
-        backgroundImage: `url(/images/backgroundSkyHomepage.jpg)`,
+        backgroundImage: `url(/images/mobile/bg-form.jpg)`,
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
         height: "100%",

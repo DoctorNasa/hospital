@@ -33,6 +33,11 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 300,
     zIndex: 1
   },
+  squareTablet: {
+    width: "100%",
+    maxWidth: 300,
+    zIndex: 1
+  },
   bulletInactive: {
     borderRadius: "50%",
     height: 15,
@@ -51,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function BannerCarousel() {
+const BannerCarousel = () => {
   const classes = useStyles()
   const theme = useTheme()
   const [activeStep, setActiveStep] = React.useState(0)
@@ -70,7 +75,7 @@ function BannerCarousel() {
   }
 
   return (
-    <div style={{ position: "absolute", top: 0 }}>
+    <div style={{ position: "absolute", top: 0, bottom: 0 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -89,7 +94,7 @@ function BannerCarousel() {
 
                 <Grid container justify="center">
                   <Grid item xs={8} style={{ marginTop: "-33%" }}>
-                    <Grid container spacing={2}>
+                    <Grid container>
                       <Grid item>
                         <div className={classes.square}>
                           <h1 style={{ fontSize: 35 }}>
