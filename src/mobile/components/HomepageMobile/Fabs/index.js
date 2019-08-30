@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Fab from "@material-ui/core/Fab"
 import Paper from "@material-ui/core/Paper"
+import { Link } from "react-router-dom"
 
 import "./style.css"
 
@@ -25,8 +26,8 @@ const styles = {
   hoverPaper: {
     position: "absolute",
     width: 150,
-    left: 87,
-    top: -7,
+    left: 0,
+    top: -38,
     zIndex: 95
   },
   triangle: {
@@ -47,6 +48,11 @@ const styles = {
     paddingTop: 5,
     fontSize: 13,
     textAlign: "start"
+  },
+  nostyle: {
+    textDecoration: "none",
+    color: "black",
+    fontWeight: 400
   }
 }
 
@@ -80,27 +86,31 @@ const Fabs = () => {
         marginBottom: 20
       }}
     >
-      {listFabs.map(({ title, imgSrc }) => (
+      {listFabs.map(({ title, imgSrc }, index) => (
         <div style={{ flex: " 0 50%", textAlign: "center" }}>
           <Fab
             style={styles.fab}
             aria-label="add"
-            // onMouseOver={() => setMenuActive(0)}
-            // onMouseLeave={() => setMenuActive(null)}
+            onClick={() => setMenuActive(index)}
           >
-            {menuActive === 0 && (
-              <Paper style={styles.hoverPaper}>
-                <div style={{ position: "relative" }}>
-                  <div
-                    className="itemInHover"
-                    onClick={() => console.log("roger")}
-                  >
-                    phayathai 1
-                  </div>
-                  <div className="itemInHover">phayathai 2</div>
-                  <div className="itemInHover">phayathai ---- 3</div>
-                  <div style={styles.triangle} />
-                </div>
+            {menuActive === index && index === 0 && (
+              <Paper style={index === 0 && styles.hoverPaper}>
+                <Link to="/branch/phyathai1" style={styles.nostyle}>
+                  <div className="itemInHover">phyathai 1</div>
+                </Link>
+                <Link to="/branch/phyathai2" style={styles.nostyle}>
+                  <div className="itemInHover">phyathai 2</div>
+                </Link>
+                <Link to="/branch/phyathai3" style={styles.nostyle}>
+                  <div className="itemInHover">phyathai 3</div>
+                </Link>
+                <Link to="/branch/พญาไทศรีราชา" style={styles.nostyle}>
+                  <div className="itemInHover">พญาไท ศรีราชา</div>
+                </Link>
+                <Link to="/branch/พญาไทนวมินทร์" style={styles.nostyle}>
+                  <div className="itemInHover">พญาไท นวมินทร์</div>
+                </Link>
+                <div style={styles.triangle} />
               </Paper>
             )}
             <img src={imgSrc} style={styles.imgIcon} />

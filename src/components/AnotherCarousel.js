@@ -28,16 +28,12 @@ const slides = [
 
 const styles = {
   item: {
-    background: "#f2bd61",
     boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.45)"
   },
   container: {
-    background: "#30bfc5",
     width: "100%",
-    zIndex: 90,
-    backgroundImage: `url(/images/bg-bubble.jpg)`,
-    backgroundSize: "45% 500px",
-    backgroundRepeat: "no-repeat"
+    height: 600,
+    zIndex: 90
   }
 }
 
@@ -77,15 +73,23 @@ const CardsCarousel = () => {
                 <Grid item md={12} sm={12} style={styles.container}>
                   <div
                     style={{
-                      backgroundImage: `url(/images/anotherblockPic.jpg)`,
+                      backgroundImage: `url(/images/anotherslideblock.png)`,
                       backgroundSize: "45% 500px",
                       backgroundRepeat: "no-repeat",
-                      display: "flex",
-                      backgroundColor: "white"
+                      display: "flex"
                     }}
                   >
                     <div style={{ flex: 1 }} />
                     <Grid container>
+                      <img
+                        src="/images/bg-bubble.jpg"
+                        style={{
+                          position: "absolute",
+                          zIndex: -90,
+                          width: "100%",
+                          height: 600
+                        }}
+                      />
                       <Grid item md={6} />
                       <Grid item md>
                         <h3 style={{ fontSize: 25, fontWeight: 700 }}>

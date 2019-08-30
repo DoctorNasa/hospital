@@ -9,12 +9,10 @@ import Search from "@material-ui/icons/Search"
 const useStyles = makeStyles({
   root: {
     color: "yellow",
-    marginTop: 20,
-    marginBottom: 20,
     "&$selected": {
       backgroundColor: "pink"
     },
-    width: 250
+    width: "100%"
   },
   input: {
     color: "#00826a"

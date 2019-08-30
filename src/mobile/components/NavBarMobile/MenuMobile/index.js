@@ -1,6 +1,6 @@
 import React from "react"
 import ListMenu from "./ListMenu"
-import SearchBarMobile from "./SearchBarMobile"
+import SearchBarMobile from "../../SearchBarMobile"
 import PopUpCountry from "./PopUpCountry"
 
 const MenuMobile = ({ open, menuDB }) => {
@@ -15,10 +15,13 @@ const MenuMobile = ({ open, menuDB }) => {
         style={{
           position: "fixed",
           bottom: 0,
-          marginLeft: 15
+          marginLeft: 16
         }}
       >
-        <SearchBarMobile />
+        <div style={{ paddingRight: 30, marginTop: 20, marginBottom: 20 }}>
+          <SearchBarMobile />
+        </div>
+
         <PopUpCountry />
         <img
           style={{ width: "calc(100% - 55px)", marginTop: 20 }}
