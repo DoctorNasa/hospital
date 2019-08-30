@@ -47,8 +47,8 @@ const styles = {
   },
   fabTablet: {
     backgroundColor: "white",
-    width: "60px",
-    height: "60px",
+    width: "70px",
+    height: "70px",
     position: "relative",
     textTransform: "capitalize"
   },

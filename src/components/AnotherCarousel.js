@@ -70,7 +70,7 @@ const CardsCarousel = () => {
           {slides.map((slide, index) => (
             <div key={slide.title}>
               {Math.abs(activeStep - index) <= 2 ? (
-                <Grid item md={12} sm={12} style={styles.container}>
+                <Grid item sm={12} style={styles.container}>
                   <div
                     style={{
                       backgroundImage: `url(/images/anotherslideblock.png)`,
@@ -90,8 +90,8 @@ const CardsCarousel = () => {
                           height: 600
                         }}
                       />
-                      <Grid item md={6} />
-                      <Grid item md>
+                      <Grid item md={6} sm={4} />
+                      <Grid item md sm>
                         <h3 style={{ fontSize: 25, fontWeight: 700 }}>
                           ศูนย์ทางการแพทย์
                         </h3>
@@ -126,7 +126,7 @@ const CardsCarousel = () => {
                           <BlueBtn text="ศูนย์ทางการแพทย์ทั้งหมด" fullWidth />
                         </div>
                       </Grid>
-                      <Grid item md={2} />
+                      <Grid item md={2} sm={1} />
                     </Grid>
                   </div>
                 </Grid>

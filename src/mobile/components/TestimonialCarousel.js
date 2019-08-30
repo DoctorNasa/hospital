@@ -71,7 +71,7 @@ const TestimonialCarousel = () => {
   }
 
   return (
-    <Grid item sm={12} style={{ marginTop: 50 }}>
+    <Grid item sm={12}>
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -82,93 +82,37 @@ const TestimonialCarousel = () => {
         {slides.map((slide, index) => (
           <div key={slide.title}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <Grid container justify="space-between">
-                <Grid item xs={12} sm={5}>
-                  <img
-                    style={{ width: "100%", marginRight: 100 }}
-                    src={slide.imgPath}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Grid item xs={12} sm={8} style={styles.containerTxt}>
-                    <b style={{ fontSIze: 25 }}>{slide.title}</b>
-                    <div style={{ marginTop: 15, textAlign: "left" }}>
-                      <img
-                        style={{ width: 50 }}
-                        src="/images/iconStartTesti-landingpage.jpg"
-                      />
-                    </div>
+              <div>
+                <h3 style={{ fontSize: 25, textAlign: "center" }}>
+                  {slide.title}
+                </h3>
+                <div>
+                  <img style={{ width: "100%" }} src={slide.imgPath} />
+                </div>
+                <div style={{ paddingLeft: 15, paddingRight: 15 }}>
+                  <div style={{ marginTop: 15, textAlign: "left" }}>
+                    <img
+                      style={{ width: 50 }}
+                      src="/images/iconStartTesti-landingpage.jpg"
+                    />
+                  </div>
 
-                    <p>{slide.testimonial}</p>
-                    <div style={{ width: "100%", textAlign: "end" }}>
-                      <img
-                        style={{ width: 50 }}
-                        src="/images/iconEndTesti-landingpage.jpg"
-                      />
-                    </div>
-                    <div style={{ width: "100%", textAlign: "center" }}>
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        size="large"
-                        style={{
-                          color: "white",
-                          fontSize: 20,
-                          marginTop: 15
-                        }}
-                      >
-                        อ่านต่อ
-                      </Button>
-                    </div>
-
-                    <div
-                      style={{
-                        display: "flex",
-                        width: "100%",
-                        marginTop: 50,
-                        justifyContent: "center"
-                      }}
-                    >
-                      <ArrowBackIos
-                        onClick={handleBack}
-                        style={{
-                          fontSize: 25,
-                          color: "#00826a",
-                          cursor: "pointer"
-                        }}
-                      />
-                      <div
-                        style={{
-                          display: "flex",
-                          marginLeft: 40,
-                          marginRight: 40,
-                          alignItems: "center"
-                        }}
-                      >
-                        {slides.map((x, i) => (
-                          <div
-                            onClick={() => handleStepChange(i)}
-                            className={
-                              i === activeStep
-                                ? "bulletactive"
-                                : "bulletinactive"
-                            }
-                          />
-                        ))}
-                      </div>
-
-                      <ArrowForwardIos
-                        onClick={handleNext}
-                        style={{
-                          fontSize: 25,
-                          color: "#00826a",
-                          cursor: "pointer"
-                        }}
-                      />
-                    </div>
-                  </Grid>
-                </Grid>
-              </Grid>
+                  <div
+                    style={{
+                      padding: 15,
+                      textAlign: "center"
+                    }}
+                  >
+                    {slide.testimonial}
+                  </div>
+                  <div style={{ width: "100%", textAlign: "end" }}>
+                    <img
+                      style={{ width: 50 }}
+                      src="/images/iconEndTesti-landingpage.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
             ) : null}
           </div>
         ))}

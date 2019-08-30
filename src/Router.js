@@ -61,7 +61,7 @@ const HomepageContainer =
       })
 
 const BranchContainer =
-  isBrowser &&
+  deviceType !== "mobile" &&
   Loadable({
     loader: () => import("./containers/BranchContainer"),
     loading: Loading

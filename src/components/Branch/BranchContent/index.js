@@ -1,6 +1,43 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import DropDownBranch from "./DropDownBranch"
+import { deviceType } from "react-device-detect"
+
+const styles = {
+  bg1: {
+    position: "absolute",
+    height: "80vh",
+    right: 0,
+    top: "5vh",
+    zIndex: -1
+  },
+  bg1Tablet: {
+    position: "absolute",
+    width: "50vw",
+    right: 0,
+    top: "5vh",
+    zIndex: -1
+  },
+  bg2: {
+    position: "absolute",
+    height: "80vh",
+    left: 0,
+    zIndex: -1
+  },
+  bg2Tablet: {
+    position: "absolute",
+    left: 0,
+    width: "50vw",
+    zIndex: -1
+  },
+  section2: {
+    position: "relative",
+    marginTop: "35vh"
+  },
+  section2Tablet: {
+    position: "relative"
+  }
+}
 
 const BranchContent = ({ match, dnBranch }) => {
   return (
@@ -8,13 +45,7 @@ const BranchContent = ({ match, dnBranch }) => {
       <div style={{ position: "relative" }}>
         <img
           src="/images/branch/bg1.jpg"
-          style={{
-            position: "absolute",
-            height: "80vh",
-            right: 0,
-            top: "5vh",
-            zIndex: -1
-          }}
+          style={deviceType === "tablet" ? styles.bg1Tablet : styles.bg1}
         />
         <Grid container justify="center">
           <Grid item sm={8}>
@@ -45,21 +76,15 @@ const BranchContent = ({ match, dnBranch }) => {
           </Grid>
         </Grid>
       </div>
-      <div style={{ position: "relative", marginTop: "35vh" }}>
+      <div style={{ position: "relative", marginTop: "15vh" }}>
         <img
           src="/images/branch/bg2.jpg"
-          style={{
-            position: "absolute",
-            height: "80vh",
-            left: 0,
-            top: "-30vh",
-            zIndex: -1
-          }}
+          style={deviceType === "tablet" ? styles.bg2Tablet : styles.bg2}
         />
         <Grid container justify="center">
           <Grid item sm={8}>
             <Grid container justify="flex-end">
-              <Grid item sm={6}>
+              <Grid item sm={6} style={{ paddingTop: "15vh" }}>
                 <h3 className="titles">วิสัยทัศน์และพันธกิจ</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

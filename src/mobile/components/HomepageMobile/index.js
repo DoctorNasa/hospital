@@ -9,6 +9,7 @@ import VideosCarousel from "./VideosCarousel"
 import PackagesCarousel from "./PackagesCarousel"
 import AnotherCarousel from "./AnotherCarousel"
 import FormBlock from "./FormBlock"
+import TestimonialCarousel from "../TestimonialCarousel"
 
 const styles = {
   margins: {
@@ -52,6 +53,7 @@ const HomepageMobile = () => {
 
       <AnotherCarousel />
       <FormBlock />
+      <TestimonialCarousel />
     </div>
   )
 }

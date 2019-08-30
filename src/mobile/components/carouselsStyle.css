@@ -1,0 +1,20 @@
+.bulletinactive {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: #00826a;
+  opacity: 0.3;
+  margin-right: 6px;
+  cursor: pointer;
+}
+.bulletinactive:hover {
+  opacity: 1;
+}
+
+.bulletactive {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: #00826a;
+  margin-right: 6px;
+}

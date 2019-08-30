@@ -32,8 +32,8 @@ const FormBlock = () => {
       <Grid container justify="center">
         <Grid
           item
-          md={8}
-          sm={12}
+          sm={8}
+          xs={12}
           style={{ textAlign: "center", marginTop: 10 }}
         >
           <h3 style={{ fontSize: 25 }}>นัดหมายแพทย์</h3>
@@ -71,10 +71,14 @@ const FormBlock = () => {
                 alignItems: "center",
                 paddingTop: 30,
                 paddingRight: 30,
-                paddingBottom: 30
+                paddingBottom: 30,
+                margin: 15
               }}
             >
-              <img src="/images/formimg-homepage.jpg" />
+              <img
+                src="/images/formimg-homepage.jpg"
+                style={{ width: "100%" }}
+              />
             </div>
           </div>
         </Grid>
