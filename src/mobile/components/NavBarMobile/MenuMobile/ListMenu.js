@@ -59,7 +59,6 @@ const ListMenu = ({ menuDB }) => {
               </ListItem>
               <Collapse in={open} timeout="auto" unmountOnExit>
                 {menu.sub.map(x => {
-                  console.log("fu", x)
                   return (
                     <List component="div" disablePadding>
                       <ListItem button className={classes.nested}>

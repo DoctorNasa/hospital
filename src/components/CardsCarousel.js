@@ -121,7 +121,7 @@ const CardsCarousel = ({ backgroundImg }) => {
                 {Math.abs(activeStep - index) <= slides.length - 1 ? (
                   <div style={{ padding: 20 }}>
                     <Grid container spacing={4}>
-                      <Grid item xs={12} md={4}>
+                      <Grid item xs={12} sm={4}>
                         <div style={styles.item}>
                           <img style={{ width: "100%" }} src={slide.imgPath} />
                           <div style={styles.itemDesc}>
@@ -133,7 +133,7 @@ const CardsCarousel = ({ backgroundImg }) => {
                           </div>
                         </div>
                       </Grid>
-                      <Grid item xs={12} md={4}>
+                      <Grid item xs={12} sm={4}>
                         <div style={styles.item}>
                           <img style={{ width: "100%" }} src={slide.imgPath} />
                           <div style={styles.itemDesc}>
@@ -145,7 +145,7 @@ const CardsCarousel = ({ backgroundImg }) => {
                           </div>
                         </div>
                       </Grid>
-                      <Grid item xs={12} md={4}>
+                      <Grid item xs={12} sm={4}>
                         <div style={styles.item}>
                           <img style={{ width: "100%" }} src={slide.imgPath} />
                           <div style={styles.itemDesc}>

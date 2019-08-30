@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid"
 import Fab from "@material-ui/core/Fab"
 import Paper from "@material-ui/core/Paper"
 import { Link } from "react-router-dom"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 
 const styles = {
   containerBrowser: {
@@ -14,7 +15,7 @@ const styles = {
   },
   containerTablet: {
     position: "absolute",
-    marginTop: 25,
+    marginTop: "-10vh",
     zIndex: 99
   },
   searchInput: {
@@ -110,36 +111,47 @@ const BannerMenu = () => {
           <Grid item md={8} sm={12}>
             <Grid container spacing={2}>
               <Grid item md={3} sm={6} style={{ textAlign: "center" }}>
-                <Fab
-                  style={styles.fab}
-                  aria-label="add"
-                  onMouseOver={() => setMenuActive(0)}
-                  onMouseLeave={() => setMenuActive(null)}
-                >
-                  {menuActive === 0 && (
-                    <Paper style={styles.hoverPaper}>
-                      <div style={{ position: "relative" }}>
-                        <Link to="/branch/phyathai1" style={styles.nostyle}>
-                          <div className="itemInHover">phyathai 1</div>
-                        </Link>
-                        <Link to="/branch/phyathai2" style={styles.nostyle}>
-                          <div className="itemInHover">phyathai 2</div>
-                        </Link>
-                        <Link to="/branch/phyathai3" style={styles.nostyle}>
-                          <div className="itemInHover">phyathai 3</div>
-                        </Link>
-                        <Link to="/branch/พญาไทศรีราชา" style={styles.nostyle}>
-                          <div className="itemInHover">พญาไท ศรีราชา</div>
-                        </Link>
-                        <Link to="/branch/พญาไทนวมินทร์" style={styles.nostyle}>
-                          <div className="itemInHover">พญาไท นวมินทร์</div>
-                        </Link>
-                        <div style={styles.triangle} />
-                      </div>
-                    </Paper>
-                  )}
-                  <img src="/images/iconLocation.png" style={styles.imgIcon} />
-                </Fab>
+                <ClickAwayListener onClickAway={() => setMenuActive(null)}>
+                  <Fab
+                    style={styles.fab}
+                    aria-label="add"
+                    onMouseOver={() => setMenuActive(0)}
+                    onMouseLeave={() => setMenuActive(null)}
+                  >
+                    {menuActive === 0 && (
+                      <Paper style={styles.hoverPaper}>
+                        <div style={{ position: "relative" }}>
+                          <Link to="/branch/phyathai1" style={styles.nostyle}>
+                            <div className="itemInHover">phyathai 1</div>
+                          </Link>
+                          <Link to="/branch/phyathai2" style={styles.nostyle}>
+                            <div className="itemInHover">phyathai 2</div>
+                          </Link>
+                          <Link to="/branch/phyathai3" style={styles.nostyle}>
+                            <div className="itemInHover">phyathai 3</div>
+                          </Link>
+                          <Link
+                            to="/branch/พญาไทศรีราชา"
+                            style={styles.nostyle}
+                          >
+                            <div className="itemInHover">พญาไท ศรีราชา</div>
+                          </Link>
+                          <Link
+                            to="/branch/พญาไทนวมินทร์"
+                            style={styles.nostyle}
+                          >
+                            <div className="itemInHover">พญาไท นวมินทร์</div>
+                          </Link>
+                          <div style={styles.triangle} />
+                        </div>
+                      </Paper>
+                    )}
+                    <img
+                      src="/images/iconLocation.png"
+                      style={styles.imgIcon}
+                    />
+                  </Fab>
+                </ClickAwayListener>
                 <div style={styles.ImgIconTxt}>เลือก โรงพยาบาล</div>
               </Grid>
               <Grid item md={3} sm={6} style={{ textAlign: "center" }}>

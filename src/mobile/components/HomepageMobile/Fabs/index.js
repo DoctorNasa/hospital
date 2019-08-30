@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Fab from "@material-ui/core/Fab"
 import Paper from "@material-ui/core/Paper"
 import { Link } from "react-router-dom"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 
 import "./style.css"
 
@@ -26,7 +27,7 @@ const styles = {
   hoverPaper: {
     position: "absolute",
     width: 150,
-    left: 0,
+    left: 87,
     top: -38,
     zIndex: 95
   },
@@ -94,24 +95,28 @@ const Fabs = () => {
             onClick={() => setMenuActive(index)}
           >
             {menuActive === index && index === 0 && (
-              <Paper style={index === 0 && styles.hoverPaper}>
-                <Link to="/branch/phyathai1" style={styles.nostyle}>
-                  <div className="itemInHover">phyathai 1</div>
-                </Link>
-                <Link to="/branch/phyathai2" style={styles.nostyle}>
-                  <div className="itemInHover">phyathai 2</div>
-                </Link>
-                <Link to="/branch/phyathai3" style={styles.nostyle}>
-                  <div className="itemInHover">phyathai 3</div>
-                </Link>
-                <Link to="/branch/พญาไทศรีราชา" style={styles.nostyle}>
-                  <div className="itemInHover">พญาไท ศรีราชา</div>
-                </Link>
-                <Link to="/branch/พญาไทนวมินทร์" style={styles.nostyle}>
-                  <div className="itemInHover">พญาไท นวมินทร์</div>
-                </Link>
-                <div style={styles.triangle} />
-              </Paper>
+              <ClickAwayListener onClickAway={() => setMenuActive(null)}>
+                <Paper style={styles.hoverPaper}>
+                  <div style={{ position: "relative" }}>
+                    <Link to="/branch/phyathai1" style={styles.nostyle}>
+                      <div className="itemInHover">phyathai 1</div>
+                    </Link>
+                    <Link to="/branch/phyathai2" style={styles.nostyle}>
+                      <div className="itemInHover">phyathai 2</div>
+                    </Link>
+                    <Link to="/branch/phyathai3" style={styles.nostyle}>
+                      <div className="itemInHover">phyathai 3</div>
+                    </Link>
+                    <Link to="/branch/พญาไทศรีราชา" style={styles.nostyle}>
+                      <div className="itemInHover">พญาไท ศรีราชา</div>
+                    </Link>
+                    <Link to="/branch/พญาไทนวมินทร์" style={styles.nostyle}>
+                      <div className="itemInHover">พญาไท นวมินทร์</div>
+                    </Link>
+                    <div style={styles.triangle} />
+                  </div>
+                </Paper>
+              </ClickAwayListener>
             )}
             <img src={imgSrc} style={styles.imgIcon} />
           </Fab>

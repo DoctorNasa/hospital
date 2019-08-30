@@ -11,10 +11,6 @@ import TestimonialCarousel from "../TestimonialCarousel"
 import "./style.css"
 
 const BrowserHomepage = () => {
-  React.useEffect(() => {
-    // Update the document title using the browser API
-    console.log("-")
-  }, [])
   return (
     <div>
       <BannerCarousel />

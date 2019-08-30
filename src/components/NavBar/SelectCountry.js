@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/styles"
 import Avatar from "@material-ui/core/Avatar"
 import Paper from "@material-ui/core/Paper"
 import ExpandMore from "@material-ui/icons/ExpandMore"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 
 const languages = [
   {
@@ -46,16 +47,18 @@ const SelectCountry = () => {
       >
         <ExpandMore />
         {showDrop && (
-          <Paper elevation={2} className={classes.root}>
-            {languages.map(x => (
-              <div
-                className="itemDropDown"
-                onClick={() => setSelectedLang(x.lang)}
-              >
-                {x.lang}
-              </div>
-            ))}
-          </Paper>
+          <ClickAwayListener onClickAway={() => setShowDrop(false)}>
+            <Paper elevation={2} className={classes.root}>
+              {languages.map(x => (
+                <div
+                  className="itemDropDown"
+                  onClick={() => setSelectedLang(x.lang)}
+                >
+                  {x.lang}
+                </div>
+              ))}
+            </Paper>
+          </ClickAwayListener>
         )}
       </div>
     </div>

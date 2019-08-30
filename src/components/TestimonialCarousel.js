@@ -1,6 +1,5 @@
 import React from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
-import { isBrowser, isMobile, isTablet } from "react-device-detect"
 import SwipeableViews from "react-swipeable-views"
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
@@ -91,12 +90,7 @@ const TestimonialCarousel = () => {
                   />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Grid
-                    item
-                    xs={12}
-                    md={8}
-                    style={isBrowser && styles.containerTxt}
-                  >
+                  <Grid item xs={12} md={8} style={styles.containerTxt}>
                     <b style={{ fontSIze: 25 }}>{slide.title}</b>
                     <div style={{ marginTop: 15, textAlign: "left" }}>
                       <img

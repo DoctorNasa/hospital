@@ -1,6 +1,6 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
-import { isBrowser, isMobile, isTablet } from "react-device-detect"
+import { isBrowser, isMobile, isTablet, deviceType } from "react-device-detect"
 import Empty from "./components/Empty"
 
 import Loadable from "react-loadable"
@@ -27,35 +27,38 @@ const AboutContainer = Loadable({
   loading: Loading
 })
 
-const FooterContainer = isMobile
-  ? Loadable({
-      loader: () => import("./mobile/containers/FooterMobileContainer"),
-      loading: Loading
-    })
-  : Loadable({
-      loader: () => import("./containers/FooterContainer"),
-      loading: Loading
-    })
+const FooterContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/FooterMobileContainer"),
+        loading: Loading
+      })
+    : Loadable({
+        loader: () => import("./containers/FooterContainer"),
+        loading: Loading
+      })
 
-const NavbarContainer = isMobile
-  ? Loadable({
-      loader: () => import("./mobile/containers/NavBarMobileContainer"),
-      loading: Loading
-    })
-  : Loadable({
-      loader: () => import("./containers/NavbarContainer"),
-      loading: Loading
-    })
+const NavbarContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/NavBarMobileContainer"),
+        loading: Loading
+      })
+    : Loadable({
+        loader: () => import("./containers/NavbarContainer"),
+        loading: Loading
+      })
 
-const HomepageContainer = isMobile
-  ? Loadable({
-      loader: () => import("./mobile/containers/HomepageMobileContainer"),
-      loading: Loading
-    })
-  : Loadable({
-      loader: () => import("./containers/HomepageContainer"),
-      loading: Loading
-    })
+const HomepageContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/HomepageMobileContainer"),
+        loading: Loading
+      })
+    : Loadable({
+        loader: () => import("./containers/HomepageContainer"),
+        loading: Loading
+      })
 
 const BranchContainer =
   isBrowser &&
