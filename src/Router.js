@@ -61,11 +61,15 @@ const HomepageContainer =
       })
 
 const BranchContainer =
-  deviceType !== "mobile" &&
-  Loadable({
-    loader: () => import("./containers/BranchContainer"),
-    loading: Loading
-  })
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/BranchMobileContainer"),
+        loading: Loading
+      })
+    : Loadable({
+        loader: () => import("./containers/BranchContainer"),
+        loading: Loading
+      })
 
 const Router = () => (
   <div>
