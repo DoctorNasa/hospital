@@ -1,0 +1,42 @@
+[
+  {
+    "id": "phyathai1",
+    "name": "Phyathai 1",
+    "lat": 13.75648,
+    "lng": 100.539204,
+    "tel": "02 201 4600",
+    "address": "364/1 ถ. ศรีอยุธยา แขวง ถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400"
+  },
+  {
+    "id": "phyathai2",
+    "name": "Phyathai 2",
+    "lat": 13.770568,
+    "lng": 100.540601,
+    "tel": "02 617 2444",
+    "address": "943 Phahonyothin Rd, แขวง พญาไท Khet Phaya Thai, Krung Thep Maha Nakhon 10400"
+  },
+  {
+    "id": "phyathai3",
+    "name": "Phyathai 3",
+    "lat": 13.723242,
+    "lng": 100.46409,
+    "tel": "02 467 1111",
+    "address": "111 Phet Kasem Rd, Khwaeng Pak Khlong Phasi Charoen, Khet Phasi Charoen, Krung Thep Maha Nakhon 10160"
+  },
+  {
+    "id": "พญาไทศรีราชา",
+    "name": "พญาไท ศรีราชา",
+    "lat": 13.75648,
+    "lng": 100.539204,
+    "tel": "02 201 4600",
+    "address": "364/1 ถ. ศรีอยุธยา แขวง ถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400"
+  },
+  {
+    "id": "พญาไทนวมินทร์",
+    "name": "พญาไท นวมินทร์",
+    "lat": 13.75648,
+    "lng": 100.539204,
+    "tel": "02 201 4600",
+    "address": "364/1 ถ. ศรีอยุธยา แขวง ถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400"
+  }
+]
