@@ -1,10 +1,8 @@
 import React, { useState } from "react"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
-import Button from "@material-ui/core/Button"
 import { autoPlay } from "react-swipeable-views-utils"
-import Box from "@material-ui/core/Box"
 import DotsCarousel from "../DotsCarousel"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)

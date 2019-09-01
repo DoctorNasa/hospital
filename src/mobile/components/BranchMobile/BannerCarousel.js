@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import { useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
-import BtnBlue from "./BtnBlue"
+import BtnBlue from "../BtnBlue"
 import { autoPlay } from "react-swipeable-views-utils"
-import DotsCarousel from "./DotsCarousel"
+import DotsCarousel from "../DotsCarousel"
 
 const styleMobileBanner = img => ({
   background: `url(${img})`,
-  backgroundSize: "100% 100%",
+  backgroundSize: "100%",
   backgroundRepeat: "no-repeat",
   height: "100%"
 })
@@ -28,16 +28,16 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
 const slides = [
   {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "/images/mobile/img-banner.jpg"
+    title: "โรงพยาบาลพญาไท 1",
+    imgPath: "/images/branch/mobile/banner-bg.jpg"
   },
   {
-    label: "Bird",
-    imgPath: "/images/mobile/img-banner.jpg"
+    title: "โรงพยาบาลพญาไท 1",
+    imgPath: "/images/branch/mobile/banner-bg.jpg"
   },
   {
-    label: "Bali, Indonesia",
-    imgPath: "/images/mobile/img-banner.jpg"
+    title: "โรงพยาบาลพญาไท 1",
+    imgPath: "/images/branch/mobile/banner-bg.jpg"
   }
 ]
 
@@ -67,6 +67,7 @@ function BannerCarousel() {
       >
         {slides.map((x, index) => (
           <div key={x.label} style={styleMobileBanner(x.imgPath)}>
+            <h1 style={{ paddingTop: 80 }}>{x.title}</h1>
             <div
               display="flex"
               alignItems="center"

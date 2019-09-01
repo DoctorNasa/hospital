@@ -1,7 +1,12 @@
 import React from "react"
+import BannerCarousel from "./BannerCarousel"
 
 const BranchMobile = () => {
-  return <div>Branch Mobile</div>
+  return (
+    <div>
+      <BannerCarousel />
+    </div>
+  )
 }
 
 export default BranchMobile
