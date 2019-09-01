@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import { useTheme } from "@material-ui/core/styles"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
-import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 import { autoPlay } from "react-swipeable-views-utils"
 import DotsCarousel from "../DotsCarousel"
 
@@ -9,25 +8,25 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
 const slides = [
   {
-    imgPath: "/images/cardCarousel.png",
+    imgPath: "/images/mobile/another-carousel-homepage.jpg",
     title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว",
     subtitle: "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา"
   },
   {
-    imgPath: "/images/cardCarousel.png",
+    imgPath: "/images/mobile/another-carousel-homepage.jpg",
     title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #1",
     subtitle:
       "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #1"
   },
   {
-    imgPath: "/images/cardCarousel.png",
+    imgPath: "/images/mobile/another-carousel-homepage.jpg",
     title: "Hidden Hunger ภาวะขาดวิตามิน ที่คุณอาจเป็น...แต่ไม่เคยรู้ตัว #2",
     subtitle:
       "จากการศึกษาของ WHO หรือองค์กรอนามัยโลก พบว่าพฤติกรรมการรับประทา #2"
   }
 ]
 
-function CardsCarousel() {
+const AnotherCarousel = () => {
   const theme = useTheme()
   const [activeStep, setActiveStep] = useState(0)
 
@@ -53,50 +52,37 @@ function CardsCarousel() {
       >
         {slides.map(({ imgPath, title, subtitle }, index) => (
           <div>
-            <div
-              style={{
-                backgroundColor: "#ffd1db",
-                borderRadius: 5,
-                boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)"
-              }}
-            >
+            <div style={{ position: "relative" }}>
               <img
                 src={imgPath}
                 style={{
                   width: "100%",
-                  height: "100%",
+                  height: "650px",
                   borderTopLeftRadius: 5,
                   borderTopRightRadius: 5
                 }}
               />
               <div
-                style={{
-                  paddingLeft: 15,
-                  paddingRight: 15
-                }}
+                style={{ position: "absolute", top: 330, left: 0, right: 0 }}
               >
-                <div
-                  style={{
-                    marginTop: 15,
-                    marginBottom: 15,
-                    color: "#4d4d4d",
-                    fontSize: 20,
-                    fontWeight: 600
-                  }}
-                >
-                  {title}
-                </div>
-                <div
-                  style={{
-                    color: "#818385"
-                  }}
-                >
-                  {subtitle}
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <div style={{ paddingTop: 30, fontSize: 20 }}>
-                    อ่านต่อ <ArrowForwardIos style={{ fontSize: 14 }} />
-                  </div>
+                <h3 style={{ textAlign: "center", fontSize: 25 }}>
+                  ศูนย์ทางการแพทย์
+                </h3>
+                <div style={{ marginLeft: 15, marginRight: 15 }}>
+                  <b>
+                    นวัตกรรมใหม่ 'Bi-plane DSA'รักษาหลอดเลือด
+                    สมองได้โดยไม่ต้องผ่าต
+                  </b>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce eu lorem nec velit malesuada blandit id nec nibh. Sed
+                    nec risus blandit, lobortis nulla vitae, dignissim massa.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce eu lorem nec velit malesuada blandit id nec nibh. Sed
+                    nec risus blandit, lobortis nulla vitae, dignissim massa.
+                  </p>
                 </div>
               </div>
             </div>
@@ -107,10 +93,9 @@ function CardsCarousel() {
         handleStepChange={handleStepChange}
         slidesLength={slides.length}
         activeIndex={activeStep}
-        marginTop={30}
       />
     </div>
   )
 }
 
-export default CardsCarousel
+export default AnotherCarousel

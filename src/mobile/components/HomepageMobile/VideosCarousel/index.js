@@ -58,7 +58,7 @@ const VideosCarousel = () => {
   }
 
   return (
-    <div style={{ paddingTop: 20 }}>
+    <div style={{ paddingTop: 20, marginLeft: 15, marginRight: 15 }}>
       <h3
         style={{
           width: "100%",

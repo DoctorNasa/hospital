@@ -2,12 +2,10 @@ import React from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
 import Grid from "@material-ui/core/Grid"
-import Box from "@material-ui/core/Box"
-import Button from "@material-ui/core/Button"
 import { autoPlay } from "react-swipeable-views-utils"
-import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
-import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
+import DotsCarousel from "./DotsCarousel"
 import "./carouselsStyle.css"
+import BtnBlue from "./BtnBlue"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -112,11 +110,21 @@ const TestimonialCarousel = () => {
                     />
                   </div>
                 </div>
+                <BtnBlue
+                  text="ดูทั้งหมด"
+                  textAlign="center"
+                  paddingBottom={15}
+                />
               </div>
             ) : null}
           </div>
         ))}
       </SwipeableViews>
+      <DotsCarousel
+        handleStepChange={handleStepChange}
+        slidesLength={slides.length}
+        activeIndex={activeStep}
+      />
     </Grid>
   )
 }

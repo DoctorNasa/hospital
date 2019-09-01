@@ -3,35 +3,43 @@ import "./style.css"
 import Hamburger from "react-hamburger-menu"
 import MenuMobile from "./MenuMobile"
 import useScrollPosition from "use-scroll-position"
+import { Link } from "react-router-dom"
 
 const menuDB = [
   {
     main: "homepage",
-    sub: []
+    sub: [],
+    link: "/"
   },
   {
     main: "hospital service",
-    sub: []
+    sub: [],
+    link: "/"
   },
   {
     main: "promotion packages",
-    sub: []
+    sub: [],
+    link: "/"
   },
   {
     main: "health article",
-    sub: ["medical articles", "videos", "staff", "innovation"]
+    sub: ["medical articles", "videos", "staff", "innovation"],
+    link: null
   },
   {
     main: "innovation",
-    sub: []
+    sub: [],
+    link: "/"
   },
   {
     main: "about us",
-    sub: []
+    sub: [],
+    link: "/"
   },
   {
     main: "member",
-    sub: []
+    sub: [],
+    link: "/"
   }
 ]
 
@@ -42,6 +50,9 @@ const styleBgLight = scrollPosition => ({
 const NavBarMobile = ({ pageContainer }) => {
   const [open, setOpen] = useState(null)
   const scrollPosition = useScrollPosition()
+
+  const _menuOpen = bool => setOpen(bool)
+
   return (
     <>
       <div
@@ -50,7 +61,9 @@ const NavBarMobile = ({ pageContainer }) => {
         onScroll={() => console.log("lol")}
       >
         <div style={{ flex: 1 }}>
-          <img src="/images/logo-mobile.png" style={{ width: "100%" }} />
+          <Link to="/">
+            <img src="/images/logo-mobile.png" style={{ width: "100%" }} />
+          </Link>
         </div>
 
         <div
@@ -75,7 +88,7 @@ const NavBarMobile = ({ pageContainer }) => {
           {open && <div style={{ color: "#32bfc6", fontSize: 12 }}>Close</div>}
         </div>
       </div>
-      <MenuMobile menuDB={menuDB} open={open} />
+      <MenuMobile menuDB={menuDB} open={open} _menuOpen={_menuOpen} />
     </>
   )
 }

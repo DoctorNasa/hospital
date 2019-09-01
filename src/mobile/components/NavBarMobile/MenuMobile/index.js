@@ -3,14 +3,14 @@ import ListMenu from "./ListMenu"
 import SearchBarMobile from "../../SearchBarMobile"
 import PopUpCountry from "./PopUpCountry"
 
-const MenuMobile = ({ open, menuDB }) => {
+const MenuMobile = ({ open, menuDB, _menuOpen }) => {
   return (
     <div
       className={
         open === null ? "menuInit" : open ? "menuSlideIn" : "menuSlideOut"
       }
     >
-      <ListMenu menuDB={menuDB} />
+      <ListMenu menuDB={menuDB} _menuOpen={_menuOpen} />
       <div
         style={{
           position: "fixed",

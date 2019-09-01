@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import ListSubheader from "@material-ui/core/ListSubheader"
 import List from "@material-ui/core/List"
@@ -11,7 +11,7 @@ import DraftsIcon from "@material-ui/icons/Drafts"
 import SendIcon from "@material-ui/icons/Send"
 import ExpandLess from "@material-ui/icons/ExpandLess"
 import ExpandMore from "@material-ui/icons/ExpandMore"
-import StarBorder from "@material-ui/icons/StarBorder"
+import { Link } from "react-router-dom"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,9 +32,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ListMenu = ({ menuDB }) => {
+const ListMenu = ({ menuDB, _menuOpen }) => {
   const classes = useStyles()
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = useState(true)
 
   const handleClick = () => {
     setOpen(!open)
@@ -46,19 +46,19 @@ const ListMenu = ({ menuDB }) => {
       aria-labelledby="nested-list-subheader"
       className={classes.root}
     >
-      {menuDB.map((menu, index) => {
-        if (menu.sub.length > 0) {
+      {menuDB.map((x, index) => {
+        if (x.sub.length > 0) {
           return (
             <>
               <ListItem button onClick={handleClick}>
                 <ListItemText
                   className={open && classes.selectedItem}
-                  primary={menu.main}
+                  primary={x.main}
                 />
                 {open ? <ExpandLess /> : <ExpandMore />}
               </ListItem>
               <Collapse in={open} timeout="auto" unmountOnExit>
-                {menu.sub.map(x => {
+                {x.sub.map(x => {
                   return (
                     <List component="div" disablePadding>
                       <ListItem button className={classes.nested}>
@@ -73,8 +73,13 @@ const ListMenu = ({ menuDB }) => {
         }
         return (
           <div>
-            <ListItem button>
-              <ListItemText primary={menu.main} />
+            <ListItem
+              button
+              component={Link}
+              to={x.link}
+              onClick={() => _menuOpen(false)}
+            >
+              <ListItemText primary={x.main} />
             </ListItem>
           </div>
         )
