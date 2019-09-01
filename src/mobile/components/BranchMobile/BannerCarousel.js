@@ -8,8 +8,7 @@ import DotsCarousel from "../DotsCarousel"
 const styleMobileBanner = img => ({
   background: `url(${img})`,
   backgroundSize: "100%",
-  backgroundRepeat: "no-repeat",
-  height: "100%"
+  backgroundRepeat: "no-repeat"
 })
 
 const styles = {
@@ -29,14 +28,20 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 const slides = [
   {
     title: "โรงพยาบาลพญาไท 1",
+    content:
+      "Integer euismod, libero non pellentesque pharetra, diam elit dapibus est, quis posuere urna sem eget augue. Duis faucibus commodo rhoncus. Aliquam eget magna ut ex fringilla condimentum a id libero. Phasellus tristique mauris ultricies tortor hendrerit pellentesque. Cras maximus molestie neque a venenatis.",
     imgPath: "/images/branch/mobile/banner-bg.jpg"
   },
   {
     title: "โรงพยาบาลพญาไท 1",
+    content:
+      "Integer euismod, libero non pellentesque pharetra, diam elit dapibus est, quis posuere urna sem eget augue. Duis faucibus commodo rhoncus. Aliquam eget magna ut ex fringilla condimentum a id libero. Phasellus tristique mauris ultricies tortor hendrerit pellentesque. Cras maximus molestie neque a venenatis.",
     imgPath: "/images/branch/mobile/banner-bg.jpg"
   },
   {
     title: "โรงพยาบาลพญาไท 1",
+    content:
+      "Integer euismod, libero non pellentesque pharetra, diam elit dapibus est, quis posuere urna sem eget augue. Duis faucibus commodo rhoncus. Aliquam eget magna ut ex fringilla condimentum a id libero. Phasellus tristique mauris ultricies tortor hendrerit pellentesque. Cras maximus molestie neque a venenatis.",
     imgPath: "/images/branch/mobile/banner-bg.jpg"
   }
 ]
@@ -66,37 +71,23 @@ function BannerCarousel() {
         enableMouseEvents
       >
         {slides.map((x, index) => (
-          <div key={x.label} style={styleMobileBanner(x.imgPath)}>
-            <h1 style={{ paddingTop: 80 }}>{x.title}</h1>
-            <div
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              flexDirection="column"
-              style={styles.containerMobile}
-            >
-              <h1
+          <div>
+            <div style={{ position: "relative" }}>
+              <img src={x.imgPath} style={{ width: "100%" }} />
+              <div style={{ position: "absolute", top: 100 }}>
+                <h1>{x.title}</h1>
+              </div>
+
+              <div
                 style={{
-                  textAlign: "center",
-                  color: "#4d4d4d",
-                  marginTop: 0,
-                  marginBottom: 0
+                  marginTop: 30,
+                  marginBottom: 30,
+                  marginLeft: 15,
+                  marginRight: 15
                 }}
               >
-                ครอบครัวมีความสุขหยุด ทุกอาการป่วยช่วยให้คุณไปต่อ
-              </h1>
-              <h2
-                style={{
-                  color: "grey",
-                  textAlign: "center",
-                  color: "#818385",
-                  marginTop: 0,
-                  marginBottom: 0
-                }}
-              >
-                เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
-              </h2>
-              <BtnBlue text="ดูรายละเอียดเพิ่มเติม" />
+                {x.content}
+              </div>
             </div>
           </div>
         ))}
@@ -106,6 +97,8 @@ function BannerCarousel() {
         handleStepChange={handleStepChange}
         slidesLength={slides.length}
         activeIndex={activeStep}
+        noArrow
+        marginLeft={15}
       />
     </div>
   )

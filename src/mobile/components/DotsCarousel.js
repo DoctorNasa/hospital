@@ -38,41 +38,67 @@ const DotsCarousel = ({
   marginLeft,
   marginRight,
   marginBottom,
-  color
+  color,
+  noArrow
 }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        zIndex: 99,
-        marginBottom,
-        marginTop,
-        marginLeft,
-        marginRight,
-        justifyContent: "center"
-      }}
-    >
-      <ArrowBackIos
-        onClick={() => activeIndex !== 0 && handleStepChange(activeIndex - 1)}
-        style={styles.arrows}
-      />
-      {new Array(slidesLength).fill(1).map((x, i) => (
-        <div
-          onClick={() => handleStepChange(i)}
-          style={
-            i === activeIndex ? styles.bulletactive : styles.bulletinactive
-          }
+  if (noArrow)
+    return (
+      <div
+        style={{
+          display: "flex",
+          zIndex: 99,
+          marginTop,
+          marginLeft,
+          marginRight,
+          marginBottom
+        }}
+      >
+        {new Array(slidesLength).fill(1).map((x, i) => (
+          <div
+            onClick={() => handleStepChange(i)}
+            style={
+              i === activeIndex ? styles.bulletactive : styles.bulletinactive
+            }
+          />
+        ))}
+      </div>
+    )
+
+  if (!noArrow)
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          zIndex: 99,
+          marginBottom,
+          marginTop,
+          marginLeft,
+          marginRight,
+          justifyContent: "center"
+        }}
+      >
+        <ArrowBackIos
+          onClick={() => activeIndex !== 0 && handleStepChange(activeIndex - 1)}
+          style={styles.arrows}
         />
-      ))}
-      <ArrowForwardIos
-        onClick={() =>
-          activeIndex !== slidesLength - 1 && handleStepChange(activeIndex + 1)
-        }
-        style={styles.arrows}
-      />
-    </div>
-  )
+        {new Array(slidesLength).fill(1).map((x, i) => (
+          <div
+            onClick={() => handleStepChange(i)}
+            style={
+              i === activeIndex ? styles.bulletactive : styles.bulletinactive
+            }
+          />
+        ))}
+        <ArrowForwardIos
+          onClick={() =>
+            activeIndex !== slidesLength - 1 &&
+            handleStepChange(activeIndex + 1)
+          }
+          style={styles.arrows}
+        />
+      </div>
+    )
 }
 
 export default DotsCarousel
