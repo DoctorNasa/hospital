@@ -8,11 +8,13 @@ const styles = {
   marginBottom: 15
 }
 
-const BtnBlue = ({ text }) => {
+const BtnBlue = ({ text, width, textAlign, marginTop, paddingBottom }) => {
   return (
-    <Button variant="contained" color="secondary" size="large" style={styles}>
-      {text}
-    </Button>
+    <div style={{ width, textAlign, marginTop, paddingBottom }}>
+      <Button variant="contained" color="secondary" size="large" style={styles}>
+        {text}
+      </Button>
+    </div>
   )
 }
 
