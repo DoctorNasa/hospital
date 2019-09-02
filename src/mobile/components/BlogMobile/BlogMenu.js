@@ -5,7 +5,7 @@ const styles = {
   menu: {
     flex: 1,
     color: "#818385",
-    padding: 5,
+    padding: 7,
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 20,
@@ -16,7 +16,7 @@ const styles = {
     flex: 1,
     color: "white",
     background: "#30bfc5",
-    padding: 5,
+    padding: 7,
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 20,
