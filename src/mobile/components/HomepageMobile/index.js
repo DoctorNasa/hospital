@@ -1,7 +1,7 @@
 import React from "react"
 import "./style.css"
 import BannerCarousel from "./BannerCarousel"
-import SearchBar from "./SearchBar"
+import ZSearchBar from "../ZSearchBar"
 import Fabs from "./Fabs"
 import ZCardsCategoriesCarousel from "../ZCardsCategoriesCarousel"
 import BtnBlue from "../BtnBlue"
@@ -23,7 +23,7 @@ const HomepageMobile = () => {
     <div>
       <BannerCarousel />
       <div style={styles.margins}>
-        <SearchBar style={{ marginTop: 20, marginBottom: 20 }} />
+        <ZSearchBar style={{ marginTop: 20, marginBottom: 20 }} />
         <Fabs />
       </div>
       <ZCardsCategoriesCarousel />

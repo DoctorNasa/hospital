@@ -71,6 +71,14 @@ const BranchContainer =
         loading: Loading
       })
 
+const BlogContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/BlogMobileContainer"),
+        loading: Loading
+      })
+    : ""
+
 const Router = () => (
   <div>
     <NavbarContainer />
@@ -79,7 +87,7 @@ const Router = () => (
       <Route exact path="/branch/:branch" component={BranchContainer} />
       <Route exact path="/services" component={ServicesContainer} />
       <Route exact path="/packages" component={PackagesContainer} />
-      <Route exact path="/articles" component={ArticlesContainer} />
+      <Route exact path="/articles" component={BlogContainer} />
       <Route exact path="/aboutus" component={AboutContainer} />
       <Route component={Empty} />
     </Switch>

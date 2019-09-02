@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./style.css"
 import Hamburger from "react-hamburger-menu"
 import MenuMobile from "./MenuMobile"
@@ -24,7 +24,7 @@ const menuDB = [
   {
     main: "health article",
     sub: ["medical articles", "videos", "staff", "innovation"],
-    link: null
+    link: "/articles"
   },
   {
     main: "innovation",
@@ -47,9 +47,24 @@ const styleBgLight = scrollPosition => ({
   backgroundColor: `rgba(255, 255, 255, ${(1 / 250) * scrollPosition})`
 })
 
+const styleBgDark = open =>
+  open
+    ? {
+        backgroundColor: `white`
+      }
+    : {
+        backgroundColor: `white`,
+        boxShadow:
+          "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
+      }
+
 const NavBarMobile = ({ pageContainer }) => {
   const [open, setOpen] = useState(null)
   const scrollPosition = useScrollPosition()
+
+  useEffect(() => {
+    console.log("useeffect", pageContainer)
+  }, [pageContainer])
 
   const _menuOpen = bool => setOpen(bool)
 
@@ -57,7 +72,9 @@ const NavBarMobile = ({ pageContainer }) => {
     <>
       <div
         className={pageContainer === 0 ? "headerLight" : "headerDark"}
-        style={styleBgLight(scrollPosition)}
+        style={
+          pageContainer === 0 ? styleBgLight(scrollPosition) : styleBgDark(open)
+        }
         onScroll={() => console.log("lol")}
       >
         <div style={{ flex: 1 }}>
