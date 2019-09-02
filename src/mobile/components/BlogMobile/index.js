@@ -13,7 +13,7 @@ const styles = {
   }
 }
 
-const BlogMobile = () => {
+const BlogMobile = ({ queries }) => {
   return (
     <div style={{ paddingTop: 100 }}>
       browser BlogMobile
@@ -35,10 +35,12 @@ const BlogMobile = () => {
             { name: "บทความสุขภาพ", link: "/" }
           ]}
         />
-        <BlogMenu />
+        <BlogMenu queries={queries} />
       </div>
     </div>
   )
 }
 
 export default BlogMobile
+
+//TODO BTNDRAG

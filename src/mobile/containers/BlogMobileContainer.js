@@ -12,10 +12,10 @@ const BlogMobileContainer = () => {
       setActive(false)
       _pageContainer(3)
     }
-    const queryString = require("query-string")
+    console.log(queryString.parse(window.location.search))
   }, [active, _pageContainer])
 
-  return <BlogMobile />
+  return <BlogMobile queries={queryString.parse(window.location.search)} />
 }
 
 export default BlogMobileContainer

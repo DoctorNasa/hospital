@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const styles = {
   menu: {
@@ -8,7 +9,8 @@ const styles = {
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 20,
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: 20
   },
   menuActive: {
     flex: 1,
@@ -18,16 +20,37 @@ const styles = {
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 20,
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: 20
   }
 }
 
-const BlogMenu = () => {
+const BlogMenu = ({ queries }) => {
   return (
-    <div style={{ display: "flex" }}>
-      <div style={styles.menuActive}>ทั้งหมด</div>
-      <div style={styles.menu}>บทความ</div>
-      <div style={styles.menu}>วีดีโอ</div>
+    <div
+      style={{ display: "flex", width: "100%", justifyContent: "space-evenly" }}
+    >
+      <Link to="/articles" style={{ textDecoration: "none" }}>
+        <div
+          style={
+            Object.entries(queries).length === 0
+              ? styles.menuActive
+              : styles.menu
+          }
+        >
+          ทั้งหมด
+        </div>
+      </Link>
+      <Link to="/articles?videos=true" style={{ textDecoration: "none" }}>
+        <div style={queries.videos ? styles.menuActive : styles.menu}>
+          บทความ
+        </div>
+      </Link>
+      <Link to="/articles?articles=true" style={{ textDecoration: "none" }}>
+        <div style={queries.articles ? styles.menuActive : styles.menu}>
+          วีดีโอ
+        </div>
+      </Link>
     </div>
   )
 }
