@@ -1,12 +1,27 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import BlueBtn from "../BlueBtn"
+import { deviceType } from "react-device-detect"
 
 const styles = {
   container: {
     paddingTop: "30vh",
     position: "relative",
     paddingBottom: 70
+  },
+  bg1: {
+    position: "absolute",
+    maxHeight: "80vh",
+    right: 0,
+    bottom: 0,
+    zIndex: -1
+  },
+  bg1Tablet: {
+    position: "absolute",
+    maxHeight: "60vh",
+    right: 0,
+    bottom: 0,
+    zIndex: -1
   }
 }
 
@@ -15,17 +30,11 @@ const CeoBlock = () => {
     <div style={styles.container}>
       <img
         src="/images/branch/branch-ceo.jpg"
-        style={{
-          position: "absolute",
-          height: "80vh",
-          right: 0,
-          bottom: 0,
-          zIndex: -1
-        }}
+        style={deviceType === "tablet" ? styles.bg1Tablet : styles.bg1}
       />
       <Grid container justify="center">
-        <Grid item md={8}>
-          <Grid item md={6}>
+        <Grid item sm={8}>
+          <Grid item sm={6}>
             <h3 className="titles">
               ผู้บริหารโรงพยาบาล และ คณะกรรมการ โรงพยาบาลพญาไท
             </h3>
@@ -36,18 +45,18 @@ const CeoBlock = () => {
               />
             </div>
             <Grid container justify="center">
-              <Grid item md={8} style={{ fontSize: 25 }}>
+              <Grid item sm={8} style={{ fontSize: 25 }}>
                 เรามุ่งเน้นในเรื่องความเชี่ยวชาญ การแพทย์เฉพาะทาง
               </Grid>
             </Grid>
             <div style={{ width: "100%", textAlign: "end" }}>
               <img
                 style={{ width: 50 }}
-                src="/images/branch/testimonial-end-blue.jpg"
+                src="/images/branch/testimonial-end-blue.png"
               />
             </div>
             <Grid container justify="center">
-              <Grid item md={8}>
+              <Grid item sm={8}>
                 <div style={{ fontSize: 20, fontWeight: "bold" }}>
                   นาย อัฐ ทองแตง
                 </div>
@@ -56,8 +65,8 @@ const CeoBlock = () => {
                 </div>
               </Grid>
             </Grid>
-            <Grid item md={8}></Grid>
-            <div style={{ width: "100%", textAlign: "center", marginTop: 20 }}>
+            <Grid item sm={8}></Grid>
+            <div style={{ width: "100%", textAlign: "center" }}>
               <BlueBtn text="ดูทั้งหมด" />
             </div>
           </Grid>

@@ -31,7 +31,7 @@ const ItemCardCarousel = ({
   backgroundColor
 }) => {
   return (
-    <Grid item xs={12} md={4}>
+    <Grid item sm={4}>
       <div style={styleBg(backgroundColor)}>
         <div style={styles.itemDesc}>
           <div style={{ display: "flex" }}>

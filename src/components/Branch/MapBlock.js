@@ -5,12 +5,12 @@ import Paper from "@material-ui/core/Paper"
 import PhoneInTalk from "@material-ui/icons/PhoneInTalk"
 import Print from "@material-ui/icons/Print"
 import WhereToVote from "@material-ui/icons/WhereToVote"
+import { deviceType } from "react-device-detect"
 
 const options = {}
 
 const styles = {
   inMap: {
-    paddingTop: 20,
     display: "flex",
     fontSize: 15,
     color: "#7a7979"
@@ -40,7 +40,7 @@ const MapBlock = ({ info }) => {
         zoom={15}
         center={{
           lat,
-          lng
+          lng: deviceType === "tablet" ? lng - 0.008 : lng
         }}
       >
         <div

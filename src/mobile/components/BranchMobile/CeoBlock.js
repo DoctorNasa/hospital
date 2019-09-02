@@ -10,7 +10,7 @@ const styles = {
 
 const CeoBlock = () => {
   return (
-    <div style={{ paddingBottom: 55, paddingTop: 30 }}>
+    <div style={{ paddingBottom: 30, paddingTop: 30 }}>
       <div style={styles.margins}>
         <h3 className="blueTitle">
           ผู้บริหารโรงพยาบาล และ คณะกรรมการ โรงพยาบาลพญาไท
@@ -43,7 +43,6 @@ const CeoBlock = () => {
             src="/images/branch/branch-ceo.jpg"
             style={{
               width: "100%",
-              height: 400,
               zIndex: -1
             }}
           />
