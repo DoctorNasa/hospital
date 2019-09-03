@@ -1,9 +1,9 @@
 import React from "react"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 
-const ItemCategory = ({ imgPath, title, subtitle }) => {
+const ItemCategory = ({ imgPath, title, subtitle, marginTop }) => {
   return (
-    <div>
+    <div style={{ marginTop }}>
       <div
         style={{
           backgroundColor: "#ffd1db",

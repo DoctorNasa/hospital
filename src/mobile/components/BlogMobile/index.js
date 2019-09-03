@@ -3,16 +3,16 @@ import React, { useEffect, useState } from "react"
 import ButtonDrag from "./ButtonDrag"
 import "./styles.css"
 import ItemVideo from "../ZVideosCarousel/ItemVideo"
-import ItemCardCarousel from "../ZCarouselCardMobile/ItemCardCarousel"
+import ItemCategory from "../ZCardsCategoriesCarousel/ItemCategory"
 
 const styles = {
   close: {
-    marginTop: -180,
+    marginTop: -140,
     marginLeft: 15,
     marginRight: 15
   },
   open: {
-    marginTop: 100,
+    marginTop: 140,
     marginLeft: 15,
     marginRight: 15
   }
@@ -25,27 +25,37 @@ const BlogMobile = ({ queries }) => {
 
   useEffect(() => {
     console.log("isOpen", isOpen)
-  }, [isOpen])
+    console.log("queries", queries)
+  }, [isOpen, queries])
   return (
     <div>
       <ButtonDrag queries={queries} _setIsOpen={_setIsOpen} isOpen={isOpen} />
       <div style={isOpen ? styles.open : styles.close}>
-        <ItemVideo vidId="sTQTFRBp9ZA" title="title" desc="desc" />
-        <ItemCardCarousel
-          title="title 1"
-          subtitle="subtitle 1"
-          desc="description 1"
-        />
-        <ItemCardCarousel
-          title="title 2"
-          subtitle="subtitle 2"
-          desc="description 2"
-        />
-        <ItemCardCarousel
-          title="title 3"
-          subtitle="subtitle 3"
-          desc="description 3"
-        />
+        {queries.articles === undefined && (
+          <ItemVideo vidId="sTQTFRBp9ZA" title="title" desc="desc" />
+        )}
+        {queries.videos === undefined && (
+          <>
+            <ItemCategory
+              imgPath={"/images/cardCarousel.png"}
+              title={"title 1"}
+              subtitle={"subtitle 1"}
+              marginTop={15}
+            />
+            <ItemCategory
+              imgPath={"/images/cardCarousel.png"}
+              title={"title 2"}
+              subtitle={"subtitle 2"}
+              marginTop={15}
+            />
+            <ItemCategory
+              imgPath={"/images/cardCarousel.png"}
+              title={"title 3"}
+              subtitle={"subtitle 3"}
+              marginTop={15}
+            />
+          </>
+        )}
       </div>
     </div>
   )

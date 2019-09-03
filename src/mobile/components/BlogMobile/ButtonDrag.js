@@ -107,7 +107,7 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen }) => {
           <div style={{ marginTop: 15, marginBottom: 15 }}>
             Playlist / บทความเกี่ยวกับ
           </div>
-          <ZSelect />
+          <ZSelect placeHolder="กรุณาเลือก" />
           <div style={{ marginTop: 50, marginBottom: 15 }}>
             <BreadCrumb
               crumbs={[

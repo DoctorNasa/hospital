@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ZSelect = () => {
+const ZSelect = ({ placeHolder }) => {
   const classes = useStyles()
   const [values, setValues] = useState({
     age: "",
@@ -43,7 +43,7 @@ const ZSelect = () => {
     <form className={classes.root} autoComplete="off">
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel ref={inputLabel} htmlFor="outlined-age-simple">
-          Age
+          {placeHolder ? placeHolder : "Age"}
         </InputLabel>
         <Select
           value={values.age}

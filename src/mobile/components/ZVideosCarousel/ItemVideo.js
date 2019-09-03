@@ -1,9 +1,9 @@
 import React from "react"
 import YoutubeModal from "./YoutubeModal"
 
-const ItemVideo = ({ vidId, title, desc }) => {
+const ItemVideo = ({ vidId, title, desc, marginTop }) => {
   return (
-    <div>
+    <div style={{ marginTop }}>
       <YoutubeModal vidId={vidId} />
       <div style={{ paddingLeft: 10, paddingRight: 10 }}>
         <div
