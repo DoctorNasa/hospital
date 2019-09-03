@@ -5,7 +5,7 @@ import ZSearchBar from "../ZSearchBar"
 import Fabs from "./Fabs"
 import ZCardsCategoriesCarousel from "../ZCardsCategoriesCarousel"
 import BtnBlue from "../BtnBlue"
-import VideosCarousel from "./VideosCarousel"
+import ZVideosCarousel from "../ZVideosCarousel"
 import ZPackagesCarousel from "../ZPackagesCarousel"
 import ZAnotherCarousel from "../ZAnotherCarousel"
 import FormBlock from "./FormBlock"
@@ -28,7 +28,7 @@ const HomepageMobile = () => {
       </div>
       <ZCardsCategoriesCarousel />
       <BtnBlue text="ดูทั้งหมด" textAlign="center" />
-      <VideosCarousel />
+      <ZVideosCarousel />
       <BtnBlue text="ดูทั้งหมด" textAlign="center" />
       <ZCardsCategoriesCarousel />
       <BtnBlue text="ดูทั้งหมด" textAlign="center" />

@@ -3,7 +3,7 @@ import { useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
 import { autoPlay } from "react-swipeable-views-utils"
 import DotsCarousel from "../DotsCarousel"
-import YoutubeModal from "./YoutubeModal"
+import ItemVideo from "./ItemVideo"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -79,29 +79,11 @@ const VideosCarousel = () => {
         {slides.map((slide, index) => (
           <div key={slide.title}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <div>
-                <YoutubeModal vidId={slide.vidId} />
-                <div style={{ paddingLeft: 10, paddingRight: 10 }}>
-                  <div
-                    style={{
-                      marginTop: 15,
-                      marginBottom: 15,
-                      color: "#4d4d4d",
-                      fontSize: 20,
-                      fontWeight: 600
-                    }}
-                  >
-                    {slide.title}
-                  </div>
-                  <div
-                    style={{
-                      color: "#818385"
-                    }}
-                  >
-                    {slide.desc}
-                  </div>
-                </div>
-              </div>
+              <ItemVideo
+                vidId={slide.vidId}
+                title={slide.title}
+                desc={slide.desc}
+              />
             ) : null}
           </div>
         ))}

@@ -7,6 +7,9 @@ import ZSearchBar from "../ZSearchBar"
 import ZSelect from "../ZSelect"
 import BreadCrumb from "../BreadCrumb"
 import BlogMenu from "./BlogMenu"
+import Fab from "@material-ui/core/Fab"
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward"
 
 const items = ["save item", "open item", "share item", "delete item", "cancel"]
 const height = items.length * 60 + 80
@@ -29,7 +32,7 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen }) => {
   }
   const close = () => {
     _setIsOpen(false)
-    setY({ y: -200, config: config.stiff })
+    setY({ y: -180, config: config.stiff })
   }
 
   const bind = useDrag(
@@ -98,19 +101,46 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen }) => {
           transform: y.interpolate(py => `translate3d(0px,${py}px,0)`)
         }}
       >
-        <div>ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ</div>
-        <ZSearchBar marginTop={15} noTitle />
-        <div>Playlist / บทความเกี่ยวกับ</div>
-        <ZSelect />
-        <BreadCrumb
-          crumbs={[
-            { name: "หน้าหลัก", link: "/" },
-            { name: "บทความสุขภาพ", link: "/" }
-          ]}
-        />
-        <BlogMenu queries={queries} />
-        <div ref={dragginBtn} onClick={isOpen ? close : open}>
-          open
+        <div style={{ marginLeft: 15, marginRight: 15 }}>
+          <div>ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ</div>
+          <ZSearchBar marginTop={15} noTitle />
+          <div style={{ marginTop: 15, marginBottom: 15 }}>
+            Playlist / บทความเกี่ยวกับ
+          </div>
+          <ZSelect />
+          <div style={{ marginTop: 50, marginBottom: 15 }}>
+            <BreadCrumb
+              crumbs={[
+                { name: "หน้าหลัก", link: "/" },
+                { name: "บทความสุขภาพ", link: "/" }
+              ]}
+            />
+          </div>
+
+          <BlogMenu queries={queries} />
+          <div
+            style={{
+              textAlign: "center",
+              paddingBottom: 40,
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              position: "relative"
+            }}
+          >
+            <div style={{ position: "absolute", top: 20 }}>
+              <Fab
+                size="small"
+                color="secondary"
+                aria-label="add"
+                ref={dragginBtn}
+                onClick={isOpen ? close : open}
+                style={{ color: "white", background: "#cad9d9" }}
+              >
+                {isOpen ? <ArrowDownwardIcon /> : <ArrowUpwardIcon />}
+              </Fab>
+            </div>
+          </div>
         </div>
       </a.div>
     </>

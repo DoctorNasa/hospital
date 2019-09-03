@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react"
 
 import ButtonDrag from "./ButtonDrag"
 import "./styles.css"
+import ZVideosCarousel from "../ZVideosCarousel"
 
 const styles = {
   close: {
-    marginTop: -200
+    marginTop: -180
   },
   open: {
     marginTop: 100
@@ -23,7 +24,9 @@ const BlogMobile = ({ queries }) => {
   return (
     <div>
       <ButtonDrag queries={queries} _setIsOpen={_setIsOpen} isOpen={isOpen} />
-      <div style={isOpen ? styles.open : styles.close}>hehhe</div>
+      <div style={isOpen ? styles.open : styles.close}>
+        <ZVideosCarousel />
+      </div>
     </div>
   )
 }
