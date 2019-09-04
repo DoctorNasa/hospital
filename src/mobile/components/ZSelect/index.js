@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ZSelect = ({ placeHolder }) => {
+const ZSelect = ({ placeHolder, marginTop, marginBottom }) => {
   const classes = useStyles()
   const [values, setValues] = useState({
     age: "",
@@ -40,7 +40,11 @@ const ZSelect = ({ placeHolder }) => {
   }
 
   return (
-    <form className={classes.root} autoComplete="off">
+    <form
+      className={classes.root}
+      autoComplete="off"
+      style={{ marginTop, marginBottom }}
+    >
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel ref={inputLabel} htmlFor="outlined-age-simple">
           {placeHolder ? placeHolder : "Age"}

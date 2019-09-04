@@ -21,7 +21,9 @@ const styles = {
     marginRight: 10,
     borderRadius: 20,
     textAlign: "center",
-    fontSize: 20
+    fontSize: 20,
+    paddingRight: 20,
+    paddingLeft: 20
   }
 }
 
