@@ -1,7 +1,7 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 
-const BlueBtn = ({ text, fullWidth }) => {
+const BtnBlue = ({ text, fullWidth }) => {
   return (
     <Button
       variant="contained"
@@ -19,4 +19,4 @@ const BlueBtn = ({ text, fullWidth }) => {
   )
 }
 
-export default BlueBtn
+export default BtnBlue

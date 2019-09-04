@@ -1,6 +1,6 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-import BlueBtn from "../BlueBtn"
+import BtnBlue from "../BtnBlue"
 import { deviceType } from "react-device-detect"
 
 const styles = {
@@ -67,7 +67,7 @@ const CeoBlock = () => {
             </Grid>
             <Grid item sm={8}></Grid>
             <div style={{ width: "100%", textAlign: "center" }}>
-              <BlueBtn text="ดูทั้งหมด" />
+              <BtnBlue text="ดูทั้งหมด" />
             </div>
           </Grid>
         </Grid>

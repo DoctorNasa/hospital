@@ -13,14 +13,16 @@ const styles = {
     marginLeft: 15,
     marginRight: 15,
     overflow: "hidden",
-    height: "100%"
+    height: "100%",
+    display: "flex"
   },
   open: {
     marginTop: 130,
     marginLeft: 15,
     marginRight: 15,
     overflow: "hidden",
-    height: "100%"
+    height: "100%",
+    display: "flex"
   }
 }
 

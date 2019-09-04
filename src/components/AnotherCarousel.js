@@ -4,7 +4,7 @@ import SwipeableViews from "react-swipeable-views"
 import Grid from "@material-ui/core/Grid"
 import { autoPlay } from "react-swipeable-views-utils"
 import DotsCarousel from "./DotsCarousel"
-import BlueBtn from "./BlueBtn"
+import BtnBlue from "./BtnBlue"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -123,7 +123,7 @@ const CardsCarousel = () => {
                           marginTop={30}
                         />
                         <div style={{ width: "100%", textAlign: "center" }}>
-                          <BlueBtn text="ศูนย์ทางการแพทย์ทั้งหมด" fullWidth />
+                          <BtnBlue text="ศูนย์ทางการแพทย์ทั้งหมด" fullWidth />
                         </div>
                       </Grid>
                       <Grid item md={2} sm={1} />
