@@ -1,5 +1,6 @@
 import React from "react"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
+import { Link } from "react-router-dom"
 
 const ItemCategory = ({ imgPath, title, subtitle, marginTop }) => {
   return (
@@ -45,9 +46,14 @@ const ItemCategory = ({ imgPath, title, subtitle, marginTop }) => {
             {subtitle}
           </div>
           <div style={{ textAlign: "right" }}>
-            <div style={{ paddingTop: 30, fontSize: 20 }}>
-              อ่านต่อ <ArrowForwardIos style={{ fontSize: 14 }} />
-            </div>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/articles/post/post-id-1"
+            >
+              <div style={{ paddingTop: 30, fontSize: 20, paddingBottom: 30 }}>
+                อ่านต่อ <ArrowForwardIos style={{ fontSize: 14 }} />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

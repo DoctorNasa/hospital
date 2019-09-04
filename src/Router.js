@@ -96,11 +96,7 @@ const Router = () => (
       <Route exact path="/services" component={ServicesContainer} />
       <Route exact path="/packages" component={PackagesContainer} />
       <Route exact path="/articles" component={BlogContainer} />
-      <Route
-        exact
-        path="/articles/post/:postId"
-        component={BlogPostContainer}
-      />
+      <Route exact path="/articles/post/:id" component={BlogPostContainer} />
       <Route exact path="/aboutus" component={AboutContainer} />
       <Route component={Empty} />
     </Switch>
