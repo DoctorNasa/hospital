@@ -77,7 +77,10 @@ const BlogContainer =
         loader: () => import("./mobile/containers/BlogMobileContainer"),
         loading: Loading
       })
-    : ""
+    : Loadable({
+        loader: () => import("./containers/BlogContainer"),
+        loading: Loading
+      })
 
 const BlogPostContainer =
   deviceType === "mobile"
@@ -85,7 +88,10 @@ const BlogPostContainer =
         loader: () => import("./mobile/containers/BlogMobilePostContainer"),
         loading: Loading
       })
-    : ""
+    : Loadable({
+        loader: () => import("./containers/BlogPostContainer"),
+        loading: Loading
+      })
 
 const Router = () => (
   <div>
