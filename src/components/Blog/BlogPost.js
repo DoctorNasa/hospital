@@ -207,22 +207,6 @@ const BlogPost = ({ match }) => {
           </Button>
         </div>
         <ZDoctorCarousel />
-        <img
-          src="/images/mobile/blog/ads-post-page.jpg"
-          style={{ width: "100%" }}
-        />
-        <h3
-          style={{
-            margin: 30,
-            marginBottom: 10,
-            textAlign: "center",
-            fontSize: 25
-          }}
-        >
-          บทความสำหรับคุณ
-        </h3>
-        <ZCardsCategoriesCarousel />
-        <BtnBlue text="fdfdf" textAlign="center" paddingBottom={30} />
       </Grid>
     </Grid>
   )
