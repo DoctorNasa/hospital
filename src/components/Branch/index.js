@@ -6,7 +6,7 @@ import BranchContent from "./BranchContent"
 import CeoBlock from "./CeoBlock"
 import MapBlock from "./MapBlock"
 import BtnBlue from "../BtnBlue"
-import CardsCarousel from "../CardsCarousel"
+import ZCardsCategoriesCarousel from "../ZCardsCategoriesCarousel"
 import PackagesCarousel from "../PackagesCarousel"
 import AnotherCarousel from "../AnotherCarousel"
 import TestimonialCarousel from "../TestimonialCarousel"
@@ -94,7 +94,7 @@ const Branch = ({ match }) => {
         >
           <BtnBlue text="Contact us" />
           <Grid container justify="center">
-            <CardsCarousel />
+            <ZCardsCategoriesCarousel />
             <PackagesCarousel />
             <AnotherCarousel />
             <TestimonialCarousel />

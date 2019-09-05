@@ -1,6 +1,6 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-import CardsCarousel from "../CardsCarousel"
+import ZCardsCategoriesCarousel from "../ZCardsCategoriesCarousel"
 import BannerCarousel from "./BannerCarousel"
 import BannerMenu from "./BannerMenu"
 import YoutubeCarousel from "./YoutubeCarousel"
@@ -17,9 +17,9 @@ const BrowserHomepage = () => {
       <div style={{ marginTop: "40%" }}>
         <Grid container justify="center">
           <BannerMenu />
-          <CardsCarousel backgroundImg />
+          <ZCardsCategoriesCarousel backgroundImg />
           <YoutubeCarousel />
-          <CardsCarousel />
+          <ZCardsCategoriesCarousel />
           <PackagesCarousel />
           <img
             style={{ zIndex: 99, marginTop: 90, width: "100%" }}

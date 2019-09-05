@@ -120,7 +120,17 @@ const CardsCarousel = ({ backgroundImg }) => {
             {slides.map(({ imgPath, title, subtitle }, index) => (
               <div key={index}>
                 {Math.abs(activeStep - index) <= slides.length - 1 ? (
-                  <Grid container spacing={4}>
+                  <Grid container>
+                    <ItemCategory
+                      title={title}
+                      imgPath={imgPath}
+                      subtitle={subtitle}
+                    />
+                    <ItemCategory
+                      title={title}
+                      imgPath={imgPath}
+                      subtitle={subtitle}
+                    />
                     <ItemCategory
                       title={title}
                       imgPath={imgPath}
