@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown"
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 import "./style.css"
 
 const arrayDb = [
@@ -106,13 +107,15 @@ const SearchPlaylist = ({ margin }) => {
         )}
       </div>
       {isOpen && (
-        <div style={styles.dropDownWindow}>
-          {arrayDb.map(x => (
-            <div className="itemsDropDown" key={x.id}>
-              {x.title}
-            </div>
-          ))}
-        </div>
+        <ClickAwayListener onClickAway={() => setIsOpen(false)}>
+          <div style={styles.dropDownWindow}>
+            {arrayDb.map(x => (
+              <div className="itemsDropDown" key={x.id}>
+                {x.title}
+              </div>
+            ))}
+          </div>
+        </ClickAwayListener>
       )}
     </div>
   )

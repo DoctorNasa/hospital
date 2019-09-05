@@ -47,7 +47,7 @@ const BlogMobile = ({ queries }) => {
             </Grid>
 
             <div style={styles.container}>
-              <Grid container spacing={4}>
+              <Grid container>
                 {queries.articles === undefined && (
                   <ItemVideo
                     title={"video title"}
