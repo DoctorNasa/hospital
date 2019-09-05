@@ -4,10 +4,7 @@ import Grid from "@material-ui/core/Grid"
 const styles = {
   item: {
     background: "#f2bd61",
-    boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.45)",
-    width: "33.33%",
-    boxSizing: "border-box",
-    flex: 1
+    boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.45)"
   },
   itemDesc: {
     paddingLeft: 10,
@@ -24,18 +21,20 @@ const styles = {
   }
 }
 
-const ItemCategory = ({ imgPath, itemDesc, subtitle, title }) => {
+const ItemCategory = ({ imgPath, subtitle, title }) => {
   return (
-    <div style={styles.item}>
-      <img style={{ width: "100%" }} src={imgPath} />
-      <div style={styles.itemDesc}>
-        <h4>{title}</h4>
-        <div>{subtitle}</div>
-        <div style={{ marginTop: 30 }}>
-          <b>Created Date: </b>01/07/2019
+    <Grid item sm={4}>
+      <div style={styles.item}>
+        <img style={{ width: "100%" }} src={imgPath} />
+        <div style={styles.itemDesc}>
+          <h4>{title}</h4>
+          <div>{subtitle}</div>
+          <div style={{ marginTop: 30 }}>
+            <b>Created Date: </b>01/07/2019
+          </div>
         </div>
       </div>
-    </div>
+    </Grid>
   )
 }
 

@@ -27,10 +27,15 @@ const styles = {
   }
 }
 
-const BlogMenu = ({ queries }) => {
+const BlogMenu = ({ queries, padding }) => {
   return (
     <div
-      style={{ display: "flex", width: "100%", justifyContent: "space-evenly" }}
+      style={{
+        display: "flex",
+        width: "100%",
+        justifyContent: "space-evenly",
+        padding
+      }}
     >
       <Link to="/articles" style={{ textDecoration: "none" }}>
         <div

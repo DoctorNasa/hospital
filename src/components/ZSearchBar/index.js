@@ -7,6 +7,7 @@ const SearchBar = ({
   marginRight,
   marginTop,
   marginBottom,
+  padding,
   noTitle
 }) => {
   return (
@@ -16,7 +17,8 @@ const SearchBar = ({
         marginLeft,
         marginRight,
         marginTop,
-        marginBottom
+        marginBottom,
+        padding
       }}
     >
       {!noTitle && (

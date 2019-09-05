@@ -1,8 +1,15 @@
-import React from "react"
-import { useTheme } from "@material-ui/core/styles"
+import React, { useState } from "react"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { isBrowser, isMobile, isTablet } from "react-device-detect"
 import SwipeableViews from "react-swipeable-views"
+import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
 import { autoPlay } from "react-swipeable-views-utils"
-import DotsCarousel from "../DotsCarousel"
+
+import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
+import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
+import YoutubeModal from "./YoutubeModal"
 import ItemVideo from "./ItemVideo"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
@@ -37,9 +44,9 @@ const styles = {
   }
 }
 
-const VideosCarousel = () => {
+const CardsCarousel = () => {
   const theme = useTheme()
-  const [activeStep, setActiveStep] = React.useState(0)
+  const [activeStep, setActiveStep] = useState(0)
 
   const handleNext = () => {
     if (activeStep !== 2)
@@ -58,44 +65,72 @@ const VideosCarousel = () => {
   }
 
   return (
-    <div style={{ paddingTop: 20, marginLeft: 15, marginRight: 15 }}>
-      <h3
-        style={{
-          width: "100%",
-          textAlign: "center",
-          fontSize: 25,
-          color: "#4d4d4d"
-        }}
-      >
-        Phyathai channel
-      </h3>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-        style={{ width: "100%" }}
-      >
-        {slides.map((slide, index) => (
-          <div key={slide.title}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <ItemVideo
-                vidId={slide.vidId}
-                title={slide.title}
-                desc={slide.desc}
-              />
-            ) : null}
+    <Grid item sm={8} xs={12}>
+      <div style={{ marginTop: 50 }}>
+        <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
+          บทความใหม่ล่าสุด
+        </h3>
+        <div style={{ position: "relative", marginTop: 50 }}>
+          <ArrowBackIos
+            onClick={handleBack}
+            style={{
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              top: 150,
+              bottom: 150,
+              left: -50,
+              cursor: "pointer"
+            }}
+          />
+          <ArrowForwardIos
+            onClick={handleNext}
+            style={{
+              fontSize: 50,
+              color: "#00826a",
+              position: "absolute",
+              top: 150,
+              right: -50,
+              cursor: "pointer"
+            }}
+          />
+          <AutoPlaySwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
+            style={{ width: "100%" }}
+          >
+            {slides.map((slide, index) => (
+              <div key={slide.title}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <ItemVideo
+                    title={slide.title}
+                    desc={slide.desc}
+                    vidId={slide.vidId}
+                  />
+                ) : null}
+              </div>
+            ))}
+          </AutoPlaySwipeableViews>
+          <div style={{ width: "100%", textAlign: "center" }}>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              style={{
+                color: "white",
+                fontSize: 20,
+                marginTop: 15
+              }}
+            >
+              อ่านต่อ
+            </Button>
           </div>
-        ))}
-      </AutoPlaySwipeableViews>
-      <DotsCarousel
-        handleStepChange={handleStepChange}
-        slidesLength={slides.length}
-        activeIndex={activeStep}
-        marginTop={30}
-      />
-    </div>
+        </div>
+      </div>
+    </Grid>
   )
 }
 
-export default VideosCarousel
+export default CardsCarousel

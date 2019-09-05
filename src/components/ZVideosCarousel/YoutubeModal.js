@@ -9,8 +9,13 @@ const useStyles = makeStyles(theme => ({
   modal: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    width: "100%"
+    justifyContent: "center"
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    width: "60vw",
+    height: 500
   }
 }))
 
@@ -70,7 +75,9 @@ const YoutubeModal = ({ vidId }) => {
         }}
       >
         <Fade in={open}>
-          <VideoPlayer vidId={vidId} />
+          <div className={classes.paper}>
+            <VideoPlayer vidId={vidId} />
+          </div>
         </Fade>
       </Modal>
     </div>

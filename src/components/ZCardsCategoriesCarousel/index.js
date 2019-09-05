@@ -117,31 +117,16 @@ const CardsCarousel = ({ backgroundImg }) => {
             enableMouseEvents
             style={{ width: "100%" }}
           >
-            {slides.map(({ imgPath, title, subtitle, itemDesc }, index) => (
+            {slides.map(({ imgPath, title, subtitle }, index) => (
               <div key={index}>
                 {Math.abs(activeStep - index) <= slides.length - 1 ? (
-                  <div
-                    style={{ padding: 20, display: "flex", flexWrap: "wrap" }}
-                  >
+                  <Grid container spacing={4}>
                     <ItemCategory
                       title={title}
                       imgPath={imgPath}
-                      itemDesc={itemDesc}
                       subtitle={subtitle}
                     />
-                    <ItemCategory
-                      title={title}
-                      imgPath={imgPath}
-                      itemDesc={itemDesc}
-                      subtitle={subtitle}
-                    />
-                    <ItemCategory
-                      title={title}
-                      imgPath={imgPath}
-                      itemDesc={itemDesc}
-                      subtitle={subtitle}
-                    />
-                  </div>
+                  </Grid>
                 ) : null}
               </div>
             ))}
