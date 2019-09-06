@@ -1,13 +1,14 @@
 import React from "react"
 
-const TitleDiv = ({ text }) => {
+const TitleDiv = ({ text, color, textAlign }) => {
   return (
     <div
       style={{
-        color: "#666666",
+        color: color ? color : "#666666",
         padding: 16,
         fontWeight: "bold",
-        fontSize: 20
+        fontSize: 20,
+        textAlign
       }}
     >
       {text}

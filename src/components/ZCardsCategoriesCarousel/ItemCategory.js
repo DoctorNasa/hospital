@@ -44,7 +44,7 @@ const ItemCategory = ({ imgPath, subtitle, title }) => {
             <b>Created Date: </b>01/07/2019
           </div>
           <div style={{ textAlign: "right" }}>
-            <div style={{ paddingTop: 15, fontSize: 20, paddingBottom: 20 }}>
+            <div style={{ paddingTop: 15, fontSize: 20, paddingBottom: 10 }}>
               <Link
                 style={{ textDecoration: "none", color: "black" }}
                 to="/articles/post/post-id-1"

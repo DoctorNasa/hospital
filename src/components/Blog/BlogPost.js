@@ -206,8 +206,11 @@ const BlogPost = ({ match }) => {
             />
           </Button>
         </div>
+
         <ZDoctorCarousel />
       </Grid>
+      <img src="/images/adspink.jpg" style={{ width: "100%" }} />
+      <ZCardsCategoriesCarousel />
     </Grid>
   )
 }

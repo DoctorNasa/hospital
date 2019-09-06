@@ -79,7 +79,7 @@ const CardsCarousel = ({ backgroundImg }) => {
 
   return (
     <Grid container justify="center">
-      <Grid item sm={8} style={{ marginTop: 50 }}>
+      <Grid item sm={8} style={{ marginTop: 50, marginBottom: 50 }}>
         <TitleH3
           text={"บทความใหม่ล่าสุด"}
           style={{ width: "100%", textAlign: "center", fontSize: 25 }}

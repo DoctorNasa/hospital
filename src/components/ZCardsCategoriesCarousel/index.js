@@ -75,7 +75,14 @@ const CardsCarousel = ({ backgroundImg }) => {
   return (
     <Grid item sm={8} xs={12}>
       <div style={{ marginTop: 50 }}>
-        <h3 style={{ width: "100%", textAlign: "center", fontSize: 25 }}>
+        <h3
+          style={{
+            width: "100%",
+            textAlign: "center",
+            fontSize: 25,
+            color: "#4d4d4d"
+          }}
+        >
           บทความใหม่ล่าสุด
         </h3>
         <div
