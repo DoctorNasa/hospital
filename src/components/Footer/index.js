@@ -29,8 +29,8 @@ const FooterContainer = () => {
             <div
               style={{
                 display: "flex",
-                background: "pink",
-                justifyContent: "center"
+                justifyContent: "center",
+                color: "#00826a"
               }}
             >
               <div style={styles.hospitalItem}>phyathai 1</div>
@@ -38,6 +38,33 @@ const FooterContainer = () => {
               <div style={styles.hospitalItem}>phyathai 3</div>
               <div style={styles.hospitalItem}>พญาไท ศรีราชา</div>
               <div style={styles.hospitalItem}>พญาไท นวมินทร์</div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around"
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {new Array(11).fill(1).map((x, i) => (
+                  <div>column left {i}</div>
+                ))}
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {new Array(11).fill(1).map((x, i) => (
+                  <div>column middle-left {i}</div>
+                ))}
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {new Array(11).fill(1).map((x, i) => (
+                  <div>column middle-right {i}</div>
+                ))}
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {new Array(11).fill(1).map((x, i) => (
+                  <div>column right {i}</div>
+                ))}
+              </div>
             </div>
           </Grid>
         </Grid>
