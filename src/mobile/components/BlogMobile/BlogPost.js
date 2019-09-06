@@ -167,7 +167,12 @@ const BlogPost = ({ match }) => {
         บทความสำหรับคุณ
       </h3>
       <ZCardsCategoriesCarousel />
-      <BtnBlue text="fdfdf" textAlign="center" paddingBottom={30} />
+      <BtnBlue
+        text="fdfdf"
+        textAlign="center"
+        marginTop={15}
+        paddingBottom={30}
+      />
     </div>
   )
 }

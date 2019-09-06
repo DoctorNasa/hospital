@@ -67,7 +67,7 @@ const CeoBlock = () => {
             </Grid>
             <Grid item sm={8}></Grid>
             <div style={{ width: "100%", textAlign: "center" }}>
-              <BtnBlue text="ดูทั้งหมด" />
+              <BtnBlue text="ดูทั้งหมด" marginTop={15} />
             </div>
           </Grid>
         </Grid>

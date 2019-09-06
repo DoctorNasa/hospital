@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
 import Grid from "@material-ui/core/Grid"
@@ -6,6 +6,7 @@ import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 import Avatar from "@material-ui/core/Avatar"
 import TitleH3 from "../TitleH3"
+import BtnBlue from "../BtnBlue"
 
 const slides = [
   {
@@ -28,19 +29,33 @@ const slides = [
 ]
 
 const styles = {
-  itemContainerUnactive: {
+  containerImg: {
     flex: 1,
     textAlign: "center"
   },
-  itemContainerActive: {
-    flex: 1,
-    textAlign: "center"
+  img: {
+    width: 100,
+    height: 100,
+    marginTop: 20,
+    marginBottom: 20,
+    borderRadius: "50%",
+    cursor: "pointer"
+  },
+  imgActive: {
+    width: 100,
+    height: 100,
+    marginTop: 20,
+    marginBottom: 20,
+    borderRadius: "50%",
+    cursor: "pointer",
+    boxShadow: "0px 0px 21px -2px rgba(50,191,198,1)"
   }
 }
 
 const CardsCarousel = ({ backgroundImg }) => {
   const theme = useTheme()
-  const [activeStep, setActiveStep] = React.useState(0)
+  const [activeStep, setActiveStep] = useState(0)
+  const [selectedDoctor, setSelectedDoctor] = useState(1)
 
   const handleNext = () => {
     if (activeStep !== slides.length - 1)
@@ -58,6 +73,10 @@ const CardsCarousel = ({ backgroundImg }) => {
     setActiveStep(step)
   }
 
+  const _selectDoctor = idDoctor => {
+    setSelectedDoctor(idDoctor)
+  }
+
   return (
     <Grid container justify="center">
       <Grid item sm={8} style={{ marginTop: 50 }}>
@@ -65,7 +84,43 @@ const CardsCarousel = ({ backgroundImg }) => {
           text={"บทความใหม่ล่าสุด"}
           style={{ width: "100%", textAlign: "center", fontSize: 25 }}
         />
-        <div>top content</div>
+        <div style={{ width: "100%", display: "flex" }}>
+          <div style={{ flex: 1, textAlign: "center" }}>
+            <img
+              src={`/images/icons/icon-doctor-${selectedDoctor}.jpg`}
+              style={{ width: "70%" }}
+            />
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ color: "#00826a", fontWeight: "bold", fontSize: 20 }}>
+              พญ.วริศรา รุทระวณิช
+            </div>
+            <div style={{ paddingTop: 15, paddingBottom: 15 }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center"
+              }}
+            >
+              <div>
+                <img
+                  style={{ height: 50 }}
+                  src="/images/icons/calendar-icon.png"
+                />
+              </div>
+              <div>
+                <BtnBlue text="นัดหมายแพทย์" />
+              </div>
+            </div>
+          </div>
+        </div>
         <div
           style={{
             position: "relative",
@@ -110,22 +165,31 @@ const CardsCarousel = ({ backgroundImg }) => {
               <div key={index}>
                 {Math.abs(activeStep - index) <= slides.length - 1 ? (
                   <div style={{ display: "flex" }}>
-                    <div style={styles.itemContainerUnactive}>
+                    <div style={styles.containerImg}>
                       <img
                         src="/images/icons/icon-doctor-1.jpg"
-                        style={{ width: 100, height: 100, borderRadius: "50%" }}
+                        style={
+                          selectedDoctor === 1 ? styles.imgActive : styles.img
+                        }
+                        onClick={() => _selectDoctor(1)}
                       />
                     </div>
-                    <div style={styles.itemContainerUnactive}>
+                    <div style={styles.containerImg}>
                       <img
-                        src="/images/icons/icon-doctor-1.jpg"
-                        style={{ width: 100, height: 100, borderRadius: "50%" }}
+                        src="/images/icons/icon-doctor-2.jpg"
+                        style={
+                          selectedDoctor === 2 ? styles.imgActive : styles.img
+                        }
+                        onClick={() => _selectDoctor(2)}
                       />
                     </div>
-                    <div style={styles.itemContainerUnactive}>
+                    <div style={styles.containerImg}>
                       <img
-                        src="/images/icons/icon-doctor-1.jpg"
-                        style={{ width: 100, height: 100, borderRadius: "50%" }}
+                        src="/images/icons/icon-doctor-3.jpg"
+                        style={
+                          selectedDoctor === 3 ? styles.imgActive : styles.img
+                        }
+                        onClick={() => _selectDoctor(3)}
                       />
                     </div>
                   </div>

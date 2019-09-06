@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
-import BtnBlue from "../BtnBlue"
 import { autoPlay } from "react-swipeable-views-utils"
 import DotsCarousel from "../DotsCarousel"
 

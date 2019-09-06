@@ -92,7 +92,7 @@ const Branch = ({ match }) => {
             marginBottom: 100
           }}
         >
-          <BtnBlue text="Contact us" />
+          <BtnBlue text="Contact us" marginTop={15} />
           <Grid container justify="center">
             <ZCardsCategoriesCarousel />
             <PackagesCarousel />
