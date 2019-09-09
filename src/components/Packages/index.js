@@ -1,7 +1,69 @@
-import React from "react"
+import React, { useEffect, useState, useRef } from "react"
+import Pagination from "../Pagination"
+import Grid from "@material-ui/core/Grid"
+import "./styles.css"
+import BreadCrumb from "../BreadCrumb"
+import TitleDiv from "../TitleDiv"
+import ZSearchBar from "../ZSearchBar"
+import ZSearchPlaylist from "../ZSearchPlaylist"
+import TitlesSection from "./TitlesSection"
+import ZSimpleCarousel from "../ZSimpleCarousel"
+import BlockSection from "./BlockSection"
 
-const Packages = () => {
-  return <div>This is Packages!</div>
+const styles = {
+  container: {
+    marginTop: 30,
+    marginLeft: 16,
+    marginRight: 16,
+    overflow: "hidden"
+  }
+}
+
+const items = new Array(20).fill(1)
+
+const Packages = ({ queries }) => {
+  return (
+    <Grid container justify="center">
+      <Grid item sm={10}>
+        <Grid container spacing={4}>
+          <Grid item sm={4}>
+            <TitleDiv text="ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ" />
+            <ZSearchBar padding={16} noTitle />
+            <TitleDiv text="เลือกโรงพยาบาล" />
+            <ZSearchPlaylist margin={16} />
+            <TitleDiv text="เลือกศูนย์การแพทย์" />
+            <ZSearchPlaylist margin={16} />
+          </Grid>
+          <Grid item sm={8}>
+            <Grid item sm={6}>
+              <BreadCrumb
+                padding={16}
+                crumbs={[
+                  { name: "หน้าหลัก", link: "/" },
+                  { name: "บทความสุขภาพ" }
+                ]}
+              />
+              <h1 style={{ color: "#4d4d4d", padding: 16 }}>
+                แพคเกจและโปรโมชั่น
+              </h1>
+            </Grid>
+
+            <div style={styles.container}>
+              <TitlesSection text="ในเครือพญาไททั้งหมด" />
+              <ZSimpleCarousel />
+            </div>
+            <BlockSection title="โรงพยาบาล พญาไท 1" />
+            <BlockSection title="โรงพยาบาล พญาไท 2" />
+            <BlockSection title="โรงพยาบาล พญาไท 3" />
+            <BlockSection title="โรงพยาบาล พญาไท ศรีราชา" />
+            <BlockSection title="โรงพยาบาล พญาไท นวมินทร์" />
+
+            <Pagination currentPage={1} itemsLength={items.length} />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  )
 }
 
 export default Packages

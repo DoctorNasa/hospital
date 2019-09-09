@@ -1,6 +1,4 @@
 import React from "react"
-import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
-import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 
 const styles = {
   bulletinactive: {

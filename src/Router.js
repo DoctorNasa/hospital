@@ -16,12 +16,6 @@ const PackagesContainer = Loadable({
   loader: () => import("./containers/PackagesContainer"),
   loading: Loading
 })
-
-const ArticlesContainer = Loadable({
-  loader: () => import("./containers/ArticlesContainer"),
-  loading: Loading
-})
-
 const AboutContainer = Loadable({
   loader: () => import("./containers/AboutContainer"),
   loading: Loading
