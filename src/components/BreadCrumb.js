@@ -13,11 +13,20 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const CustomSeparator = ({ crumbs, padding }) => {
+const CustomSeparator = ({
+  crumbs,
+  padding,
+  paddingBottom,
+  paddingLeft,
+  paddingTop
+}) => {
   const classes = useStyles()
 
   return (
-    <div className={classes.root} style={{ padding }}>
+    <div
+      className={classes.root}
+      style={{ padding, paddingBottom, paddingLeft, paddingTop }}
+    >
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"

@@ -9,7 +9,6 @@ const BtnBlue = ({ text, fullWidth, marginTop }) => {
       size="large"
       style={{
         color: "white",
-        fontSize: 20,
         marginTop
       }}
       fullWidth={fullWidth === true}

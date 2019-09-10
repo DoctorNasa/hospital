@@ -8,7 +8,7 @@ import BreadCrumb from "../BreadCrumb"
 import ItemVideo from "../ZVideosCarousel/ItemVideo"
 import TitleDiv from "../TitleDiv"
 import ZSearchBar from "../ZSearchBar"
-import ZSearchPlaylist from "../ZSearchPlaylist"
+import ZDropDown from "../ZDropDown"
 
 const styles = {
   container: {
@@ -25,19 +25,21 @@ const items = new Array(20).fill(1)
 
 const BlogMobile = ({ queries }) => {
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" style={{ paddingTop: 30 }}>
       <Grid item sm={10}>
         <Grid container spacing={4}>
           <Grid item sm={4}>
             <TitleDiv text="ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ" />
             <ZSearchBar padding={16} noTitle />
             <TitleDiv text="เลือก Playlist / บทความเกี่ยวกับ" />
-            <ZSearchPlaylist margin={16} />
+            <ZDropDown margin={16} />
           </Grid>
           <Grid item sm={8}>
             <Grid item sm={6}>
               <BreadCrumb
-                padding={16}
+                paddingLeft={16}
+                paddingTop={16}
+                paddingBottom={16}
                 crumbs={[
                   { name: "หน้าหลัก", link: "/" },
                   { name: "บทความสุขภาพ" }

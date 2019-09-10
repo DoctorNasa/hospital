@@ -74,7 +74,11 @@ const styles = {
     color: "#848484",
     border: "1px solid #30bfc5",
     overflowY: "scroll",
-    height: 400
+    height: 400,
+    position: "absolute",
+    left: 0,
+    right: 0,
+    zIndex: 98
   },
   itemsDropDown: {
     paddingLeft: 30,
@@ -86,15 +90,17 @@ const styles = {
   }
 }
 
-const SearchPlaylist = ({ margin }) => {
+const ZDropDown = ({ margin, placeholder }) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <div
         onClick={() => setIsOpen(!isOpen)}
         style={styleContainer(margin, isOpen)}
       >
-        <div>เลือก Playlist / บทความเกี่ยวกับ </div>
+        <div>
+          {placeholder ? placeholder : "เลือก Playlist / บทความเกี่ยวกับ"}
+        </div>
 
         {isOpen ? (
           <div>
@@ -121,4 +127,4 @@ const SearchPlaylist = ({ margin }) => {
   )
 }
 
-export default SearchPlaylist
+export default ZDropDown

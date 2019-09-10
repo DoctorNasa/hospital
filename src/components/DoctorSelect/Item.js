@@ -7,25 +7,26 @@ const styles = {
     flex: 1,
     marginLeft: 16,
     marginRight: 16,
-    boxShadow: "0px 8px 19px -7px rgba(186,186,186,1)"
+    textAlign: "center"
   }
 }
 
 const PackageItem = ({ img, text }) => {
   return (
     <div style={styles.container}>
-      <img style={{ width: "100%", height: 180 }} src={img} />
+      <img style={{ margin: 15 }} src={img} />
+      <div style={{ color: "#00826a", fontSize: 20, fontWeight: "bold" }}>
+        พญ.วริศรา รุทระวณิช
+      </div>
       <div
         style={{
           color: "#4d4d4d",
           fontWeight: "bold",
-          fontSize: 20,
+          fontSize: 15,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: 100,
-          marginLeft: 20,
-          marginRight: 20,
+          margin: 20,
           textAlign: "center"
         }}
       >

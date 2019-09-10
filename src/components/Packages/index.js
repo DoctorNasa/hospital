@@ -5,14 +5,14 @@ import "./styles.css"
 import BreadCrumb from "../BreadCrumb"
 import TitleDiv from "../TitleDiv"
 import ZSearchBar from "../ZSearchBar"
-import ZSearchPlaylist from "../ZSearchPlaylist"
+import ZDropDown from "../ZDropDown"
 import TitlesSection from "./TitlesSection"
 import ZSimpleCarousel from "../ZSimpleCarousel"
 import BlockSection from "./BlockSection"
 
 const styles = {
   container: {
-    marginTop: 30,
+    marginTop: 16,
     marginLeft: 16,
     marginRight: 16,
     overflow: "hidden"
@@ -23,27 +23,28 @@ const items = new Array(20).fill(1)
 
 const Packages = ({ queries }) => {
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" style={{ paddingTop: 30 }}>
       <Grid item sm={10}>
         <Grid container spacing={4}>
           <Grid item sm={4}>
             <TitleDiv text="ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ" />
             <ZSearchBar padding={16} noTitle />
             <TitleDiv text="เลือกโรงพยาบาล" />
-            <ZSearchPlaylist margin={16} />
+            <ZDropDown margin={16} />
             <TitleDiv text="เลือกศูนย์การแพทย์" />
-            <ZSearchPlaylist margin={16} />
+            <ZDropDown margin={16} />
           </Grid>
           <Grid item sm={8}>
             <Grid item sm={6}>
               <BreadCrumb
-                padding={16}
+                paddingLeft={16}
+                paddingTop={16}
                 crumbs={[
                   { name: "หน้าหลัก", link: "/" },
-                  { name: "บทความสุขภาพ" }
+                  { name: "แพคเกจโปรโมชั่น", name: "ศูนย์หัวใจ" }
                 ]}
               />
-              <h1 style={{ color: "#4d4d4d", padding: 16 }}>
+              <h1 style={{ color: "#4d4d4d", paddingLeft: 16 }}>
                 แพคเกจและโปรโมชั่น
               </h1>
             </Grid>
