@@ -123,7 +123,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
               <Grid item style={{ width: 200 }}>
                 <Call />
               </Grid>
-              <div style={{ width: "100%", display: "flex" }}>
+              <div style={{ width: "100%", display: "flex", paddingTop: 20 }}>
                 {titles.map(({ title, link }, index) => (
                   <div
                     style={{
