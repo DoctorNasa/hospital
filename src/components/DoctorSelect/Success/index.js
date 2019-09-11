@@ -1,5 +1,6 @@
 import React from "react"
 import BtnBlue from "../../BtnBlue"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 const styles = {
   container: {
@@ -37,7 +38,9 @@ const Success = () => {
         </div>
         <img src="/images/icons/phone-icons.png" />
         <div style={{ marginTop: 20 }}>
-          <BtnBlue text="ตกลง" />
+          <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/">
+            <BtnBlue text="ตกลง" />
+          </Link>
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import BlockSection from "./BlockSection"
 import BtnLeftPanel from "./BtnLeftPanel"
 import BlockBooking from "./BlockBooking"
 import Success from "./Success"
+import { useSpring, animated } from "react-spring"
 
 const styles = {
   container: {
@@ -34,10 +35,14 @@ const styles = {
 }
 
 const DoctorSelect = ({ queries }) => {
-  const [success, setSuccess] = useState(true)
+  const [success, setSuccess] = useState(false)
 
   const _success = () => setSuccess(true)
-
+  const { x } = useSpring({
+    from: { x: 0 },
+    x: queries.booking ? 1 : 0,
+    config: { duration: 1000 }
+  })
   if (success) return <Success />
 
   return (
@@ -69,7 +74,15 @@ const DoctorSelect = ({ queries }) => {
             )}
           </Grid>
           {queries.booking ? (
-            <BlockBooking _success={_success} />
+            <Grid item sm={8}>
+              <animated.div
+                style={{
+                  opacity: x.interpolate({ range: [0, 1], output: [0, 1] })
+                }}
+              >
+                <BlockBooking _success={_success} />
+              </animated.div>
+            </Grid>
           ) : (
             <Grid item sm={8}>
               <Grid item sm={6}>

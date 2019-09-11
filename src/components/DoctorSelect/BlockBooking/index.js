@@ -23,37 +23,35 @@ const BlockBooking = ({ _fillBooking, _fillCustomer, state, _success }) => {
   const handleBack = () => setActiveStep(prevActiveStep => prevActiveStep - 1)
 
   return (
-    <Grid item sm={8}>
-      <div style={styles.container}>
-        <div style={{ padding: 50 }}>
-          <Steps
+    <div style={styles.container}>
+      <div style={{ padding: 50 }}>
+        <Steps
+          handleNext={handleNext}
+          activeStep={activeStep}
+          handleBack={handleBack}
+        />
+        {activeStep === 0 ? (
+          <Step0
             handleNext={handleNext}
             activeStep={activeStep}
             handleBack={handleBack}
+            _fillBooking={_fillBooking}
+            state={state}
           />
-          {activeStep === 0 ? (
-            <Step0
-              handleNext={handleNext}
-              activeStep={activeStep}
-              handleBack={handleBack}
-              _fillBooking={_fillBooking}
-              state={state}
-            />
-          ) : activeStep === 1 ? (
-            <Step1
-              handleNext={handleNext}
-              activeStep={activeStep}
-              handleBack={handleBack}
-              _fillCustomer={_fillCustomer}
-              state={state}
-              _success={_success}
-            />
-          ) : (
-            ""
-          )}
-        </div>
+        ) : activeStep === 1 ? (
+          <Step1
+            handleNext={handleNext}
+            activeStep={activeStep}
+            handleBack={handleBack}
+            _fillCustomer={_fillCustomer}
+            state={state}
+            _success={_success}
+          />
+        ) : (
+          ""
+        )}
       </div>
-    </Grid>
+    </div>
   )
 }
 
