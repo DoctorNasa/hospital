@@ -128,7 +128,7 @@ ColorlibStepIcon.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "90%"
+    width: "100%"
   },
   button: {
     marginRight: theme.spacing(1)
@@ -156,22 +156,13 @@ function getStepContent(step) {
   }
 }
 
-export default function CustomizedSteppers() {
+export default function CustomizedSteppers({
+  handleNext,
+  handleBack,
+  activeStep
+}) {
   const classes = useStyles()
-  const [activeStep, setActiveStep] = React.useState(0)
   const steps = getSteps()
-
-  function handleNext() {
-    setActiveStep(prevActiveStep => prevActiveStep + 1)
-  }
-
-  function handleBack() {
-    setActiveStep(prevActiveStep => prevActiveStep - 1)
-  }
-
-  function handleReset() {
-    setActiveStep(0)
-  }
 
   return (
     <div className={classes.root}>
@@ -186,41 +177,6 @@ export default function CustomizedSteppers() {
           </Step>
         ))}
       </Stepper>
-      <div>
-        {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <Typography className={classes.instructions}>
-              {getStepContent(activeStep)}
-            </Typography>
-            <div>
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.button}
-              >
-                Back
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button>
-            </div>
-          </div>
-        )}
-      </div>
     </div>
   )
 }

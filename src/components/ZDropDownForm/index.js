@@ -70,14 +70,8 @@ const styles = {
   }
 }
 
-const ZDropDown = ({ margin, placeholder, disable }) => {
+const ZDropDown = ({ margin, placeholder, disable, _select, select }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [select, setSelect] = useState(null)
-
-  const _select = i => {
-    setSelect(i)
-    setIsOpen(false)
-  }
 
   return (
     <div style={{ position: "relative" }}>
@@ -102,7 +96,10 @@ const ZDropDown = ({ margin, placeholder, disable }) => {
           <div style={styles.dropDownWindow}>
             {arrayDb.map((x, i) => (
               <div
-                onClick={() => _select(i)}
+                onClick={() => {
+                  _select(i)
+                  setIsOpen(false)
+                }}
                 className="itemsDropDown"
                 key={x.title}
               >
