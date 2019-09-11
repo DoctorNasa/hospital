@@ -64,7 +64,7 @@ const Branch = ({ match }) => {
   })
 
   return (
-    <>
+    <div style={{ marginBottom: 50 }}>
       <BranchBannerCarousel match={match} />
       <div style={{ marginTop: "35vw" }}>
         <BranchCarouselCard />
@@ -101,7 +101,7 @@ const Branch = ({ match }) => {
           </Grid>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

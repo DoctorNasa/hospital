@@ -10,23 +10,23 @@ import "./style.css"
 
 const titles = [
   {
-    title: "Homepage",
+    title: "หน้าหลัก",
     link: "/"
   },
   {
-    title: "Hospital services",
+    title: "บริการโรงพยาบาล",
     link: "/services"
   },
   {
-    title: "Promotion packages",
+    title: "แพคเกจ โปรโมชั่น",
     link: "/packages"
   },
   {
-    title: "Health articles",
+    title: "บทความ",
     link: "/articles"
   },
   {
-    title: "About us",
+    title: "เกี่ยวกับเรา",
     link: "/aboutus"
   }
 ]
@@ -141,7 +141,9 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
                         onMouseOver={() => setshowDropDown(true)}
                         onMouseLeave={() => setshowDropDown(false)}
                       >
-                        <div style={styles.hoverTitleService}>Services</div>
+                        <div style={styles.hoverTitleService}>
+                          บริการโรงพยาบาล
+                        </div>
                         {showDropDown && (
                           <div style={styles.hoverWindow}>
                             <div style={{ position: "relative" }}>

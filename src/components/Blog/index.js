@@ -25,7 +25,11 @@ const items = new Array(20).fill(1)
 
 const BlogMobile = ({ queries }) => {
   return (
-    <Grid container justify="center" style={{ paddingTop: 30 }}>
+    <Grid
+      container
+      justify="center"
+      style={{ paddingTop: 30, marginBottom: 220 }}
+    >
       <Grid item sm={10}>
         <Grid container spacing={4}>
           <Grid item sm={4}>

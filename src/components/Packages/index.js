@@ -23,7 +23,11 @@ const items = new Array(20).fill(1)
 
 const Packages = ({ queries }) => {
   return (
-    <Grid container justify="center" style={{ paddingTop: 30 }}>
+    <Grid
+      container
+      justify="center"
+      style={{ paddingTop: 30, marginBottom: 50 }}
+    >
       <Grid item sm={10}>
         <Grid container spacing={4}>
           <Grid item sm={4}>

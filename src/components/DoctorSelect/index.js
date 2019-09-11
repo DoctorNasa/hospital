@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Grid from "@material-ui/core/Grid"
 import "./styles.css"
 import BreadCrumb from "../BreadCrumb"
@@ -10,6 +10,7 @@ import ZSimpleCarousel from "../ZSimpleCarousel"
 import BlockSection from "./BlockSection"
 import BtnLeftPanel from "./BtnLeftPanel"
 import BlockBooking from "./BlockBooking"
+import Success from "./Success"
 
 const styles = {
   container: {
@@ -33,6 +34,12 @@ const styles = {
 }
 
 const DoctorSelect = ({ queries }) => {
+  const [success, setSuccess] = useState(true)
+
+  const _success = () => setSuccess(true)
+
+  if (success) return <Success />
+
   return (
     <Grid
       container
@@ -62,7 +69,7 @@ const DoctorSelect = ({ queries }) => {
             )}
           </Grid>
           {queries.booking ? (
-            <BlockBooking />
+            <BlockBooking _success={_success} />
           ) : (
             <Grid item sm={8}>
               <Grid item sm={6}>

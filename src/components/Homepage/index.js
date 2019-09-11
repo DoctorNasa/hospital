@@ -12,7 +12,7 @@ import "./style.css"
 
 const BrowserHomepage = () => {
   return (
-    <div>
+    <div style={{ marginBottom: 50 }}>
       <BannerCarousel />
       <div style={{ marginTop: "40%" }}>
         <Grid container justify="center">

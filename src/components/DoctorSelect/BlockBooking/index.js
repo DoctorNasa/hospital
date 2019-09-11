@@ -15,7 +15,7 @@ const styles = {
     padding: 10
   }
 }
-const BlockBooking = (_fillBooking, _fillCustomer, state) => {
+const BlockBooking = ({ _fillBooking, _fillCustomer, state, _success }) => {
   const [activeStep, setActiveStep] = useState(0)
 
   const handleNext = () => setActiveStep(prevActiveStep => prevActiveStep + 1)
@@ -46,6 +46,7 @@ const BlockBooking = (_fillBooking, _fillCustomer, state) => {
               handleBack={handleBack}
               _fillCustomer={_fillCustomer}
               state={state}
+              _success={_success}
             />
           ) : (
             ""

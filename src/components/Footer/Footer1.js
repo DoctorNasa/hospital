@@ -5,8 +5,7 @@ import TitleDiv from "../TitleDiv"
 const styles = {
   container: {
     background: "#f5f9f9",
-    height: 400,
-    marginTop: 50
+    height: 400
   },
   hospitalItem: {
     padding: 15,
