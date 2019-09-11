@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import Grid from "@material-ui/core/Grid"
 import Steps from "./Steps"
 import GrayTitle from "./GrayTitle"
 import ZDropDownForm from "../../ZDropDownForm"
 import PickerTime from "./PickerTime"
+import PickerDay from "./PickerDay"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 
 const styles = {
   container: {
@@ -17,6 +19,17 @@ const styles = {
   }
 }
 const BlockBooking = () => {
+  const [pickerDayFilled, setPickerDayFilled] = useState(null)
+  const [pickerTimeFilled, setPickerTimeFilled] = useState(null)
+
+  const _pickerDayFilled = () => {
+    setPickerDayFilled(true)
+  }
+
+  const _pickerTimeFilled = () => {
+    setPickerTimeFilled(true)
+  }
+
   return (
     <Grid item sm={8}>
       <div style={styles.container}>
@@ -53,16 +66,30 @@ const BlockBooking = () => {
           <div style={styles.section}>
             <GrayTitle text="เลือกวันเวลานัดหมายที่คุณต้องการ" />
             <div style={{ display: "flex" }}>
-              <div style={{ flex: 1, paddingRight: 10 }}>
-                <ZDropDownForm placeholder="เลือกวัน" />
+              <div style={{ flex: 1, paddingLeft: 10 }}>
+                <PickerDay _pickerDayFilled={_pickerDayFilled} />
               </div>
               <div style={{ flex: 1, paddingLeft: 10 }}>
-                <ZDropDownForm placeholder="เลือกเวลา" />
+                <PickerTime _pickerTimeFilled={_pickerTimeFilled} />
               </div>
-              <PickerTime />
             </div>
           </div>
-          <div style={styles.section}></div>
+          {pickerDayFilled && pickerTimeFilled && (
+            <div style={styles.section}>
+              <GrayTitle text="เลือกวันเวลานัดหมายที่คุณต้องการ" />
+              <div style={{ display: "flex" }}>
+                <div style={{ flex: 1, paddingLeft: 10 }}>
+                  <PickerDay _pickerDayFilled={_pickerDayFilled} />
+                </div>
+                <div style={{ flex: 1, paddingLeft: 10 }}>
+                  <PickerTime _pickerTimeFilled={_pickerTimeFilled} />
+                </div>
+              </div>
+            </div>
+          )}
+          {(!pickerDayFilled || !pickerTimeFilled) && (
+            <div style={styles.section}></div>
+          )}
         </div>
       </div>
     </Grid>

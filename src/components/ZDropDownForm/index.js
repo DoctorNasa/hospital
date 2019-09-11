@@ -70,7 +70,7 @@ const styles = {
   }
 }
 
-const ZDropDown = ({ margin, placeholder }) => {
+const ZDropDown = ({ margin, placeholder, disable }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [select, setSelect] = useState(null)
 
@@ -82,7 +82,7 @@ const ZDropDown = ({ margin, placeholder }) => {
   return (
     <div style={{ position: "relative" }}>
       <div
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => !disable && setIsOpen(!isOpen)}
         style={styleContainer(margin, isOpen)}
       >
         <div>{select ? select : placeholder}</div>
