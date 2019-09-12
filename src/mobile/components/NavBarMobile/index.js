@@ -19,12 +19,16 @@ const menuDB = [
   {
     main: "promotion packages",
     sub: [],
-    link: "/"
+    link: "/packages"
   },
   {
     main: "health article",
-    sub: ["medical articles", "videos", "staff", "innovation"],
-    link: "/articles"
+    sub: [
+      { title: "medical articles", link: "/articles" },
+      { title: "videos", link: "/articles?videos=true" },
+      { title: "staff", link: "/articles" },
+      { title: "innovation", link: "/articles" }
+    ]
   },
   {
     main: "innovation",

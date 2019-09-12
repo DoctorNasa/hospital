@@ -61,8 +61,14 @@ const ListMenu = ({ menuDB, _menuOpen }) => {
                 {x.sub.map(x => {
                   return (
                     <List component="div" disablePadding>
-                      <ListItem button className={classes.nested}>
-                        <ListItemText primary={x} />
+                      <ListItem
+                        onClick={() => _menuOpen(false)}
+                        button
+                        className={classes.nested}
+                        component={Link}
+                        to={x.link}
+                      >
+                        <ListItemText primary={x.title} />
                       </ListItem>
                     </List>
                   )

@@ -12,10 +12,17 @@ const ServicesContainer = Loadable({
   loading: Loading
 })
 
-const PackagesContainer = Loadable({
-  loader: () => import("./containers/PackagesContainer"),
-  loading: Loading
-})
+const PackagesContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/PackagesMobileContainer"),
+        loading: Loading
+      })
+    : Loadable({
+        loader: () => import("./containers/PackagesContainer"),
+        loading: Loading
+      })
+
 const AboutContainer = Loadable({
   loader: () => import("./containers/AboutContainer"),
   loading: Loading
