@@ -122,7 +122,13 @@ const CardsCarousel = () => {
                           activeIndex={index}
                           marginTop={30}
                         />
-                        <div style={{ width: "100%", textAlign: "center" }}>
+                        <div
+                          style={{
+                            width: "100%",
+                            textAlign: "center",
+                            paddingTop: 30
+                          }}
+                        >
                           <BtnBlue text="ศูนย์ทางการแพทย์ทั้งหมด" fullWidth />
                         </div>
                       </Grid>
