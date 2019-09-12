@@ -6,6 +6,7 @@ const TitlePackageItem = ({ text, padding }) => {
       style={{
         color: "#4d4d4d",
         fontWeight: "bold",
+        fontSize: 23,
         padding
       }}
     >

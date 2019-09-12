@@ -1,60 +1,37 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import BtnBlue from "../BtnBlue"
+import TitlePackageItem from "../Titles/TitlePackageItem"
 
 const ItemPackage = ({ imgPath, title, subtitle, marginTop }) => {
   return (
-    <div style={{ marginTop }}>
+    <div
+      style={{
+        marginTop,
+        boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+        borderRadius: 5
+      }}
+    >
+      <img
+        src={imgPath}
+        style={{
+          width: "100%",
+          height: 200,
+          borderTopLeftRadius: 5,
+          borderTopRightRadius: 5
+        }}
+      />
       <div
         style={{
-          backgroundColor: "#ffd1db",
-          borderRadius: 5,
-          boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)"
+          padding: 15,
+          textAlign: "center"
         }}
       >
-        <img
-          src={imgPath}
-          style={{
-            width: "100%",
-            height: "100%",
-            borderTopLeftRadius: 5,
-            borderTopRightRadius: 5
-          }}
+        <TitlePackageItem
+          text="แพ็คเกจเหมาจ่าย หัตการหัวใจ"
+          padding="10px 50px 10px 50px"
         />
-        <div
-          style={{
-            paddingLeft: 15,
-            paddingRight: 15
-          }}
-        >
-          <div
-            style={{
-              marginTop: 15,
-              marginBottom: 15,
-              color: "#4d4d4d",
-              fontSize: 20,
-              fontWeight: 600
-            }}
-          >
-            {title}
-          </div>
-          <div
-            style={{
-              color: "#818385"
-            }}
-          >
-            {subtitle}
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-              to="/articles/post/post-id-1"
-            >
-              <div style={{ paddingTop: 30, fontSize: 20, paddingBottom: 30 }}>
-                อ่านต่อ
-              </div>
-            </Link>
-          </div>
-        </div>
+        <BtnBlue text="ดูรายละเอียด" />
       </div>
     </div>
   )

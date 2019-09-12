@@ -55,7 +55,29 @@ const PackagesMobile = ({ queries }) => {
           />
           <TitlePackageCategory text="โรงพยาบาล พญาไท 1" />
           <ItemPackage
-            imgPath={`/images/cardCarousel.png`}
+            imgPath={`/images/mobile/package-item.jpg`}
+            title={`title`}
+            subtitle={`subtitle`}
+            marginTop={15}
+          />
+          <ItemPackage
+            imgPath={`/images/mobile/package-item.jpg`}
+            title={`title`}
+            subtitle={`subtitle`}
+            marginTop={15}
+          />
+          <ItemPackage
+            imgPath={`/images/mobile/package-item.jpg`}
+            title={`title`}
+            subtitle={`subtitle`}
+            marginTop={15}
+          />
+          <TitlePackageCategory
+            text="โรงพยาบาล พญาไท 2"
+            padding="15px 0px 15px 0px"
+          />
+          <ItemPackage
+            imgPath={`/images/mobile/package-item.jpg`}
             title={`title`}
             subtitle={`subtitle`}
             marginTop={15}
