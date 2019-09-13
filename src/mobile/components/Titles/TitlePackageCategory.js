@@ -1,10 +1,13 @@
 import React from "react"
 
-const TitlePackageCategory = ({ text, padding }) => {
+const TitlePackageCategory = ({ text, padding, img }) => {
   return (
     <div style={{ display: "flex", padding, alignItems: "center" }}>
       <div>
-        <img style={{ height: 30 }} src="/images/icons/titles-icon.jpg" />
+        <img
+          style={{ height: 30 }}
+          src={img ? img : "/images/icons/titles-icon.jpg"}
+        />
       </div>
       <div
         style={{
