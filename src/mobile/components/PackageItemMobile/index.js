@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
 import BreadCrumb from "../BreadCrumb"
-import TitlePackageMain from "../Titles/TitlePackageMain"
-import TitlePackageCategory from "../Titles/TitlePackageCategory"
+import DescriptionTop from "./DescriptionTop"
+import PackageItem from "./PackageItem"
 
 const styles = {
   container: {
@@ -17,18 +17,23 @@ const styles = {
   underDescription: {
     paddingLeft: 15,
     paddingRight: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
     backgroundColor: "#f3f3f3"
   }
 }
 
 const PackageItemMobile = ({ match }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div style={styles.container}>
       <div
         style={{
           marginLeft: 15,
           marginRight: 15,
-          paddingTop: 30,
+          paddingTop: 15,
           paddingBottom: 30
         }}
       >
@@ -41,49 +46,10 @@ const PackageItemMobile = ({ match }) => {
         />
       </div>
 
-      <img
-        src="/images/mobile/banner-mobile.jpg"
-        style={{ width: "100%", paddingTop: 15 }}
-      />
-      <div>
-        <div style={styles.description}>
-          <TitlePackageMain
-            text="แพคเกจเหมาจ่าย หัตการหัวใจ"
-            padding="0px 0px 10px 0px"
-          />
-          <div style={{ marginLeft: 15, marginRight: 15 }}>
-            <TitlePackageCategory
-              text="สาขา"
-              img="/images/icons/package-desc-1.jpg"
-            />
-            <div style={{ marginLeft: 40, marginBottom: 10 }}>
-              โรงพยาบาล พญาไท 1
-            </div>
-            <TitlePackageCategory
-              text="ชนิดของโปรแกรม"
-              img="/images/icons/package-desc-2.jpg"
-            />
-            <div style={{ marginLeft: 40, marginBottom: 10 }}>
-              โปรแกรมการรักษารายครั้ง
-            </div>
-            <TitlePackageCategory
-              text="ราคาเริ่มต้น"
-              img="/images/icons/package-desc-3.jpg"
-            />
-            <div
-              style={{
-                marginLeft: 40,
-                fontWeight: "bold",
-                fontSize: 18,
-                color: "#30bfc5"
-              }}
-            >
-              39,000 - 121,000 บาท
-            </div>
-          </div>
-          param id {match.params.id}
-        </div>
-        <div style={styles.underDescription}>fsdfdsf</div>
+      <img src="/images/mobile/banner-mobile.jpg" style={{ width: "100%" }} />
+      <DescriptionTop />
+      <div style={styles.underDescription}>
+        <PackageItem />
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import BtnBlue from "../BtnBlue"
 import TitlePackageItem from "../Titles/TitlePackageItem"
 
-const ItemPackage = ({ imgPath, title, subtitle, marginTop }) => {
+const ItemPackage = ({ imgPath, title, subtitle, marginTop, link }) => {
   return (
     <div
       style={{
@@ -31,7 +31,10 @@ const ItemPackage = ({ imgPath, title, subtitle, marginTop }) => {
           text="แพ็คเกจเหมาจ่าย หัตการหัวใจ"
           padding="10px 50px 10px 50px"
         />
-        <BtnBlue text="ดูรายละเอียด" />
+
+        <Link to={link} style={{ textDecoration: "none" }}>
+          <BtnBlue text="ดูรายละเอียด" />
+        </Link>
       </div>
     </div>
   )

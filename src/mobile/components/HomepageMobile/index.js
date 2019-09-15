@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./style.css"
 import BannerCarousel from "./BannerCarousel"
 import ZSearchBar from "../ZSearchBar"
@@ -19,6 +19,9 @@ const styles = {
 }
 
 const HomepageMobile = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div>
       <BannerCarousel />

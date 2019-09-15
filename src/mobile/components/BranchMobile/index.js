@@ -14,6 +14,9 @@ import TestimonialCarousel from "../TestimonialCarousel"
 
 const BranchMobile = ({ match }) => {
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  useEffect(() => {
     console.log("hi", match.params.branch)
   })
 

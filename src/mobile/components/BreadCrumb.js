@@ -6,18 +6,9 @@ import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
 import NavigateNextIcon from "@material-ui/icons/NavigateNext"
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    justifyContent: "center",
-    flexWrap: "wrap"
-  }
-}))
-
 const CustomSeparator = ({ crumbs }) => {
-  const classes = useStyles()
-
   return (
-    <div className={classes.root}>
+    <div style={{ justifyContent: "center", flexWrap: "wrap" }}>
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"

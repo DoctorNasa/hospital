@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import BreadCrumb from "../BreadCrumb"
 import Button from "@material-ui/core/Button"
 import ZCardsCategoriesCarousel from "../ZCardsCategoriesCarousel"
@@ -15,6 +15,9 @@ const styles = {
 }
 
 const BlogPost = ({ match }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div style={styles.container}>
       <div style={styles.margins}>

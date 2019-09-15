@@ -34,6 +34,10 @@ const BlogMobile = ({ queries }) => {
   const _setLockSrcoll = bool => setLockScroll(bool)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     console.log("isOpen", isOpen)
     console.log("queries", queries)
   }, [isOpen, queries])

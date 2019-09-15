@@ -1,6 +1,6 @@
 import React from "react"
 
-const TitlePackageCategory = ({ text, padding, img }) => {
+const TitlePackageCategory = ({ text, padding, img, color }) => {
   return (
     <div style={{ display: "flex", padding, alignItems: "center" }}>
       <div>
@@ -11,7 +11,7 @@ const TitlePackageCategory = ({ text, padding, img }) => {
       </div>
       <div
         style={{
-          color: "#2b2b2b",
+          color: color ? color : "#2b2b2b",
           fontWeight: "bold",
           paddingLeft: 10
         }}

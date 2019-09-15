@@ -1,10 +1,10 @@
 import React from "react"
 
-const TitlePackageMain = ({ text, padding }) => {
+const TitlePackageMain = ({ text, padding, color }) => {
   return (
     <div
       style={{
-        color: "#666666",
+        color: color ? color : "#666666",
         fontWeight: "bold",
         fontSize: 20,
         padding

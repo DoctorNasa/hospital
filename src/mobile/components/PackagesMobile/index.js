@@ -12,17 +12,19 @@ import TitlePackageCategory from "../Titles/TitlePackageCategory"
 const styles = {
   close: {
     marginTop: -230,
-    marginLeft: 15,
-    marginRight: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 30,
     overflow: "hidden",
     height: "100%"
   },
   open: {
     marginTop: 130,
-    marginLeft: 15,
-    marginRight: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
     overflow: "hidden",
-    height: "100%"
+    height: "100%",
+    paddingBottom: 30
   }
 }
 
@@ -34,6 +36,10 @@ const PackagesMobile = ({ queries }) => {
 
   const _setIsOpen = y => setIsOpen(y)
   const _setLockSrcoll = bool => setLockScroll(bool)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     console.log("isOpen", isOpen)
@@ -59,18 +65,21 @@ const PackagesMobile = ({ queries }) => {
             title={`title`}
             subtitle={`subtitle`}
             marginTop={15}
+            link={"/packages/item/id1"}
           />
           <ItemPackage
             imgPath={`/images/mobile/package-item.jpg`}
             title={`title`}
             subtitle={`subtitle`}
             marginTop={15}
+            link={"/packages/item/id2"}
           />
           <ItemPackage
             imgPath={`/images/mobile/package-item.jpg`}
             title={`title`}
             subtitle={`subtitle`}
             marginTop={15}
+            link={"/packages/item/id3"}
           />
           <TitlePackageCategory
             text="โรงพยาบาล พญาไท 2"
@@ -81,6 +90,7 @@ const PackagesMobile = ({ queries }) => {
             title={`title`}
             subtitle={`subtitle`}
             marginTop={15}
+            link={"/packages/item/id4"}
           />
         </div>
       </ScrollLock>

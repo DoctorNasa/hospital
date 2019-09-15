@@ -114,7 +114,7 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
             <BreadCrumb
               crumbs={[
                 { name: "หน้าหลัก", link: "/" },
-                { name: "แพ็คเกจโปรโมชั่น", link: "/articles" },
+                { name: "แพ็คเกจโปรโมชั่น", link: "/packages" },
                 { name: "ศูนย์หัวใจ", link: "/articles" }
               ]}
             />
