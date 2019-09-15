@@ -107,10 +107,17 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
       <Grid item md={10} sm={12}>
         <Grid container justify="center">
           <Grid item md={3} sm={2}>
-            <img
-              style={{ width: "100%", maxWidth: 200, marginTop: 30 }}
-              src="/images/logo.png"
-            />
+            <Link to="/" style={styles.noStyle}>
+              <img
+                style={{
+                  width: "100%",
+                  maxWidth: 200,
+                  marginTop: 30,
+                  cursor: "pointer"
+                }}
+                src="/images/logo.png"
+              />
+            </Link>
           </Grid>
           <Grid item md={9} sm={10}>
             <Grid container justify="flex-end" style={{ paddingTop: 20 }}>

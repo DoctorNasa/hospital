@@ -42,11 +42,13 @@ const ZSimpleCarousel = ({ marginTop }) => {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <DotsCarousel
-        handleStepChange={handleStepChange}
-        slidesLength={slides.length}
-        activeIndex={activeStep}
-      />
+      <div style={{ paddingTop: 30 }}>
+        <DotsCarousel
+          handleStepChange={handleStepChange}
+          slidesLength={slides.length}
+          activeIndex={activeStep}
+        />
+      </div>
     </div>
   )
 }
