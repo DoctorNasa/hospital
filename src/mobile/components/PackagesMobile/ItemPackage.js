@@ -3,10 +3,11 @@ import { Link } from "react-router-dom"
 import BtnBlue from "../BtnBlue"
 import TitlePackageItem from "../Titles/TitlePackageItem"
 
-const ItemPackage = ({ imgPath, title, subtitle, marginTop, link }) => {
+const ItemPackage = ({ imgPath, title, subtitle, marginTop, link, margin }) => {
   return (
     <div
       style={{
+        margin,
         marginTop,
         boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
         borderRadius: 5

@@ -37,7 +37,7 @@ const styles = {
   }
 }
 
-const VideosCarousel = () => {
+const VideosCarousel = ({ title }) => {
   const theme = useTheme()
   const [activeStep, setActiveStep] = React.useState(0)
 
@@ -67,7 +67,7 @@ const VideosCarousel = () => {
           color: "#4d4d4d"
         }}
       >
-        Phyathai channel
+        {title ? title : "Phyathai channel"}
       </h3>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
