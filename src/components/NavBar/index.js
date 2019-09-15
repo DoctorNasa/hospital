@@ -101,7 +101,8 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
       style={{
         boxShadow: " 2px 2px 52px -40px rgba(0,0,0,0.27)",
         position: "sticky",
-        zIndex: 99
+        zIndex: 99,
+        height: 150
       }}
     >
       <Grid item md={10} sm={12}>
@@ -214,7 +215,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
                     color="secondary"
                     style={{ color: "white" }}
                   >
-                    Login
+                    สมาชิก
                   </Button>
                 </div>
               </div>
