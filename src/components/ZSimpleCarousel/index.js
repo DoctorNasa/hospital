@@ -37,7 +37,7 @@ const ZSimpleCarousel = ({ marginTop }) => {
         {slides.map((slide, index) => (
           <div key={slide.title}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img src={slide.urlImg} />
+              <img src={slide.urlImg} style={{ width: "100%" }} />
             ) : null}
           </div>
         ))}
