@@ -6,7 +6,6 @@ import "./styles.css"
 import ZSearchBar from "../ZSearchBar"
 import ZSelect from "../ZSelect"
 import BreadCrumb from "../BreadCrumb"
-import BlogMenu from "./BlogMenu"
 import Fab from "@material-ui/core/Fab"
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown"
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp"
@@ -115,8 +114,6 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
               ]}
             />
           </div>
-
-          <BlogMenu queries={queries} />
           <div
             style={{
               textAlign: "center",
