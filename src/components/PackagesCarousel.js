@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button"
 import ArrowBackIos from "@material-ui/icons/ArrowBackIos"
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos"
 import Grid from "@material-ui/core/Grid"
+import { deviceType } from "react-device-detect"
 
 const slidStyle = url => ({
   backgroundImage: `url(${url})`,
@@ -25,6 +26,11 @@ const styles = {
     right: 0,
     top: -"10%",
     width: "100%"
+  },
+  backgroundImgTablet: {
+    position: "absolute",
+    right: 0,
+    top: -"10%"
   }
 }
 
@@ -109,7 +115,14 @@ const PackagesCarousel = () => {
   return (
     <Grid item sm={8} xs={12}>
       <div>
-        <img src="/images/background3.png" style={styles.backgroundImg} />
+        <img
+          src="/images/background3.png"
+          style={
+            deviceType === "tablet"
+              ? styles.backgroundImgTablet
+              : styles.backgroundImg
+          }
+        />
 
         <div
           style={{

@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import { autoPlay } from "react-swipeable-views-utils"
+import { deviceType } from "react-device-detect"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -22,6 +23,21 @@ const slides = [
     imgPath: "/images/background-landingpage-top.jpg"
   }
 ]
+
+const styles = {
+  h1Browser: {
+    fontSize: 35
+  },
+  h1Tablet: {
+    fontSize: 25
+  },
+  squareMarginBrowser: {
+    marginTop: "-33%"
+  },
+  squareMarginTablet: {
+    marginTop: "-25%"
+  }
+}
 
 const useStyles = makeStyles(theme => ({
   img: {
@@ -93,11 +109,25 @@ const BannerCarousel = () => {
                 />
 
                 <Grid container justify="center">
-                  <Grid item xs={8} style={{ marginTop: "-33%" }}>
+                  <Grid
+                    item
+                    xs={8}
+                    style={
+                      deviceType === "tablet"
+                        ? styles.squareMarginTablet
+                        : styles.squareMarginBrowser
+                    }
+                  >
                     <Grid container>
                       <Grid item>
                         <div className={classes.square}>
-                          <h1 style={{ fontSize: 35 }}>
+                          <h1
+                            style={
+                              deviceType === "tablet"
+                                ? styles.h1Tablet
+                                : styles.h1Browser
+                            }
+                          >
                             หยุดทุกอาการป่วย ช่วยให้คุณไปต่อ
                           </h1>
                           <h2
