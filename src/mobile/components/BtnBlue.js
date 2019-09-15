@@ -2,10 +2,17 @@ import React from "react"
 import Button from "@material-ui/core/Button"
 
 const styles = {
-  color: "white",
-  fontSize: 20,
-  marginTop: 15,
-  marginBottom: 15
+  btnFull: {
+    color: "white",
+    fontSize: 20,
+    marginTop: 15,
+    marginBottom: 15
+  },
+  btnOutlined: {
+    fontSize: 20,
+    marginTop: 15,
+    marginBottom: 15
+  }
 }
 
 const BtnBlue = ({
@@ -14,11 +21,17 @@ const BtnBlue = ({
   textAlign,
   marginTop,
   paddingBottom,
-  icon
+  icon,
+  outlined
 }) => {
   return (
     <div style={{ width, textAlign, marginTop, paddingBottom }}>
-      <Button variant="contained" color="secondary" size="large" style={styles}>
+      <Button
+        variant={outlined ? "outlined" : "contained"}
+        color="secondary"
+        size="large"
+        style={outlined ? styles.btnOutlined : styles.btnFull}
+      >
         {icon && <img style={{ height: 20, paddingRight: 10 }} src={icon} />}
         {text}
       </Button>

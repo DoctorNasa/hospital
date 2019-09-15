@@ -1,13 +1,16 @@
 import React, { useEffect, useState, useRef } from "react"
 import Pagination from "../Pagination"
-
+import DoctorItem from "./DoctorItem"
+import TitlePackageCategory from "../Titles/TitlePackageCategory"
+import BtnBlue from "../BtnBlue"
 import ButtonDrag from "./ButtonDrag"
 import "./styles.css"
 import ScrollLock, { TouchScrollable } from "react-scrolllock"
+import ZCardsDoctorCarousel from "../ZCardsDoctorCarousel"
 
 const styles = {
   close: {
-    marginTop: -100,
+    marginTop: -210,
     marginLeft: 15,
     marginRight: 15,
     overflow: "hidden",
@@ -48,8 +51,33 @@ const DoctorSelectMobile = ({ queries }) => {
         _setLockSrcoll={_setLockSrcoll}
       />
       <ScrollLock isActive={lockScroll}>
-        <div style={isOpen ? styles.open : styles.close}>yo</div>
-        <Pagination currentPage={1} itemsLength={items.length} />
+        <div style={isOpen ? styles.open : styles.close}>
+          <TitlePackageCategory text="โรงพยาบาล พญาไท 1" />
+          <ZCardsDoctorCarousel />
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
+          </div>
+          <TitlePackageCategory text="โรงพยาบาล พญาไท 2" />
+          <ZCardsDoctorCarousel />
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
+          </div>
+          <TitlePackageCategory text="โรงพยาบาล พญาไท 3" />
+          <ZCardsDoctorCarousel />
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
+          </div>
+          <TitlePackageCategory text="โรงพยาบาล พญาไท ศรีราชา" />
+          <ZCardsDoctorCarousel />
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
+          </div>
+          <TitlePackageCategory text="โรงพยาบาล พญาไท นวมินทร์" />
+          <ZCardsDoctorCarousel />
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
+          </div>
+        </div>
       </ScrollLock>
     </div>
   )

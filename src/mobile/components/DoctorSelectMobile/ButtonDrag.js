@@ -29,7 +29,7 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
   const close = () => {
     console.log("closing")
     _setIsOpen(false)
-    setY({ y: -130, config: config.stiff })
+    setY({ y: -240, config: config.stiff })
   }
 
   const bind = useDrag(
@@ -103,8 +103,12 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
           <div>ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ</div>
 
           <ZSearchBar marginTop={15} noTitle />
-          <div style={{ marginBottom: 15 }}>Playlist / บทความเกี่ยวกับ</div>
-          <ZSelect placeHolder="กรุณาเลือก" />
+          <div style={{ marginBottom: 15 }}>เลือกโรงพยาบาล</div>
+          <ZSelect placeHolder="เลือกโรงพยาบาล" />
+          <div style={{ marginBottom: 15, marginTop: 15 }}>
+            เลือกศูนย์การแพทย์
+          </div>
+          <ZSelect placeHolder="เลือกสูนย์การแพทย์" />
 
           <div style={{ marginTop: 30, marginBottom: 15 }}>
             <BreadCrumb
