@@ -96,7 +96,10 @@ const BlogPostContainer =
 
 const DoctorSelectContainer =
   deviceType === "mobile"
-    ? ""
+    ? Loadable({
+        loader: () => import("./mobile/containers/DoctorSelectMobileContainer"),
+        loading: Loading
+      })
     : Loadable({
         loader: () => import("./containers/DoctorSelectContainer"),
         loading: Loading
