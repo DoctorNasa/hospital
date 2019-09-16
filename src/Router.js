@@ -113,6 +113,22 @@ const PackageItemContainer =
       })
     : ""
 
+const AccommodationsContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/AccommodationsContainer"),
+        loading: Loading
+      })
+    : ""
+
+const AccommodationItemContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/AccommodationItemContainer"),
+        loading: Loading
+      })
+    : ""
+
 const Router = () => (
   <div>
     <NavbarContainer />
@@ -120,6 +136,16 @@ const Router = () => (
       <Route exact path="/" component={HomepageContainer} />
       <Route exact path="/branch/:branch" component={BranchContainer} />
       <Route exact path="/services" component={ServicesContainer} />
+      <Route
+        exact
+        path="/accommodations/:branch"
+        component={AccommodationsContainer}
+      />
+      <Route
+        exact
+        path="/accommodations/:branch/:id"
+        component={AccommodationItemContainer}
+      />
       <Route exact path="/packages" component={PackagesContainer} />
       <Route exact path="/packages/item/:id" component={PackageItemContainer} />
       <Route exact path="/doctor-select" component={DoctorSelectContainer} />

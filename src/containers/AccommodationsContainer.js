@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../"
-import Articles from "../components/Articles"
+import Accommodations from "../components/Accommodations"
 
-const ArticlesContainer = () => {
+const AccommodationsContainer = props => {
   const { _pageContainer, pageContainer } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
@@ -13,7 +13,7 @@ const ArticlesContainer = () => {
     }
   }, [active, _pageContainer])
 
-  return <Articles />
+  return <Accommodations {...props} />
 }
 
-export default ArticlesContainer
+export default AccommodationsContainer
