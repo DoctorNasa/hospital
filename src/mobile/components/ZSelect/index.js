@@ -19,11 +19,11 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ZSelect = ({ placeHolder, marginTop, marginBottom }) => {
+const ZSelect = ({ options, placeHolder, marginTop, marginBottom }) => {
   const classes = useStyles()
   const [values, setValues] = useState({
     age: "",
-    name: "hai"
+    link: "hai"
   })
 
   const inputLabel = useRef(null)
@@ -35,7 +35,7 @@ const ZSelect = ({ placeHolder, marginTop, marginBottom }) => {
   const handleChange = event => {
     setValues(oldValues => ({
       ...oldValues,
-      [event.target.name]: event.target.value
+      [event.target.link]: event.target.value
     }))
   }
 

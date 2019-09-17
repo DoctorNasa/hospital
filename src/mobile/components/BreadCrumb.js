@@ -6,9 +6,9 @@ import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
 import NavigateNextIcon from "@material-ui/icons/NavigateNext"
 
-const CustomSeparator = ({ crumbs }) => {
+const CustomSeparator = ({ crumbs, padding }) => {
   return (
-    <div style={{ justifyContent: "center", flexWrap: "wrap" }}>
+    <div style={{ justifyContent: "center", flexWrap: "wrap", padding }}>
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"

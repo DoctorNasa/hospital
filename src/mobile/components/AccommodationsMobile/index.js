@@ -1,45 +1,98 @@
 import React from "react"
 import TitlePackageMain from "../Titles/TitlePackageMain"
-import ZSelect from "../ZSelect"
+import ZSelectBranch from "../ZSelectBranch"
+import ZSelectSort from "../ZSelectSort"
+import BreadCrumb from "../BreadCrumb"
+import dbBranches from "../../../dbBranches.json"
+import ZCarouselCardMobile from "../ZCarouselCardMobile"
+import ZCardsAccommodations from "../ZCardsAccommodations"
+import ItemAccommodation from "../ZCardsAccommodations/ItemAccommodation"
 
 const styles = {
   container: {
     paddingTop: 80
-  },
-  margins: {
-    marginRight: 15,
-    marginLeft: 15
   }
 }
 
-const AccomodationsMobile = () => {
+const AccomodationsMobile = ({ match }) => {
   return (
     <div style={styles.container}>
-      <div>
-        <img
-          src="/images/mobile/accommodation-banner.jpg"
-          style={{ width: "100%" }}
-        />
-      </div>
-      <div style={styles.margins}>
+      <img
+        src="/images/mobile/accommodation-banner.jpg"
+        style={{ width: "100%" }}
+      />
+      <div style={{ background: "white", padding: "0px 15px 0px 15px" }}>
         <div
           style={{
-            paddingTop: 15,
             display: "flex",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            alignItems: "flex-end"
           }}
         >
           <div style={{ flex: 1 }}>
             <TitlePackageMain text="เลือกโรงพยาบาล" />
           </div>
           <div style={{ flex: 1 }}>
-            <TitlePackageMain text="เลือกโรงพยาบาล" />
+            <ZSelectSort />
           </div>
         </div>
 
-        <ZSelect placeholder="พญาไท 1" marginTop={15} marginBottom={15} />
-        <div>fjdf</div>
-        <div>fjdf</div>
+        <ZSelectBranch
+          placeHolder={match.params.branch}
+          match={match}
+          baseUrl={"/accommodations"}
+          dbBranches={dbBranches}
+          margin={"30px 0px 30px 0px"}
+        />
+      </div>
+      <div style={{ background: "#f3f3f3" }}>
+        <BreadCrumb
+          padding="15px 15px 0px 15px"
+          crumbs={[
+            { name: "หน้าหลัก", link: "/" },
+            { name: "สิ่งอำนวยความสะดวก" }
+          ]}
+        />
+        <ZCarouselCardMobile />
+        <ItemAccommodation
+          imgPath="/images/mobile/accommodations-room.jpg"
+          title="Prestige-VIP (1565)"
+          price="22,610"
+          margin={"30px 15px 15px 15px"}
+          link={`/accommodations/${match.params.branch}/1`}
+        />
+        <ItemAccommodation
+          imgPath="/images/mobile/accommodations-room.jpg"
+          title="Prestige-VIP (1565)"
+          price="22,610"
+          margin={"30px 15px 15px 15px"}
+          link={`/accommodations/${match.params.branch}/2`}
+        />
+        <ItemAccommodation
+          imgPath="/images/mobile/accommodations-room.jpg"
+          title="Prestige-VIP (1565)"
+          price="22,610"
+          margin={"30px 15px 15px 15px"}
+          link={`/accommodations/${match.params.branch}/3`}
+        />
+        <ItemAccommodation
+          imgPath="/images/mobile/accommodations-room.jpg"
+          title="Prestige-VIP (1565)"
+          price="22,610"
+          margin={"30px 15px 15px 15px"}
+          link={`/accommodations/${match.params.branch}/4`}
+        />
+        <div style={{ paddingBottom: 30 }}>
+          <ItemAccommodation
+            imgPath="/images/mobile/accommodations-room.jpg"
+            title="Prestige-VIP (1565)"
+            price="22,610"
+            margin={"30px 15px 15px 15px"}
+            link={`/accommodations/${match.params.branch}/5`}
+          />
+        </div>
+
+        {/* <ZCardsAccommodations match={match} /> */}
       </div>
     </div>
   )
