@@ -9,7 +9,7 @@ const styles = {
     width: "15px",
     backgroundColor: "#71c6a2",
     opacity: "0.3",
-    marginRight: "6px",
+    margin: "0px 3px 0px 3px",
     cursor: "pointer"
   },
   bulletactive: {
@@ -17,7 +17,7 @@ const styles = {
     height: "15px",
     width: "15px",
     backgroundColor: "#71c6a2",
-    marginRight: "6px"
+    margin: "0px 3px 0px 3px"
   },
   arrows: {
     fontSize: 25,

@@ -25,11 +25,7 @@ const styles = {
     backgroundPosition: "top-left"
   },
   subcontainerNormal: {
-    position: "relative",
-    height: 280,
-    width: "100%"
-  },
-  subcontainerNormal: {
+    marginTop: 30,
     position: "relative",
     height: 280,
     width: "100%"
@@ -92,7 +88,7 @@ function BannerCarousel() {
                 style={{
                   position: "absolute",
                   width: "100%",
-                  top: "calc((9/16)*90vw)",
+                  top: "calc((9/16)*100vw)",
                   zIndex: 0
                 }}
               />
@@ -112,8 +108,7 @@ function BannerCarousel() {
                       marginBottom: 0
                     }}
                   >
-                    {window.innerWidth}ครอบครัวมีความสุขหยุด
-                    ทุกอาการป่วยช่วยให้คุณไปต่อ
+                    ครอบครัวมีความสุขหยุด ทุกอาการป่วยช่วยให้คุณไปต่อ
                   </h1>
                   <h2
                     style={{
