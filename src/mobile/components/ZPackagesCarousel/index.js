@@ -109,7 +109,7 @@ const PackagesCarousel = () => {
 
       <div
         style={{
-          width: "70%",
+          width: "50%",
           height: "200px",
           margin: "0 auto",
           position: "relative",
