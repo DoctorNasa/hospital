@@ -138,8 +138,8 @@ const PackagesCarousel = () => {
           animationConfig={config.slow}
         />
       </div>
-      <div style={{ position: "relative", marginTop: 40 }}>
-        <div style={{ position: "absolute", top: -20, zIndex: 99 }} />
+      <div style={{ position: "relative", marginTop: 90 }}>
+        <div style={{ position: "absolute", top: -30, zIndex: 99 }} />
         <DotsCarousel
           handleStepChange={handleStepChange}
           slidesLength={slides.length}
