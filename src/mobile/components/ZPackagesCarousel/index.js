@@ -4,6 +4,7 @@ import uuidv4 from "uuid"
 import { config } from "react-spring"
 import Button from "@material-ui/core/Button"
 import DotsCarousel from "../DotsCarousel"
+import BtnBlue from "../BtnBlue"
 
 const slidStyle = url => ({
   backgroundImage: `url(${url})`,
@@ -43,19 +44,7 @@ const slideItem = (
       <p>
         โปรแกรมวัคซีนป้องกัน <br /> มะเร็งปากมดลูก
       </p>
-      <Button
-        variant="contained"
-        color="secondary"
-        style={{
-          color: "white",
-          height: 50,
-          marginTop: 10,
-          marginRight: 50,
-          marginLeft: 50
-        }}
-      >
-        ดูรายละเอียด
-      </Button>
+      <BtnBlue text="ดูรายละเอียด" />
     </div>
   </div>
 )

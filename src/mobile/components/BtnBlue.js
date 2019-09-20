@@ -6,12 +6,16 @@ const styles = {
     color: "white",
     fontSize: 20,
     marginTop: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    paddingLeft: 50,
+    paddingRight: 50
   },
   btnOutlined: {
     fontSize: 20,
     marginTop: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    paddingLeft: 30,
+    paddingRight: 30
   }
 }
 

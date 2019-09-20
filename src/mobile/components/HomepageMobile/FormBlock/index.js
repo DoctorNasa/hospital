@@ -5,6 +5,7 @@ import SearchInputForm from "./SearchInputForm"
 import Button from "@material-ui/core/Button"
 import Paper from "@material-ui/core/Paper"
 import SearchBarMobile from "../../SearchBarMobile"
+import BtnBlue from "../../BtnBlue"
 
 const styles = {
   containerForm: {
@@ -42,22 +43,9 @@ const FormBlock = () => {
                 <div style={{ marginTop: 20 }}>
                   <SearchBarMobile />
                 </div>
-
                 <DropDownForm />
                 <DropDownForm />
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  size="small"
-                  style={{
-                    color: "white",
-                    fontSize: 20,
-                    marginTop: 30,
-                    marginBottom: 45
-                  }}
-                >
-                  ดูรายละเอียด
-                </Button>
+                <BtnBlue text="ดูรายละเอียด" />=
                 <img
                   src="/images/formimg-homepage.jpg"
                   style={{ width: "100%", height: 300 }}
