@@ -4,27 +4,39 @@ import SwipeableViews from "react-swipeable-views"
 import BtnBlue from "../BtnBlue"
 import { autoPlay } from "react-swipeable-views-utils"
 import DotsCarousel from "../DotsCarousel"
-
-const styleMobileBanner = img => ({
-  background: `url(${img})`,
-  backgroundSize: "100% 100%",
-  backgroundRepeat: "no-repeat",
-  height: "100%"
-})
+import { useMediaQuery } from "react-responsive"
 
 const styles = {
+  bannerBg: {
+    backgroundImage: 'url("/images/mobile/homepage-banner.jpg")',
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% calc((9/16)*160vw)",
+    backgroundAttachment: "fixed",
+    height: "calc((9/16)*150vw)"
+  },
   containerMobile: {
-    paddingTop: 380,
     marginRight: 10,
     marginLeft: 10,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top-left"
+  },
+  subcontainerNormal: {
+    position: "relative",
+    height: 280,
+    width: "100%"
+  },
+  subcontainerNormal: {
+    position: "relative",
+    height: 280,
+    width: "100%"
   }
 }
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
+const AutoPlaySwipeableViews = SwipeableViews
 
 const slides = [
   {
@@ -58,7 +70,7 @@ function BannerCarousel() {
   }
 
   return (
-    <div>
+    <div style={{ paddingBottom: 15 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -66,7 +78,8 @@ function BannerCarousel() {
         enableMouseEvents
       >
         {slides.map((x, index) => (
-          <div key={x.label} style={styleMobileBanner(x.imgPath)}>
+          <div key={x.label}>
+            <div style={styles.bannerBg} />
             <div
               display="flex"
               alignItems="center"
@@ -74,28 +87,48 @@ function BannerCarousel() {
               flexDirection="column"
               style={styles.containerMobile}
             >
-              <h1
+              <img
+                src="/images/mobile/white-wave.png"
                 style={{
-                  textAlign: "center",
-                  color: "#4d4d4d",
-                  marginTop: 0,
-                  marginBottom: 0
+                  position: "absolute",
+                  width: "100%",
+                  top: "calc((9/16)*90vw)",
+                  zIndex: 0
                 }}
-              >
-                ครอบครัวมีความสุขหยุด ทุกอาการป่วยช่วยให้คุณไปต่อ
-              </h1>
-              <h2
-                style={{
-                  color: "grey",
-                  textAlign: "center",
-                  color: "#818385",
-                  marginTop: 0,
-                  marginBottom: 0
-                }}
-              >
-                เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
-              </h2>
-              <BtnBlue text="ดูรายละเอียดเพิ่มเติม" />
+              />
+              <div style={styles.subcontainerNormal}>
+                <div
+                  style={{
+                    position: "absolute",
+                    zIndex: 1,
+                    textAlign: "center"
+                  }}
+                >
+                  <h1
+                    style={{
+                      textAlign: "center",
+                      color: "#4d4d4d",
+                      marginTop: 0,
+                      marginBottom: 0
+                    }}
+                  >
+                    {window.innerWidth}ครอบครัวมีความสุขหยุด
+                    ทุกอาการป่วยช่วยให้คุณไปต่อ
+                  </h1>
+                  <h2
+                    style={{
+                      color: "grey",
+                      textAlign: "center",
+                      color: "#818385",
+                      marginTop: 0,
+                      marginBottom: 0
+                    }}
+                  >
+                    เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
+                  </h2>
+                  <BtnBlue text="ดูรายละเอียดเพิ่มเติม" />
+                </div>
+              </div>
             </div>
           </div>
         ))}
