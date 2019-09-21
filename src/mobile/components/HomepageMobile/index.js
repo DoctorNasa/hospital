@@ -13,8 +13,11 @@ import TestimonialCarousel from "../TestimonialCarousel"
 
 const styles = {
   margins: {
-    marginLeft: 15,
-    marginRight: 15
+    paddingLeft: 15,
+    paddingRight: 15,
+    backgroundColor: "white",
+    position: "relative",
+    marginTop: "-20px"
   }
 }
 

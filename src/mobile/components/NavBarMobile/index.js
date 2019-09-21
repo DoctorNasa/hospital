@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./style.css"
-import Hamburger from "react-hamburger-menu"
+import Hamburger from "./Hamburger"
 import MenuMobile from "./MenuMobile"
 import useScrollPosition from "use-scroll-position"
 import { Link } from "react-router-dom"
@@ -83,7 +83,10 @@ const NavBarMobile = ({ pageContainer }) => {
       >
         <div style={{ flex: 1 }}>
           <Link to="/">
-            <img src="/images/logo-mobile.png" style={{ width: "100%" }} />
+            <img
+              src="/images/logo-mobile.png"
+              style={{ width: "90%", padding: "9px 0x 9x 0px" }}
+            />
           </Link>
         </div>
 
@@ -92,21 +95,25 @@ const NavBarMobile = ({ pageContainer }) => {
             flex: 1,
             direction: "rtl",
             paddingRight: 30,
-            marginTop: 9
+            paddingTop: 4
           }}
         >
           <Hamburger
             isOpen={open}
             menuClicked={() => setOpen(!open)}
-            width={30}
+            width={35}
             height={30}
-            strokeWidth={4}
+            strokeWidth={5}
             rotate={0}
             color="#00826a"
-            borderRadius={10}
+            borderRadius={25}
             animationDuration={0.3}
           />
-          {open && <div style={{ color: "#32bfc6", fontSize: 12 }}>Close</div>}
+          {open && (
+            <div style={{ color: "#32bfc6", fontSize: 12, marginRight: 2 }}>
+              Close
+            </div>
+          )}
         </div>
       </div>
       <MenuMobile menuDB={menuDB} open={open} _menuOpen={_menuOpen} />
