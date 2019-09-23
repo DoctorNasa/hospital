@@ -1,23 +1,26 @@
 import React, { useEffect, useState, useRef } from "react"
-import Pagination from "../Pagination"
-import DoctorItem from "./DoctorItem"
-import TitlePackageCategory from "../Titles/TitlePackageCategory"
-import BtnBlue from "../BtnBlue"
 import ButtonDrag from "./ButtonDrag"
 import "./styles.css"
-import ScrollLock, { TouchScrollable } from "react-scrolllock"
-import ZCardsDoctorCarousel from "../ZCardsDoctorCarousel"
+import ScrollLock from "react-scrolllock"
+import SelectDoctorPage from "./SelectDoctorPage"
+import BlockBooking from "./BlockBooking"
 
 const styles = {
+  baground: {
+    backgroundColor: "#c9ecec"
+  },
+  empty: {
+    backgroundColor: "white"
+  },
   close: {
-    marginTop: -210,
+    marginTop: -230,
     marginLeft: 15,
     marginRight: 15,
     overflow: "hidden",
     height: "100%"
   },
   open: {
-    marginTop: 130,
+    marginTop: 110,
     marginLeft: 15,
     marginRight: 15,
     overflow: "hidden",
@@ -30,9 +33,14 @@ const items = new Array(20).fill(1)
 const DoctorSelectMobile = ({ queries }) => {
   const [isOpen, setIsOpen] = useState(true)
   const [lockScroll, setLockScroll] = useState(false)
+  const [selectBooking, setSelectBooking] = useState(false)
+  const [success, setSuccess] = useState(false)
+
+  const _success = () => setSuccess(true)
 
   const _setIsOpen = y => setIsOpen(y)
   const _setLockSrcoll = bool => setLockScroll(bool)
+  const _setSelectBooking = bool => setSelectBooking(bool)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -43,39 +51,23 @@ const DoctorSelectMobile = ({ queries }) => {
     console.log("queries", queries)
   }, [isOpen, queries])
   return (
-    <div>
+    <div style={selectBooking ? styles.baground : styles.empty}>
       <ButtonDrag
         queries={queries}
         _setIsOpen={_setIsOpen}
         isOpen={isOpen}
         _setLockSrcoll={_setLockSrcoll}
+        _setSelectBooking={_setSelectBooking}
+        selectBooking={selectBooking}
       />
       <ScrollLock isActive={lockScroll}>
-        <div style={isOpen ? styles.open : styles.close}>
-          <TitlePackageCategory text="โรงพยาบาล พญาไท 1" />
-          <ZCardsDoctorCarousel />
-          <div style={{ textAlign: "center", marginBottom: 30 }}>
-            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
-          </div>
-          <TitlePackageCategory text="โรงพยาบาล พญาไท 2" />
-          <ZCardsDoctorCarousel />
-          <div style={{ textAlign: "center", marginBottom: 30 }}>
-            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
-          </div>
-          <TitlePackageCategory text="โรงพยาบาล พญาไท 3" />
-          <ZCardsDoctorCarousel />
-          <div style={{ textAlign: "center", marginBottom: 30 }}>
-            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
-          </div>
-          <TitlePackageCategory text="โรงพยาบาล พญาไท ศรีราชา" />
-          <ZCardsDoctorCarousel />
-          <div style={{ textAlign: "center", marginBottom: 30 }}>
-            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
-          </div>
-          <TitlePackageCategory text="โรงพยาบาล พญาไท นวมินทร์" />
-          <ZCardsDoctorCarousel />
-          <div style={{ textAlign: "center", marginBottom: 30 }}>
-            <BtnBlue text="ดูแพทย์เทั้งหมด" outlined />
+        <div>
+          <div style={isOpen ? styles.open : styles.close}>
+            {selectBooking ? (
+              <BlockBooking _success={_success} />
+            ) : (
+              <SelectDoctorPage />
+            )}
           </div>
         </div>
       </ScrollLock>

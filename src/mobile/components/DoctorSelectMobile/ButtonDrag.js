@@ -10,26 +10,55 @@ import Fab from "@material-ui/core/Fab"
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown"
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp"
 
+const styles = {
+  menuSelected: {
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    boxShadow: "0px 2px 10px -2px rgba(48,191,197,1)",
+    color: "#30bfc5",
+    fontSize: 13,
+    padding: 5
+  },
+  menuNotSelected: {
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#8a8a88",
+    fontSize: 13,
+    padding: 5
+  }
+}
+
 const items = ["save item", "open item", "share item", "delete item", "cancel"]
 const height = items.length * 60 + 80
 
-const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
+const ButtonDrag = ({
+  queries,
+  _setIsOpen,
+  isOpen,
+  _setLockSrcoll,
+  _setSelectBooking,
+  selectBooking
+}) => {
   const sheetRef = useRef()
   const draggingRef = useRef(false)
   const dragginBtn = useRef(false)
-  const [{ y }, setY] = useSpring(() => ({ y: 100 }))
+  const [{ y }, setY] = useSpring(() => ({ y: 60 }))
 
   const open = ({ canceled }) => {
     // when cancel is true, it means that the user passed the upwards threshold
     // so we change the spring config to create a nice wobbly effect
     console.log("opening")
     _setIsOpen(true)
-    setY({ y: 100, config: canceled ? config.wobbly : config.stiff })
+    setY({ y: 60, config: canceled ? config.wobbly : config.stiff })
   }
   const close = () => {
     console.log("closing")
     _setIsOpen(false)
-    setY({ y: -240, config: config.stiff })
+    setY({ y: -280, config: config.stiff })
   }
 
   const bind = useDrag(
@@ -43,10 +72,7 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
       canceled
     }) => {
       let newY = memo + dy
-      console.log("newY", newY)
 
-      console.log("vy", vy)
-      console.log("dy", dy)
       if (first) {
         _setLockSrcoll(true)
         draggingRef.current = false
@@ -99,7 +125,7 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
           transform: y.interpolate(py => `translate3d(0px,${py}px,0)`)
         }}
       >
-        <div style={{ marginLeft: 15, marginRight: 15 }}>
+        <div style={{ marginLeft: 15, marginRight: 15, paddingTop: 40 }}>
           <div>ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ</div>
 
           <ZSearchBar marginTop={15} noTitle />
@@ -110,13 +136,53 @@ const ButtonDrag = ({ queries, _setIsOpen, isOpen, _setLockSrcoll }) => {
           </div>
           <ZSelect placeHolder="เลือกสูนย์การแพทย์" />
 
-          <div style={{ marginTop: 30, marginBottom: 15 }}>
+          <div style={{ marginTop: 30 }}>
             <BreadCrumb
               crumbs={[
                 { name: "หน้าหลัก", link: "/" },
                 { name: "บทความสุขภาพ", link: "/articles" }
               ]}
             />
+            <div
+              style={{
+                marginTop: 10,
+                height: 50,
+                display: "flex"
+              }}
+            >
+              <div
+                style={
+                  selectBooking ? styles.menuSelected : styles.menuNotSelected
+                }
+                onClick={() => !selectBooking && _setSelectBooking(true)}
+              >
+                <img
+                  style={{ height: 25, marginRight: 10 }}
+                  src={
+                    selectBooking
+                      ? "/images/icons/select-doc-book-blue.png"
+                      : "/images/icons/select-doc-book-gray.png"
+                  }
+                />
+                แนะนำแพทย์ให้ฉัน
+              </div>
+              <div
+                style={
+                  !selectBooking ? styles.menuSelected : styles.menuNotSelected
+                }
+                onClick={() => selectBooking && _setSelectBooking(false)}
+              >
+                <img
+                  style={{ height: 25, marginRight: 10 }}
+                  src={
+                    !selectBooking
+                      ? "/images/icons/select-doc-blue.png"
+                      : "/images/icons/select-doc-gray.png"
+                  }
+                />
+                เลือกแพทย์ด้วยตัวเอง
+              </div>
+            </div>
           </div>
           <div
             style={{

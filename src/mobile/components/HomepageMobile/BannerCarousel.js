@@ -27,7 +27,7 @@ const styles = {
     paddingBottom: 10
   }
 }
-function BannerCarousel() {
+const BannerCarousel = () => {
   return (
     <div style={{ paddingBottom: 15, background: "white" }}>
       <div>
