@@ -15,7 +15,14 @@ const styles = {
     padding: 10
   }
 }
-const BlockBooking = ({ _fillBooking, _fillCustomer, state, _success }) => {
+const BlockBooking = ({
+  _fillBooking,
+  _fillCustomer,
+  state,
+  _success,
+  reducerBooking,
+  _dispatchBooking
+}) => {
   const [activeStep, setActiveStep] = useState(0)
 
   const handleNext = () => setActiveStep(prevActiveStep => prevActiveStep + 1)
@@ -24,12 +31,15 @@ const BlockBooking = ({ _fillBooking, _fillCustomer, state, _success }) => {
 
   return (
     <div style={styles.container}>
-      <div style={{ padding: 15 }}>
-        <Steps
-          handleNext={handleNext}
-          activeStep={activeStep}
-          handleBack={handleBack}
-        />
+      <div style={{ padding: "30px 15px 15px 15px" }}>
+        <div style={{ padding: "0px 0px 15px 0px" }}>
+          <Steps
+            handleNext={handleNext}
+            activeStep={activeStep}
+            handleBack={handleBack}
+          />
+        </div>
+
         {activeStep === 0 ? (
           <Step0
             handleNext={handleNext}
@@ -46,6 +56,8 @@ const BlockBooking = ({ _fillBooking, _fillCustomer, state, _success }) => {
             _fillCustomer={_fillCustomer}
             state={state}
             _success={_success}
+            reducerBooking={reducerBooking}
+            _dispatchBooking={_dispatchBooking}
           />
         ) : (
           ""

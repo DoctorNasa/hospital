@@ -1,43 +1,52 @@
-import React from "react"
+import React, { useState } from "react"
 import Radio from "@material-ui/core/Radio"
 import RadioGroup from "@material-ui/core/RadioGroup"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import FormControl from "@material-ui/core/FormControl"
 import FormLabel from "@material-ui/core/FormLabel"
+import { makeStyles } from "@material-ui/core/styles"
 
-export default function Radios() {
-  const [value, setValue] = React.useState("female")
-
-  function handleChange(event) {
-    setValue(event.target.value)
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    width: "100%"
+  },
+  controlLabel: {
+    flex: 1
   }
+}))
+
+export default function Radios({ value, _onChange }) {
+  const classes = useStyles()
 
   return (
-    <FormControl component="fieldset">
+    <FormControl component="fieldset" className={classes.formControl}>
       <RadioGroup
         aria-label="position"
         name="position"
         value={value}
-        onChange={handleChange}
+        onChange={e => _onChange(e.target.value)}
         row
       >
         <FormControlLabel
-          value="1"
+          value="male"
           control={<Radio color="secondary" />}
           label="นาย"
           labelPlacement="end"
+          className={classes.controlLabel}
         />
         <FormControlLabel
-          value="2"
+          value="female"
           control={<Radio color="secondary" />}
           label="นาง"
           labelPlacement="end"
+          className={classes.controlLabel}
         />
         <FormControlLabel
-          value="3"
+          value="transgender"
           control={<Radio color="secondary" />}
           label="นางสาว"
           labelPlacement="end"
+          className={classes.controlLabel}
         />
       </RadioGroup>
     </FormControl>

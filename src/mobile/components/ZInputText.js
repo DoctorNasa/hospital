@@ -1,7 +1,14 @@
 import React from "react"
 import TextField from "@material-ui/core/TextField"
 
-const ZInput = ({ value, _onChange, label }) => {
+const ZInput = ({
+  value,
+  _onChange,
+  label,
+  multiline,
+  rows,
+  type = "text"
+}) => {
   return (
     <TextField
       id="outlined-name"
@@ -10,6 +17,10 @@ const ZInput = ({ value, _onChange, label }) => {
       onChange={e => _onChange(e.target.value)}
       margin="normal"
       variant="outlined"
+      fullWidth
+      multiline={multiline}
+      rows={rows}
+      type={type}
     />
   )
 }

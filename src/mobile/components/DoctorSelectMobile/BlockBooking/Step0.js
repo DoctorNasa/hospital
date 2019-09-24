@@ -76,10 +76,7 @@ const Step0 = ({ handleNext, handleBack, activeStep, _fillBooking, state }) => {
           </div>
         </div>
       </div>
-      <div
-        onClick={handleNext}
-        style={{ textAlign: "center", marginTop: 30, marginBottom: 30 }}
-      >
+      <div onClick={handleNext} style={{ textAlign: "center", marginTop: 15 }}>
         <BtnBlue text="ต่อไป" />
       </div>
     </div>

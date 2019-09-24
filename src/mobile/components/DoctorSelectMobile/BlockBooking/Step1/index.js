@@ -3,6 +3,7 @@ import BtnBlue from "../../../BtnBlue"
 import Radios from "./Radios"
 import ZInputText from "../../../ZInputText"
 import Capchta from "../../../Capchta"
+import ZDaypicker from "../../../ZDaypicker"
 
 const styles = {
   section: {
@@ -10,108 +11,78 @@ const styles = {
     padding: 10
   }
 }
-const Step1 = ({
-  handleNext,
-  handleBack,
-  activeStep,
-  _fillCustomer,
-  state,
-  _success
-}) => {
-  const [inputValue, setInputValue] = useState("")
-
-  const _onChangeInput = e => setInputValue(e.target.value)
+const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
+  const {
+    gender,
+    firstName,
+    lastName,
+    country,
+    city,
+    birthday,
+    tel,
+    idCard,
+    email,
+    patientIdOptional,
+    detailsOptional
+  } = reducerBooking.form
 
   return (
     <div>
-      <Radios />
-      <div style={{ display: "flex", marginBottom: 20, marginTop: 20 }}>
-        <div style={{ flex: 1, marginRight: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-        <div style={{ flex: 1, marginLeft: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-      </div>
-      <div style={{ display: "flex", marginBottom: 20, marginTop: 20 }}>
-        <div style={{ flex: 1, marginRight: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-        <div style={{ flex: 1, marginLeft: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-      </div>
-      <div style={{ display: "flex", marginBottom: 20, marginTop: 20 }}>
-        <div style={{ flex: 1, display: "flex", marginRight: 5 }}>
-          <div style={{ flex: 1 }}>
-            <ZInputText
-              value={inputValue}
-              _onChange={_onChangeInput}
-              placeholder="placeholder"
-            />
-          </div>
-          <div style={{ flex: 1, marginLeft: 5 }}>
-            <ZInputText
-              value={inputValue}
-              _onChange={_onChangeInput}
-              placeholder="placeholder"
-            />
-          </div>
-        </div>
-        <div style={{ flex: 1, marginLeft: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-      </div>
-      <div style={{ display: "flex", marginBottom: 20, marginTop: 20 }}>
-        <div style={{ flex: 1, marginRight: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-        <div style={{ flex: 1, marginLeft: 5 }}>
-          <ZInputText
-            value={inputValue}
-            _onChange={_onChangeInput}
-            label="input"
-          />
-        </div>
-      </div>
-      <textarea
-        style={{
-          width: "100%",
-          border: "2px solid #ebebeb",
-          padding: 10,
-          borderRadius: 10,
-          outline: "none",
-          fontSize: 15
-        }}
-        rows="4"
-        cols="50"
-      >
-        text area here
-      </textarea>
+      <Radios
+        value={gender}
+        _onChange={payload => _dispatchBooking({ type: "gender", payload })}
+      />
+      <ZInputText
+        value={firstName}
+        _onChange={payload => _dispatchBooking({ type: "firstName", payload })}
+        label="first name"
+      />
+      <ZInputText
+        value={country}
+        _onChange={payload => _dispatchBooking({ type: "country", payload })}
+        label="country"
+      />
+      <ZInputText
+        value={city}
+        _onChange={payload => _dispatchBooking({ type: "city", payload })}
+        label="city"
+      />
+      <ZDaypicker />
+      <ZInputText
+        value={tel}
+        _onChange={payload => _dispatchBooking({ type: "tel", payload })}
+        label="mobile"
+        type="number"
+      />
+      <ZInputText
+        value={idCard}
+        _onChange={payload => _dispatchBooking({ type: "idCard", payload })}
+        label="id card"
+        type="number"
+      />
+      <ZInputText
+        value={email}
+        _onChange={payload => _dispatchBooking({ type: "email", payload })}
+        label="email"
+        type-="email"
+      />
+      <ZInputText
+        value={patientIdOptional}
+        _onChange={payload =>
+          _dispatchBooking({ type: "patientIdOptional", payload })
+        }
+        label="patient id (optional)"
+        type="number"
+      />
+      <ZInputText
+        value={detailsOptional}
+        _onChange={payload =>
+          _dispatchBooking({ type: "detailsOptional", payload })
+        }
+        label="details (optional)"
+        multiline
+        rows={5}
+      />
       <div style={{ color: "#bfbfbf", marginTop: 30, marginBottom: 30 }}>
         ras eget feugiat risus. Sed porta justo et tellus fermentum, in viverra
         odio pulvinar. Cras vitae bibendum tellus, eget ultrices erat. Vivamus
