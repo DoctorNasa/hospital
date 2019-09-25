@@ -83,12 +83,11 @@ const Fabs = () => {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        marginTop: 20,
-        marginBottom: 20
+        marginTop: 30
       }}
     >
       {listFabs.map(({ title, imgSrc }, index) => (
-        <div style={{ flex: " 0 50%", textAlign: "center" }}>
+        <div style={{ flex: " 0 50%", textAlign: "center", paddingBottom: 30 }}>
           <Fab
             style={styles.fab}
             aria-label="add"

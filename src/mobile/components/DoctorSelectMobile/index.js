@@ -4,6 +4,7 @@ import "./styles.css"
 import ScrollLock from "react-scrolllock"
 import SelectDoctorPage from "./SelectDoctorPage"
 import BlockBooking from "./BlockBooking"
+import Success from "./Success"
 
 const styles = {
   baground: {
@@ -50,6 +51,14 @@ const DoctorSelectMobile = ({ queries, reducerBooking, _dispatchBooking }) => {
     console.log("isOpen", isOpen)
     console.log("queries", queries)
   }, [isOpen, queries])
+
+  if (success)
+    return (
+      <div>
+        <Success />
+      </div>
+    )
+
   return (
     <div style={selectBooking ? styles.baground : styles.empty}>
       <ButtonDrag
