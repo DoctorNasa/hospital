@@ -105,6 +105,15 @@ const DoctorSelectContainer =
         loading: Loading
       })
 
+const DoctorSelectItemMobileContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () =>
+          import("./mobile/containers/DoctorSelectItemMobileContainer"),
+        loading: Loading
+      })
+    : ""
+
 const PackageItemContainer =
   deviceType === "mobile"
     ? Loadable({
@@ -149,6 +158,11 @@ const Router = () => (
       <Route exact path="/packages" component={PackagesContainer} />
       <Route exact path="/packages/item/:id" component={PackageItemContainer} />
       <Route exact path="/doctor-select" component={DoctorSelectContainer} />
+      <Route
+        exact
+        path="/doctor-select/doctor/:id"
+        component={DoctorSelectItemMobileContainer}
+      />
       <Route exact path="/articles" component={BlogContainer} />
       <Route exact path="/articles/post/:id" component={BlogPostContainer} />
       <Route exact path="/aboutus" component={AboutContainer} />
