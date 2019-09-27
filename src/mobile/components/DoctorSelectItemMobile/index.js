@@ -16,7 +16,7 @@ const styles = {
   }
 }
 
-const DoctorSelectItemMobile = ({ match }) => {
+const DoctorSelectItemMobile = ({ match, stateRedux, _actionRedux }) => {
   return (
     <div style={styles.container}>
       <BreadCrumb
@@ -39,7 +39,7 @@ const DoctorSelectItemMobile = ({ match }) => {
         fontSize={20}
       />
       <Table />
-      <Booking />
+      <Booking stateRedux={stateRedux} _actionRedux={_actionRedux} />
     </div>
   )
 }

@@ -12,7 +12,13 @@ const styles = {
     padding: 10
   }
 }
-const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
+const Step1 = ({
+  handleBack,
+  stateRedux,
+  _actionRedux,
+  _success,
+  noBackBtn
+}) => {
   const {
     gender,
     firstName,
@@ -25,7 +31,7 @@ const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
     email,
     patientIdOptional,
     detailsOptional
-  } = reducerBooking.form
+  } = stateRedux.form
 
   return (
     <div>
@@ -35,55 +41,51 @@ const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
       />
       <Radios
         value={gender}
-        _onChange={payload => _dispatchBooking({ type: "gender", payload })}
+        _onChange={payload => _actionRedux("gender", payload)}
       />
       <ZInputText
         value={firstName}
-        _onChange={payload => _dispatchBooking({ type: "firstName", payload })}
+        _onChange={payload => _actionRedux("firstName", payload)}
         label="first name"
       />
       <ZInputText
         value={country}
-        _onChange={payload => _dispatchBooking({ type: "country", payload })}
+        _onChange={payload => _actionRedux("country", payload)}
         label="country"
       />
       <ZInputText
         value={city}
-        _onChange={payload => _dispatchBooking({ type: "city", payload })}
+        _onChange={payload => _actionRedux("city", payload)}
         label="city"
       />
       <ZDaypicker />
       <ZInputText
         value={tel}
-        _onChange={payload => _dispatchBooking({ type: "tel", payload })}
+        _onChange={payload => _actionRedux("tel", payload)}
         label="mobile"
         type="number"
       />
       <ZInputText
         value={idCard}
-        _onChange={payload => _dispatchBooking({ type: "idCard", payload })}
+        _onChange={payload => _actionRedux("idCard", payload)}
         label="id card"
         type="number"
       />
       <ZInputText
         value={email}
-        _onChange={payload => _dispatchBooking({ type: "email", payload })}
+        _onChange={payload => _actionRedux("email", payload)}
         label="email"
         type-="email"
       />
       <ZInputText
         value={patientIdOptional}
-        _onChange={payload =>
-          _dispatchBooking({ type: "patientIdOptional", payload })
-        }
+        _onChange={payload => _actionRedux("patientIdOptional", payload)}
         label="patient id (optional)"
         type="number"
       />
       <ZInputText
         value={detailsOptional}
-        _onChange={payload =>
-          _dispatchBooking({ type: "detailsOptional", payload })
-        }
+        _onChange={payload => _actionRedux("detailsOptional", payload)}
         label="details (optional)"
         multiline
         rows={5}
@@ -111,9 +113,12 @@ const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
           justifyContent: "center"
         }}
       >
-        <div onClick={handleBack} style={{ marginRight: 10 }}>
-          <BtnBlue text="back" />
-        </div>
+        {!noBackBtn && (
+          <div onClick={handleBack} style={{ marginRight: 10 }}>
+            <BtnBlue text="back" />
+          </div>
+        )}
+
         <div onClick={_success}>
           <BtnBlue text="ต่อไป" />
         </div>

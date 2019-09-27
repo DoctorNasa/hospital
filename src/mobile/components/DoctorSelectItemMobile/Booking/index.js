@@ -3,10 +3,11 @@ import BlueBanner from "./BlueBanner"
 import TitlePackageMain from "../../Titles/TitlePackageMain"
 import ZPickerDay from "../../ZPickerDay"
 import ZPickerTime from "../../ZPickerTime"
+import Step1 from "../../DoctorSelectMobile/BlockBooking/Step1"
 
 const styles = {}
 
-const Booking = () => {
+const Booking = ({ stateRedux, _actionRedux }) => {
   return (
     <div>
       <BlueBanner />
@@ -31,6 +32,7 @@ const Booking = () => {
       <div style={{ color: "#979693", textAlign: "center" }}>
         ในกรณีที่วันนัดหมายแรกไม่มีแพทย์ท่านใดว่าง
       </div>
+      <Step1 noBackBtn stateRedux={stateRedux} _actionRedux={_actionRedux} />
     </div>
   )
 }

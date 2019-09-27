@@ -20,8 +20,8 @@ const BlockBooking = ({
   _fillCustomer,
   state,
   _success,
-  reducerBooking,
-  _dispatchBooking
+  stateRedux,
+  _actionRedux
 }) => {
   const [activeStep, setActiveStep] = useState(0)
 
@@ -56,8 +56,8 @@ const BlockBooking = ({
             _fillCustomer={_fillCustomer}
             state={state}
             _success={_success}
-            reducerBooking={reducerBooking}
-            _dispatchBooking={_dispatchBooking}
+            stateRedux={stateRedux}
+            _actionRedux={_actionRedux}
           />
         ) : (
           ""
