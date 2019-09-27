@@ -7,7 +7,7 @@ import BtnBlue from "../../BtnBlue"
 
 const styles = {
   container: {
-    paddingTop: 80
+    paddingTop: 70
   }
 }
 

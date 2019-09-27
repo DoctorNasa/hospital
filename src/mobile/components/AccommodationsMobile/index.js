@@ -10,7 +10,7 @@ import ItemAccommodation from "../ZCardsAccommodations/ItemAccommodation"
 
 const styles = {
   container: {
-    paddingTop: 80
+    paddingTop: 70
   }
 }
 
@@ -26,7 +26,8 @@ const AccomodationsMobile = ({ match }) => {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "flex-end"
+            alignItems: "flex-end",
+            marginTop: 5
           }}
         >
           <div style={{ flex: 1 }}>

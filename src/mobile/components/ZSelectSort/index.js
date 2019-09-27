@@ -9,15 +9,15 @@ const ZSelectSort = () => {
   const handleChange = e => setValues(e.target.value)
 
   return (
-    <form autoComplete style={{ display: "flex", justifyContent: "flex-end" }}>
-      <FormControl style={{ minWidth: 120 }}>
-        <InputLabel htmlFor="age-simple">Sort</InputLabel>
+    <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      <FormControl variant="outlined" style={{ minWidth: 120 }}>
+        <InputLabel htmlFor="sort">Sort</InputLabel>
         <Select value={values} onChange={handleChange}>
           <MenuItem value={"Price High->Low"}>Price High->Low</MenuItem>
           <MenuItem value={"Price Low->High"}>Price Low->High</MenuItem>
         </Select>
       </FormControl>
-    </form>
+    </div>
   )
 }
 
