@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import BreadCrumb from "../BreadCrumb"
 import BlueTitleIcon from "./BlueTitleIcon"
 import Description from "./Description"
 import TitlePackageCategory from "../Titles/TitlePackageCategory"
 import Table from "./Table"
 import Booking from "./Booking"
+import Success from "../DoctorSelectMobile/Success"
 
 const styles = {
   container: {
@@ -17,8 +18,17 @@ const styles = {
 }
 
 const DoctorSelectItemMobile = ({ match, stateRedux, _actionRedux }) => {
+  const [success, setSuccess] = useState(false)
+
+  const _setSuccess = bool => {
+    setSuccess(bool)
+    window.scrollTo(0, 0)
+  }
+
+  if (success) return <Success />
+
   return (
-    <div style={styles.container}>
+    <div style={success ? styles.containerSuccess : styles.container}>
       <BreadCrumb
         padding="30px 0px 30px 0px"
         crumbs={[
@@ -39,7 +49,11 @@ const DoctorSelectItemMobile = ({ match, stateRedux, _actionRedux }) => {
         fontSize={20}
       />
       <Table />
-      <Booking stateRedux={stateRedux} _actionRedux={_actionRedux} />
+      <Booking
+        stateRedux={stateRedux}
+        _actionRedux={_actionRedux}
+        _setSuccess={_setSuccess}
+      />
     </div>
   )
 }

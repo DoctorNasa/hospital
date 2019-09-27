@@ -6,18 +6,13 @@ import Capchta from "../../../Capchta"
 import ZDaypicker from "../../../ZDaypicker"
 import TitleBlueIcon from "../TitleBlueIcon"
 
-const styles = {
-  section: {
-    flex: 1,
-    padding: 10
-  }
-}
 const Step1 = ({
   handleBack,
   stateRedux,
   _actionRedux,
   _success,
-  noBackBtn
+  noBackBtn,
+  margin = "30px 0px 30px 0px"
 }) => {
   const {
     gender,
@@ -107,21 +102,21 @@ const Step1 = ({
       <div
         style={{
           textAlign: "center",
-          marginTop: 30,
-          marginBottom: 30,
+          margin,
           display: "flex",
           justifyContent: "center"
         }}
       >
         {!noBackBtn && (
-          <div onClick={handleBack} style={{ marginRight: 10 }}>
-            <BtnBlue text="back" />
-          </div>
+          <>
+            <div onClick={handleBack} style={{ marginRight: 10 }}>
+              <BtnBlue text="back" />
+            </div>
+            <div onClick={_success}>
+              <BtnBlue text="ต่อไป" />
+            </div>
+          </>
         )}
-
-        <div onClick={_success}>
-          <BtnBlue text="ต่อไป" />
-        </div>
       </div>
     </div>
   )
