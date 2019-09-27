@@ -4,6 +4,7 @@ import Radios from "./Radios"
 import ZInputText from "../../../ZInputText"
 import Capchta from "../../../Capchta"
 import ZDaypicker from "../../../ZDaypicker"
+import TitleBlueIcon from "../TitleBlueIcon"
 
 const styles = {
   section: {
@@ -28,6 +29,10 @@ const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
 
   return (
     <div>
+      <TitleBlueIcon
+        text="รายละเอียดการนัดหมาย"
+        img="/images/icons/people-edit.png"
+      />
       <Radios
         value={gender}
         _onChange={payload => _dispatchBooking({ type: "gender", payload })}
@@ -106,7 +111,7 @@ const Step1 = ({ handleBack, reducerBooking, _dispatchBooking, _success }) => {
           justifyContent: "center"
         }}
       >
-        <div onClick={handleBack} style={{ marginRight: 20 }}>
+        <div onClick={handleBack} style={{ marginRight: 10 }}>
           <BtnBlue text="back" />
         </div>
         <div onClick={_success}>

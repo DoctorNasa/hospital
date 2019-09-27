@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
     overflowY: "scroll",
-    height: "calc(100% - 250px)",
+    height: "calc(100% - 290px)",
     color: "#00826a",
     marginTop: 75
   },

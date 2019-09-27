@@ -51,23 +51,19 @@ const reducer = (state, action) => {
 }
 
 const DoctorSelectItemMobileContainer = props => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _action, state } = useContext(GlobalContext)
   const [reducerBooking, _dispatchBooking] = useReducer(reducer, initialState)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(3)
+      _action("pageContainer", 3)
     }
-  }, [active, _pageContainer, reducerBooking])
+  }, [active, _action, state])
   return (
     <>
-      <DoctorSelectItemMobile
-        reducerBooking={reducerBooking}
-        _dispatchBooking={_dispatchBooking}
-        {...props}
-      />
+      <DoctorSelectItemMobile state={state} _action={_action} {...props} />
     </>
   )
 }

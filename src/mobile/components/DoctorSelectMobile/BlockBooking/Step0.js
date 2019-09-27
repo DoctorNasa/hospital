@@ -4,6 +4,7 @@ import ZSelect from "../../ZSelect"
 import PickerTime from "./PickerTime"
 import PickerDay from "./PickerDay"
 import BtnBlue from "../../BtnBlue"
+import TitleBlueIcon from "./TitleBlueIcon"
 
 const styles = {
   section: {
@@ -29,30 +30,16 @@ const Step0 = ({ handleNext, handleBack, activeStep, _fillBooking, state }) => {
 
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <div>
-          <img
-            style={{ height: 40 }}
-            src="/images/icons/calendar-icon-secondary.jpg"
-          />
-        </div>
-        <div
-          style={{
-            marginLeft: 10,
-            color: "#30bfc5",
-            fontSize: 20,
-            fontWeight: "bold"
-          }}
-        >
-          รายละเอียดการนัดหมาย
-        </div>
-      </div>
+      <TitleBlueIcon
+        text="รายละเอียดการนัดหมาย"
+        img="/images/icons/calendar-icon-secondary.jpg"
+      />
       <div style={styles.section}>
         <GrayTitle text="โรงพยาบาล" />
         <ZSelect
           select={select}
           _select={_select}
-          placeholder="เลือกโรงพยาบาล"
+          placeHolder="เลือกโรงพยาบาล"
         />
       </div>
       <div style={styles.section}>
@@ -60,7 +47,7 @@ const Step0 = ({ handleNext, handleBack, activeStep, _fillBooking, state }) => {
         <ZSelect
           select={select}
           _select={_select}
-          placeholder="เลือกศูนย์การแพทย์"
+          placeHolder="เลือกศูนย์การแพทย์"
         />
       </div>
       <div style={{ display: "flex" }}>

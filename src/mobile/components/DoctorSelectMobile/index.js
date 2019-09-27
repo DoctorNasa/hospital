@@ -31,7 +31,7 @@ const styles = {
 
 const items = new Array(20).fill(1)
 
-const DoctorSelectMobile = ({ queries, reducerBooking, _dispatchBooking }) => {
+const DoctorSelectMobile = ({ queries, state, _action }) => {
   const [isOpen, setIsOpen] = useState(true)
   const [lockScroll, setLockScroll] = useState(false)
   const [selectBooking, setSelectBooking] = useState(false)
@@ -75,8 +75,8 @@ const DoctorSelectMobile = ({ queries, reducerBooking, _dispatchBooking }) => {
             {selectBooking ? (
               <BlockBooking
                 _success={_success}
-                reducerBooking={reducerBooking}
-                _dispatchBooking={_dispatchBooking}
+                state={state}
+                _action={_action}
               />
             ) : (
               <SelectDoctorPage />
