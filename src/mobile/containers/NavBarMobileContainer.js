@@ -3,8 +3,8 @@ import { GlobalContext } from "../../"
 import NavBarMobile from "../components/NavBarMobile"
 
 const NavBarMobileContainer = () => {
-  const { pageContainer } = useContext(GlobalContext)
-  return <NavBarMobile pageContainer={pageContainer} />
+  const { stateRedux } = useContext(GlobalContext)
+  return <NavBarMobile stateRedux={stateRedux} />
 }
 
 export default NavBarMobileContainer

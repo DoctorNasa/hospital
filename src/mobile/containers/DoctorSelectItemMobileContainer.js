@@ -51,16 +51,16 @@ const reducer = (state, action) => {
 }
 
 const DoctorSelectItemMobileContainer = props => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [reducerBooking, _dispatchBooking] = useReducer(reducer, initialState)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(3)
+      _actionRedux("pageContainer", 3)
     }
-  }, [active, _pageContainer, reducerBooking])
+  }, [active, _actionRedux, reducerBooking])
   return (
     <>
       <DoctorSelectItemMobile

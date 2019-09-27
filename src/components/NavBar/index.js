@@ -92,7 +92,7 @@ const styles = {
   }
 }
 
-const NavBar = ({ _pageContainer, pageContainer }) => {
+const NavBar = ({ _actionRedux, stateRedux }) => {
   const [showDropDown, setshowDropDown] = useState(false)
   return (
     <Grid
@@ -197,7 +197,7 @@ const NavBar = ({ _pageContainer, pageContainer }) => {
                       >
                         <div
                           style={
-                            index === pageContainer
+                            index === stateRedux.pageContainer
                               ? styles.titleActive
                               : styles.titleInactive
                           }

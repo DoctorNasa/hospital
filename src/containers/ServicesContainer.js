@@ -3,15 +3,15 @@ import { GlobalContext } from "../"
 import Services from "../components/Services"
 
 const ServicesContainer = () => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(1)
+      _actionRedux("pageContainer", 1)
     }
-  }, [active, _pageContainer])
+  }, [active, _actionRedux])
 
   return <Services />
 }

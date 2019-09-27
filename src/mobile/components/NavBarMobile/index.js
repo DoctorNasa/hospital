@@ -62,22 +62,26 @@ const styleBgDark = open =>
           "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
       }
 
-const NavBarMobile = ({ pageContainer }) => {
+const NavBarMobile = ({ stateRedux }) => {
   const [open, setOpen] = useState(null)
   const scrollPosition = useScrollPosition()
 
   useEffect(() => {
-    console.log("useeffect", pageContainer)
-  }, [pageContainer])
+    console.log("useeffect", stateRedux)
+  }, [stateRedux])
 
   const _menuOpen = bool => setOpen(bool)
 
   return (
     <>
       <div
-        className={pageContainer === 0 ? "headerLight" : "headerDark"}
+        className={
+          stateRedux.pageContainer === 0 ? "headerLight" : "headerDark"
+        }
         style={
-          pageContainer === 0 ? styleBgLight(scrollPosition) : styleBgDark(open)
+          stateRedux.pageContainer === 0
+            ? styleBgLight(scrollPosition)
+            : styleBgDark(open)
         }
         onScroll={() => console.log("lol")}
       >

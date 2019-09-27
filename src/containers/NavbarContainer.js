@@ -3,10 +3,8 @@ import { GlobalContext } from "../"
 import NavBar from "../components/NavBar"
 
 const NavbarContainer = () => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
-  return (
-    <NavBar _pageContainer={_pageContainer} pageContainer={pageContainer} />
-  )
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
+  return <NavBar _actionRedux={_actionRedux} stateRedux={stateRedux} />
 }
 
 export default NavbarContainer

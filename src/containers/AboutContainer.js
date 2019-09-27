@@ -3,15 +3,15 @@ import { GlobalContext } from "../"
 import About from "../components/About"
 
 const AboutContainer = () => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(4)
+      _actionRedux("pageContainer", 4)
     }
-  }, [active, _pageContainer])
+  }, [active, _actionRedux])
 
   return <About />
 }

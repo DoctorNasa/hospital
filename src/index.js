@@ -60,15 +60,15 @@ const reducer = (state, action) => {
 const GlobalReducer = () => {
   const [state, dispatch] = useReducer(reducer, initState)
 
-  const _pageContainer = payload =>
+  const _actionRedux = (type, payload) =>
     dispatch({
-      type: "pageContainer",
+      type,
       payload
     })
 
   const contextValues = {
-    _pageContainer,
-    pageContainer: state.pageContainer
+    _actionRedux,
+    stateRedux: state
   }
 
   return (
@@ -77,7 +77,7 @@ const GlobalReducer = () => {
     </GlobalContext.Provider>
   )
 }
-// const { _pageContainer, pageContainer } = useContext(GlobalContext)
+// const { _actionRedux, stateRedux } = useContext(GlobalContext)
 export const GlobalContext = React.createContext({})
 
 const theme = createMuiTheme({

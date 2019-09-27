@@ -3,7 +3,7 @@ import ListMenu from "./ListMenu"
 import SearchBarMobile from "../../SearchBarMobile"
 import PopUpCountry from "./PopUpCountry"
 
-const MenuMobile = ({ open, menuDB, _menuOpen, pageContainer }) => {
+const MenuMobile = ({ open, menuDB, _menuOpen, stateRedux }) => {
   return (
     <div
       className={

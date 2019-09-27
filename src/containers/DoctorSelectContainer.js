@@ -31,7 +31,7 @@ const reducer = (state, action) => {
 }
 
 const DoctorSelectContainer = () => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [state, dispatch] = useReducer(reducer, initialState)
   const [active, setActive] = useState(true)
 
@@ -50,9 +50,9 @@ const DoctorSelectContainer = () => {
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(1)
+      _actionRedux("pageContainer", 1)
     }
-  }, [active, _pageContainer])
+  }, [active, _actionRedux])
 
   return (
     <DoctorSelect

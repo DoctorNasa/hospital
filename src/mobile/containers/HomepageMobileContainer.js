@@ -3,15 +3,15 @@ import { GlobalContext } from "../../"
 import HomepageMobile from "../components/HomepageMobile"
 
 const NavBarMobileContainer = () => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(0)
+      _actionRedux("pageContainer", 0)
     }
-  }, [_pageContainer, active])
+  }, [_actionRedux, active])
 
   return <HomepageMobile />
 }

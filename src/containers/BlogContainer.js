@@ -4,16 +4,16 @@ import BlogMobile from "../components/Blog"
 import queryString from "query-string"
 
 const BlogContainer = () => {
-  const { _pageContainer, pageContainer } = useContext(GlobalContext)
+  const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _pageContainer(3)
+      _actionRedux("pageContainer", 3)
     }
     console.log(queryString.parse(window.location.search))
-  }, [active, _pageContainer])
+  }, [active, _actionRedux])
 
   return <BlogMobile queries={queryString.parse(window.location.search)} />
 }
