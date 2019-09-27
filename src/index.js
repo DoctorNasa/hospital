@@ -60,15 +60,15 @@ const reducer = (state, action) => {
 const GlobalReducer = () => {
   const [state, dispatch] = useReducer(reducer, initState)
 
-  const _action = (type, payload) =>
+  const _pageContainer = payload =>
     dispatch({
-      type,
+      type: "pageContainer",
       payload
     })
 
   const contextValues = {
-    _action,
-    state
+    _pageContainer,
+    pageContainer: state.pageContainer
   }
 
   return (

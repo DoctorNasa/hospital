@@ -3,15 +3,15 @@ import { GlobalContext } from "../../"
 import AccommodationItemMobile from "../components/AccommodationsMobile/AccommodationItemMobile"
 
 const AccommodationItemContainer = props => {
-  const { _action, state } = useContext(GlobalContext)
+  const { _pageContainer, pageContainer } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
   useEffect(() => {
     if (active) {
       setActive(false)
-      _action("pageContainer", 3)
+      _pageContainer(3)
     }
-  }, [active, _action])
+  }, [active, _pageContainer])
 
   return <AccommodationItemMobile {...props} />
 }
