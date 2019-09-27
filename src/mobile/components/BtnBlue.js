@@ -33,7 +33,6 @@ const BtnBlue = ({
       <Button
         variant={outlined ? "outlined" : "contained"}
         color="secondary"
-        size="large"
         style={outlined ? styles.btnOutlined : styles.btnFull}
       >
         {icon && <img style={{ height: 20, paddingRight: 10 }} src={icon} />}
