@@ -138,6 +138,15 @@ const AccommodationItemContainer =
       })
     : ""
 
+const InternationalContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () =>
+          import("./mobile/containers/InternationalMobileContainer"),
+        loading: Loading
+      })
+    : ""
+
 const Router = () => (
   <div>
     <NavbarContainer />
@@ -166,6 +175,7 @@ const Router = () => (
       <Route exact path="/articles" component={BlogContainer} />
       <Route exact path="/articles/post/:id" component={BlogPostContainer} />
       <Route exact path="/aboutus" component={AboutContainer} />
+      <Route exact path="/international" component={InternationalContainer} />
       <Route component={Empty} />
     </Switch>
     <FooterContainer />
