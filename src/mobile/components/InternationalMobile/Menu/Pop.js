@@ -12,7 +12,8 @@ const styles = {
     background: "#32bfc6",
     color: "white",
     padding: "5px 10px 5px 10px",
-    borderRadius: 15
+    borderRadius: 15,
+    fontWeight: "bold"
   },
   notActive: {}
 }
@@ -76,6 +77,7 @@ export default function SimplePopover({ isActive, title, subMenu }) {
       >
         {subMenu.map(x => (
           <ListItem
+            onClick={handleClose}
             button
             className={classes.nested}
             component={Link}

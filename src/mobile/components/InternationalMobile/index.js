@@ -7,7 +7,7 @@ import Insuranceguidance from "./Insuranceguidance"
 import Insurances from "./Insurances"
 import MedicalCenter from "./MedicalCenter"
 import RelationCenter from "./RelationCenter"
-import InternationService from "./InternationService"
+import Marketing from "./Marketing"
 
 const styles = {
   container: {
@@ -27,7 +27,11 @@ const InternationalMobile = ({ queries }) => {
     <div style={styles.container}>
       <Menu queries={queries} />
 
-      {queries.marketing && <div>marketing</div>}
+      {queries.marketing && (
+        <div>
+          <Marketing />
+        </div>
+      )}
       {queries.relationcenter && <RelationCenter />}
       {queries.medicalcenter && <MedicalCenter />}
       {queries.corporatepartners && <CorporatePartners />}

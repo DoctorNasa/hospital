@@ -10,7 +10,7 @@ const NavBarMobileContainer = () => {
   useEffect(() => {
     if (active) {
       setActive(false)
-      _actionRedux("pageContainer", 0)
+      _actionRedux("pageContainer", 3)
       console.log(queryString.parse(window.location.search))
     }
   }, [_actionRedux, active])

@@ -14,7 +14,8 @@ const useStyles = makeStyles(theme => ({
   },
   bar: {
     backgroundColor: "white",
-    boxShadow: " 0px 5px 6px 1px rgba(168,168,168,0.10)"
+    boxShadow: " 0px 5px 6px 1px rgba(168,168,168,0.10)",
+    paddingBottom: 15
   },
   outerActive: {
     padding: "0px 21px 0px 0px",

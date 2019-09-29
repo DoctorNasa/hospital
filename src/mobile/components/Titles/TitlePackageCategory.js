@@ -4,14 +4,13 @@ const TitlePackageCategory = ({
   text,
   padding,
   img = "/images/icons/titles-icon.jpg",
+  imgSize = 30,
   color,
   fontSize
 }) => {
   return (
     <div style={{ display: "flex", padding, alignItems: "center" }}>
-      <div>
-        <img style={{ height: 30 }} src={img} />
-      </div>
+      <img style={{ height: imgSize }} src={img} />
       <div
         style={{
           color: color ? color : "#2b2b2b",

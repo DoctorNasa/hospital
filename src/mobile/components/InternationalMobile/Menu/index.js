@@ -12,9 +12,8 @@ const Menu = ({ queries }) => {
       <BreadCrumb
         padding="30px 15px 15px 15px"
         crumbs={[
-          { name: "หน้าหลัก", link: "/" },
-          { name: "บริการโรงพยาบาล", link: "/doctor-select" },
-          { name: "แพทย์" }
+          { name: "International Patient", link: "/" },
+          { name: "Marketing" }
         ]}
       />
       <Tabs queries={queries} />
