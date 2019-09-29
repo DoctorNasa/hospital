@@ -25,16 +25,11 @@ const InternationalMobile = ({ queries }) => {
 
   return (
     <div style={styles.container}>
-      <Menu />
-      {queries.internationservice &&
-        (queries.relationcenter ? (
-          <RelationCenter />
-        ) : queries.medicalcenter ? (
-          <MedicalCenter />
-        ) : (
-          <InternationService />
-        ))}
+      <Menu queries={queries} />
 
+      {queries.marketing && <div>marketing</div>}
+      {queries.relationcenter && <RelationCenter />}
+      {queries.medicalcenter && <MedicalCenter />}
       {queries.corporatepartners && <CorporatePartners />}
       {queries.corporaterepresentative && <CorporateRepresentative />}
       {queries.insurances && <Insurances />}
