@@ -27,11 +27,7 @@ const InternationalMobile = ({ queries }) => {
     <div style={styles.container}>
       <Menu queries={queries} />
 
-      {queries.marketing && (
-        <div>
-          <Marketing />
-        </div>
-      )}
+      {queries.marketing && <Marketing />}
       {queries.relationcenter && <RelationCenter />}
       {queries.medicalcenter && <MedicalCenter />}
       {queries.corporatepartners && <CorporatePartners />}

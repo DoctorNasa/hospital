@@ -3,7 +3,7 @@ import TitlePackageCategory from "../../Titles/TitlePackageCategory"
 
 const Marketing = () => {
   return (
-    <div style={{ margin: "0px 15px 0px 15px" }}>
+    <div style={{ margin: "15px 15px 0px 15px" }}>
       <div>
         <TitlePackageCategory
           text="INTERNATIONAL MARKETING"
