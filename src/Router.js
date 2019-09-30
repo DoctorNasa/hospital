@@ -163,6 +163,14 @@ const MedicalCenterItemContainer =
       })
     : ""
 
+const FaqContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/FaqContainer"),
+        loading: Loading
+      })
+    : ""
+
 const Router = () => (
   <div>
     <NavbarContainer />
@@ -198,6 +206,7 @@ const Router = () => (
         path="/medicalcenter/post/:id"
         component={MedicalCenterItemContainer}
       />
+      <Route exact path="/faq" component={FaqContainer} />
 
       <Route component={Empty} />
     </Switch>
