@@ -147,6 +147,22 @@ const InternationalContainer =
       })
     : ""
 
+const MedicalCenterContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/MedicalCenterContainer"),
+        loading: Loading
+      })
+    : ""
+
+const MedicalCenterItemContainer =
+  deviceType === "mobile"
+    ? Loadable({
+        loader: () => import("./mobile/containers/MedicalCenterItemContainer"),
+        loading: Loading
+      })
+    : ""
+
 const Router = () => (
   <div>
     <NavbarContainer />
@@ -176,6 +192,13 @@ const Router = () => (
       <Route exact path="/articles/post/:id" component={BlogPostContainer} />
       <Route exact path="/aboutus" component={AboutContainer} />
       <Route exact path="/international" component={InternationalContainer} />
+      <Route exact path="/medicalcenter" component={MedicalCenterContainer} />
+      <Route
+        exact
+        path="/medicalcenter/post/:id"
+        component={MedicalCenterItemContainer}
+      />
+
       <Route component={Empty} />
     </Switch>
     <FooterContainer />
