@@ -2,6 +2,7 @@ import React from "react"
 import TitlePackageCategory from "../../Titles/TitlePackageCategory"
 
 const Marketing = () => {
+  React.useEffect(() => window.scrollTo(0, 0), [])
   return (
     <div style={{ margin: "15px 15px 0px 15px" }}>
       <div>

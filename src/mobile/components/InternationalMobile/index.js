@@ -16,10 +16,7 @@ const styles = {
 }
 
 const InternationalMobile = ({ queries }) => {
-  useEffect(() => {
-    console.log(window.scrollY)
-    window.scrollTo(0, 0)
-  }, [])
+  useEffect(() => window.scrollTo(0, 0), [])
 
   if (Object.entries(queries).length === 0) return <Homepage />
 

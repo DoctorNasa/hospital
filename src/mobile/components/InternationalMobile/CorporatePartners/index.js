@@ -3,6 +3,7 @@ import TitlePackageCategory from "../../Titles/TitlePackageCategory"
 import Card from "./Card"
 
 const CorporatePartners = () => {
+  React.useEffect(() => window.scrollTo(0, 0), [])
   return (
     <div style={{ margin: "15px 0px 0px 0px" }}>
       <TitlePackageCategory

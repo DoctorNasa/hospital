@@ -15,7 +15,9 @@ const CustomSeparator = ({ crumbs, padding }) => {
       >
         {crumbs.map((x, index) =>
           index === crumbs.length - 1 ? (
-            <Typography color="secondary">{x.name}</Typography>
+            <Typography color="secondary">
+              <b>{x.name}</b>
+            </Typography>
           ) : (
             <Link color="inherit" href={x.link}>
               {x.name}

@@ -3,6 +3,7 @@ import TitlePackageCategory from "../../Titles/TitlePackageCategory"
 import Tableau from "../Tableau"
 
 const CorporateRepresentative = () => {
+  React.useEffect(() => window.scrollTo(0, 0), [])
   return (
     <div style={{ margin: "15px 0px -10px 0px" }}>
       <TitlePackageCategory

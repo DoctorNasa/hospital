@@ -7,7 +7,7 @@ const styles = {
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% calc((9/16)*200vw)",
     position: "sticky",
-    top: 0,
+    top: 70,
     height: "calc((9/16)*185vw)",
     width: "100%"
   },

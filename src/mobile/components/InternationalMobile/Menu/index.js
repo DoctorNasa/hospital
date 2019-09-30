@@ -12,7 +12,7 @@ const Menu = ({ queries }) => {
       <BreadCrumb
         padding="30px 15px 15px 15px"
         crumbs={[
-          { name: "International Patient", link: "/" },
+          { name: "International Patients", link: "/international" },
           { name: "Marketing" }
         ]}
       />

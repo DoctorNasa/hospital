@@ -1,10 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 import BannerCarousel from "./BannerCarousel"
 import ZSearchBar from "../../ZSearchBar"
 import Fabs from "../../HomepageMobile/Fabs"
 import TitlePackageMain from "../../Titles/TitlePackageMain"
 import RedRectangle from "./RedRectangle"
 import BtnBlueShadow from "./BtnBlueShadow"
+import { Link } from "react-router-dom"
 
 const styles = {
   margins: {
@@ -13,13 +14,15 @@ const styles = {
     backgroundColor: "white",
     position: "relative",
     marginTop: "-20px"
+  },
+  noStyle: {
+    textDecoration: "none",
+    color: "black"
   }
 }
 
 const HomepageMobile = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  React.useEffect(() => window.scrollTo(0, 0), [])
   return (
     <div>
       <BannerCarousel />
@@ -39,25 +42,40 @@ const HomepageMobile = () => {
         padding="15px 15px 15px 15px"
         text="Our corporate partners"
       />
-      <BtnBlueShadow
-        icon="/images/icons/inter1.png"
-        text="List of Corporate Representative"
-      />
-      <BtnBlueShadow
-        icon="/images/icons/inter2.png"
-        text="List of corporate partners"
-      />
+
+      <Link
+        to="/international?corporaterepresentative=true"
+        style={styles.noStyle}
+      >
+        <BtnBlueShadow
+          icon="/images/icons/inter1.png"
+          text="List of Corporate Representative"
+        />
+      </Link>
+      <Link to="/international?corporatepartners=true" style={styles.noStyle}>
+        <BtnBlueShadow
+          icon="/images/icons/inter2.png"
+          text="List of Corporate Partners"
+        />
+      </Link>
 
       <img
         style={{ margin: "30px 0px 30px 0px", width: "100%" }}
         src="/images/mobile/internation-bg2.jpg"
       />
       <TitlePackageMain padding="15px 15px 15px 15px" text="Health Insurance" />
-      <BtnBlueShadow icon="/images/icons/inter3.png" text="Insurance list" />
-      <BtnBlueShadow
-        icon="/images/icons/inter4.png"
-        text="Insurance Guidance"
-      />
+
+      <Link to="/international?insurances=true" style={styles.noStyle}>
+        <BtnBlueShadow icon="/images/icons/inter3.png" text="Insurance list" />
+      </Link>
+
+      <Link to="/international?insuranceguidance=true" style={styles.noStyle}>
+        <BtnBlueShadow
+          icon="/images/icons/inter4.png"
+          text="Insurance Guidance"
+        />
+      </Link>
+
       <img
         style={{ margin: "30px 0px 0px 0px", width: "100%" }}
         src="/images/mobile/internation-bg3.jpg"
