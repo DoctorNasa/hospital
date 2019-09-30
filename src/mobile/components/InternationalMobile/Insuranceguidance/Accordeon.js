@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular
+    fontWeight: "bold",
+    color: "#32bfc6"
   }
 }))
 
@@ -23,7 +24,7 @@ export default function SimpleExpansionPanel() {
     <div className={classes.root}>
       <ExpansionPanel>
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon style={{ color: "#32bfc6" }} />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -70,7 +71,7 @@ export default function SimpleExpansionPanel() {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon style={{ color: "#32bfc6" }} />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
@@ -87,7 +88,7 @@ export default function SimpleExpansionPanel() {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon style={{ color: "#32bfc6" }} />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
@@ -102,7 +103,7 @@ export default function SimpleExpansionPanel() {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon style={{ color: "#32bfc6" }} />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
@@ -117,7 +118,7 @@ export default function SimpleExpansionPanel() {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon style={{ color: "#32bfc6" }} />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
