@@ -51,8 +51,8 @@ const DoctorSelect = ({ queries }) => {
       justify="center"
       style={queries.booking ? styles.bgColored : styles.bgUncolored}
     >
-      <Grid item sm={10}>
-        <Grid container spacing={4}>
+      <Grid item md={10} sm={12}>
+        <Grid container>
           <Grid item sm={4}>
             <BreadCrumb
               paddingLeft={25}
@@ -85,11 +85,9 @@ const DoctorSelect = ({ queries }) => {
             </Grid>
           ) : (
             <Grid item sm={8}>
-              <Grid item sm={6}>
-                <h1 style={{ color: "#4d4d4d", padding: 16 }}>
-                  แพคเกจและโปรโมชั่น
-                </h1>
-              </Grid>
+              <h1 style={{ color: "#4d4d4d", padding: 16 }}>
+                แพคเกจและโปรโมชั่น
+              </h1>
 
               <div style={styles.container}>
                 <TitlesSection text="ในเครือพญาไททั้งหมด" />

@@ -27,7 +27,7 @@ const BlockSection = ({ title, noDivider }) => {
           text="คลินิก ศูนย์เวชศาสตร์ชะลอวัย โรงพยาบาล พญาไท 2"
         />
       </div>
-      <div style={{ textAlign: "center", marginBottom: 50 }}>
+      <div style={{ textAlign: "center", margin: "50px 0px 50px 0px" }}>
         <Button variant="outlined" color="secondary" size="large">
           ดูแพคเกจทั้งหมด
         </Button>

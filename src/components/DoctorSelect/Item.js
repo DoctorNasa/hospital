@@ -3,10 +3,9 @@ import BtnBlue from "../BtnBlue"
 
 const styles = {
   container: {
-    height: 400,
     flex: 1,
-    marginLeft: 16,
-    marginRight: 16,
+    paddingLeft: 16,
+    paddingRight: 16,
     textAlign: "center"
   }
 }
@@ -14,8 +13,15 @@ const styles = {
 const PackageItem = ({ img, text }) => {
   return (
     <div style={styles.container}>
-      <img style={{ margin: 15 }} src={img} />
-      <div style={{ color: "#00826a", fontSize: 20, fontWeight: "bold" }}>
+      <img style={{ width: "100%", maxWidth: 150 }} src={img} />
+      <div
+        style={{
+          color: "#00826a",
+          fontSize: 20,
+          fontWeight: "bold",
+          paddingTop: 15
+        }}
+      >
         พญ.วริศรา รุทระวณิช
       </div>
       <div
@@ -27,7 +33,8 @@ const PackageItem = ({ img, text }) => {
           justifyContent: "center",
           alignItems: "center",
           margin: 20,
-          textAlign: "center"
+          textAlign: "center",
+          height: 70
         }}
       >
         {text}

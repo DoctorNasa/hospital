@@ -7,8 +7,7 @@ const styles = {
   item: {
     background: "#f2bd61",
     boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.45)",
-    marginLeft: 10,
-    marginRight: 10
+    margin: "5px 10px 5px 10px"
   },
   itemDesc: {
     paddingLeft: 10,

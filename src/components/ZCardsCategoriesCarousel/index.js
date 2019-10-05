@@ -33,15 +33,6 @@ const slides = [
 ]
 
 const styles = {
-  item: {
-    background: "#f2bd61",
-    boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.45)"
-  },
-  itemDesc: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 10
-  },
   backgroundImg: {
     position: "absolute",
     zIndex: -1,
