@@ -28,8 +28,8 @@ const Packages = ({ queries }) => {
       justify="center"
       style={{ paddingTop: 30, marginBottom: 50 }}
     >
-      <Grid item sm={10}>
-        <Grid container spacing={4}>
+      <Grid item md={10} sm={12}>
+        <Grid container>
           <Grid item sm={4}>
             <TitleDiv text="ค้นหา...สื่อวิดีโอหรือบทความสุขภาพ" />
             <ZSearchBar padding={16} noTitle />
@@ -39,19 +39,17 @@ const Packages = ({ queries }) => {
             <ZDropDown margin={16} />
           </Grid>
           <Grid item sm={8}>
-            <Grid item sm={6}>
-              <BreadCrumb
-                paddingLeft={16}
-                paddingTop={16}
-                crumbs={[
-                  { name: "หน้าหลัก", link: "/" },
-                  { name: "แพคเกจโปรโมชั่น", name: "ศูนย์หัวใจ" }
-                ]}
-              />
-              <h1 style={{ color: "#4d4d4d", paddingLeft: 16 }}>
-                แพคเกจและโปรโมชั่น
-              </h1>
-            </Grid>
+            <BreadCrumb
+              paddingLeft={16}
+              paddingTop={16}
+              crumbs={[
+                { name: "หน้าหลัก", link: "/" },
+                { name: "แพคเกจโปรโมชั่น", name: "ศูนย์หัวใจ" }
+              ]}
+            />
+            <h1 style={{ color: "#4d4d4d", paddingLeft: 16 }}>
+              แพคเกจและโปรโมชั่น
+            </h1>
 
             <div style={styles.container}>
               <TitlesSection text="ในเครือพญาไททั้งหมด" />
