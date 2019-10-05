@@ -120,7 +120,10 @@ const PackageItemContainer =
         loader: () => import("./mobile/containers/PackageItemMobileContainer"),
         loading: Loading
       })
-    : ""
+    : Loadable({
+        loader: () => import("./containers/PackagesItemContainer"),
+        loading: Loading
+      })
 
 const AccommodationsContainer =
   deviceType === "mobile"
