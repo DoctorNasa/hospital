@@ -45,9 +45,20 @@ const PackageItem = () => {
         <div style={styles.price}>39000</div>
       </div>
       <div style={{ display: "flex" }}>
-        <div style={{ display: "flex", flex: 1, flexDirection: "column" }}>
-          <div style={{ display: "flex", flex: 1 }}>
-            <div style={{ flex: 1, display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flex: 1
+            }}
+          >
+            <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
               <img
                 style={{ width: 50 }}
                 src="/images/icons/package-add-icon.png"
@@ -57,11 +68,12 @@ const PackageItem = () => {
             <div
               style={{
                 flex: 1,
-                display: "flex"
+                display: "flex",
+                alignItems: "center"
               }}
             >
               <RemoveCircle
-                style={{ color: "#30bfc5", fontSize: 40 }}
+                style={{ color: "#30bfc5", fontSize: 25 }}
                 onClick={() => counter > 1 && setCounter(counter - 1)}
               />
               <div style={{ fontSize: 20, width: 20, textAlign: "center" }}>
@@ -69,7 +81,7 @@ const PackageItem = () => {
               </div>
 
               <AddCircle
-                style={{ color: "#30bfc5", fontSize: 40 }}
+                style={{ color: "#30bfc5", fontSize: 25 }}
                 onClick={() => setCounter(counter + 1)}
               />
             </div>
