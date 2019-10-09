@@ -128,7 +128,7 @@ const BannerCarousel = () => {
                                 : styles.h1Browser
                             }
                           >
-                            หยุดทุกอาการป่วย ช่วยให้คุณไปต่อ
+                            International Patients
                           </h1>
                           <h2
                             style={{
@@ -137,7 +137,8 @@ const BannerCarousel = () => {
                               marginTop: -15
                             }}
                           >
-                            เริ่มเปลี่ยนตัวเองให้เป็นคนใหม่ ให้พญาไทยดูแลคุณ
+                            Phyathai Hospital has opened it's excellent services
+                            to peoples from all around the world.
                           </h2>
                           <Button
                             variant="contained"
