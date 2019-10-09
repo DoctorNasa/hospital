@@ -148,7 +148,10 @@ const InternationalContainer =
           import("./mobile/containers/InternationalMobileContainer"),
         loading: Loading
       })
-    : ""
+    : Loadable({
+      loader: () => import("./containers/InternationalContainer"),
+      loading: Loading
+    })
 
 const MedicalCenterContainer =
   deviceType === "mobile"
