@@ -12,15 +12,15 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 const slides = [
   {
     label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "/images/background-landingpage-top.jpg"
+    imgPath: "/images/banner-international.jpg"
   },
   {
     label: "Bird",
-    imgPath: "/images/background-landingpage-top.jpg"
+    imgPath: "/images/banner-international.jpg"
   },
   {
     label: "Bali, Indonesia",
-    imgPath: "/images/background-landingpage-top.jpg"
+    imgPath: "/images/banner-international.jpg"
   }
 ]
 
@@ -32,10 +32,10 @@ const styles = {
     fontSize: 25
   },
   squareMarginBrowser: {
-    marginTop: "-33%"
+    marginTop: "-43%"
   },
   squareMarginTablet: {
-    marginTop: "-25%"
+    marginTop: "-39%"
   }
 }
 
