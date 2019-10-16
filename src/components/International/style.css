@@ -71,3 +71,39 @@
   color: white;
   font-weight: 700;
 }
+
+.itemDropDown {
+  padding: 15px;
+  z-index: 99;
+  cursor: pointer;
+}
+.itemDropDown:hover {
+  background-color: #00826a;
+  color: white;
+}
+
+.itemInWindow {
+  padding-top: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
+.itemInWindowSub {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 30px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.itemInWindow:hover {
+  background-color: #30bfc5;
+  color: white;
+}
+
+.itemInWindowSub:hover {
+  background-color: #30bfc5;
+  color: white;
+}

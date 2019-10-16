@@ -32,7 +32,7 @@ const styles = {
     fontSize: 25
   },
   squareMarginBrowser: {
-    marginTop: "-43%"
+    marginTop: "-45%"
   },
   squareMarginTablet: {
     marginTop: "-39%"
