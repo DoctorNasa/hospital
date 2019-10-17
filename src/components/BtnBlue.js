@@ -1,12 +1,12 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 
-const BtnBlue = ({ text, fullWidth, marginTop, icon }) => {
+const BtnBlue = ({ text, fullWidth, marginTop, icon, size = "large" }) => {
   return (
     <Button
       variant="contained"
       color="secondary"
-      size="large"
+      size={size}
       style={{
         color: "white",
         marginTop

@@ -141,7 +141,17 @@ const Menu = ({ queries }) => {
           onMouseLeave={() => setshowDropDown(false)}
           key={x.title}
           style={
-            index === 0 && queries.marketing
+            index === 0
+              ? queries.marketing ||
+                queries.relationcenter ||
+                queries.medicalcenter
+                ? styles.itemActive
+                : styles.itemInactive
+              : index === 1
+              ? queries.corporatepartners || queries.corporaterepresentative
+                ? styles.itemActive
+                : styles.itemInactive
+              : index === 2 && (queries.insurances || queries.insuranceguidance)
               ? styles.itemActive
               : styles.itemInactive
           }
@@ -165,3 +175,16 @@ const Menu = ({ queries }) => {
   )
 }
 export default Menu
+
+// {
+//   queries.corporatepartners && <CorporatePartners />
+// }
+// {
+//   queries.corporaterepresentative && <CorporateRepresentative />
+// }
+// {
+//   queries.insurances && <Insurances />
+// }
+// {
+//   queries.insuranceguidance && <Insuranceguidance />
+// }

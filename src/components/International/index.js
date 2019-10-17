@@ -17,32 +17,30 @@ const International = ({ queries }) => {
   if (Object.entries(queries).length === 0) return <Homepage />
 
   return (
-    <Grid
-      container
-      justify="center"
-      style={{ paddingTop: 30, marginBottom: 220 }}
-    >
-      <Grid item md={8} sm={11}>
-        <BreadCrumb
-          paddingTop={16}
-          paddingBottom={16}
-          crumbs={[
-            { name: "International Patients", link: "/international" },
-            { name: "International Marketing" }
-          ]}
-        />
-        <Menu queries={queries} />
-        <Grid container style={{ paddingTop: 30, marginBottom: 220 }}>
-          {queries.marketing && <Marketing queries />}
-          {queries.relationcenter && <RelationCenter queries />}
-          {queries.medicalcenter && <MedicalCenter />}
-          {queries.corporatepartners && <CorporatePartners />}
-          {queries.corporaterepresentative && <CorporateRepresentative />}
-          {queries.insurances && <Insurances />}
-          {queries.insuranceguidance && <Insuranceguidance />}
+    <div style={{ paddingTop: 30, marginBottom: 220 }}>
+      <Grid container justify="center">
+        <Grid item md={8} sm={11} xs={12}>
+          <BreadCrumb
+            paddingTop={16}
+            paddingBottom={16}
+            crumbs={[
+              { name: "International Patients", link: "/international" },
+              { name: "International Marketing" }
+            ]}
+          />
+          <Menu queries={queries} />
         </Grid>
       </Grid>
-    </Grid>
+      <div style={{ paddingTop: 30, marginBottom: 220 }}>
+        {queries.marketing && <Marketing queries />}
+        {queries.relationcenter && <RelationCenter queries />}
+        {queries.medicalcenter && <MedicalCenter />}
+        {queries.corporatepartners && <CorporatePartners />}
+        {queries.corporaterepresentative && <CorporateRepresentative />}
+        {queries.insurances && <Insurances />}
+        {queries.insuranceguidance && <Insuranceguidance />}
+      </div>
+    </div>
   )
 }
 
