@@ -51,8 +51,8 @@ const styles = {
     position: "absolute",
     left: "50%",
     marginLeft: "-100px",
-    top: 58,
-    border: "1px solid #30bfc5",
+    top: 60,
+    border: "2px solid #30bfc5",
     color: "#4d4d4d",
     background: "white"
   },

@@ -1,18 +1,20 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import BlueTitleIcon from "../BlueTitleIcon"
+import BannerBottom2 from "../BannerBottom2"
+import Accordeon from "./Accordeon"
 
 const Insuranceguidance = () => {
   return (
     <div>
-      <Grid container justify="center">
+      <Grid container justify="center" style={{ marginBottom: 120 }}>
         <Grid item md={8} sm={11} xs={12}>
           <BlueTitleIcon
             text="INSURANCE GUIDANCE"
             icon="/images/icons/international/6.png"
           />
           <div>
-            <div>Health Insurance</div>
+            <h2 style={{ color: "#4d4c4c" }}>Health Insurance</h2>
             <div>
               Other than extensive care from expertise team, cost is relatively
               important. Our patients for more than 50 nationalities from
@@ -21,8 +23,8 @@ const Insuranceguidance = () => {
               contact insurance providers for guarantee payment on their
             </div>
           </div>
-          <div>
-            <div>Tip for an Easier Fast</div>
+          <div style={{ marginBottom: 60 }}>
+            <h2 style={{ color: "#4d4c4c" }}>Tip for an Easier Fast</h2>
             <div>
               The Health Insurance Policyholders are recommended to contact your
               insurance provider in order to check your benefits, coverage and
@@ -32,19 +34,11 @@ const Insuranceguidance = () => {
               information by fastest mean.
             </div>
           </div>
+          <Accordeon />
         </Grid>
       </Grid>
-      <div
-        style={{
-          backgroundImage: 'url("/images/international/04.jpg")',
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          width: "100%",
-          height: 400
-        }}
-      >
-        fff
-      </div>
+
+      <BannerBottom2 />
     </div>
   )
 }

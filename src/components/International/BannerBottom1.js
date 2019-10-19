@@ -12,7 +12,7 @@ const BannerBottom1 = ({
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         width: "100%",
-        height: 400
+        height: 300
       }}
     >
       <Grid container justify="center" style={{ height: "100%" }}>

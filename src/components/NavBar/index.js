@@ -60,7 +60,7 @@ const styles = {
     left: " 50%",
     marginLeft: "-100px",
     top: 45,
-    border: "1px solid #30bfc5",
+    border: "2px solid #30bfc5",
     color: "#4d4d4d",
     background: "white"
   },

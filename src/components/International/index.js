@@ -12,12 +12,12 @@ import Insurances from "./Insurances"
 import Insuranceguidance from "./Insuranceguidance"
 
 const International = ({ queries }) => {
-  useEffect(() => window.scrollTo(0, 0), [])
+  useEffect(() => window.scrollTo(0, 0), [queries])
 
   if (Object.entries(queries).length === 0) return <Homepage />
 
   return (
-    <div style={{ paddingTop: 30, marginBottom: 220 }}>
+    <div style={{ paddingTop: 30 }}>
       <Grid container justify="center">
         <Grid item md={8} sm={11} xs={12}>
           <BreadCrumb
@@ -31,7 +31,7 @@ const International = ({ queries }) => {
           <Menu queries={queries} />
         </Grid>
       </Grid>
-      <div style={{ paddingTop: 30, marginBottom: 220 }}>
+      <div style={{ paddingTop: 30 }}>
         {queries.marketing && <Marketing queries />}
         {queries.relationcenter && <RelationCenter queries />}
         {queries.medicalcenter && <MedicalCenter />}
