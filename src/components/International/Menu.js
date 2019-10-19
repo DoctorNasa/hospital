@@ -51,16 +51,10 @@ const styles = {
     position: "absolute",
     left: "50%",
     marginLeft: "-100px",
-    top: 60,
+    top: 58,
     border: "1px solid #30bfc5",
     color: "#4d4d4d",
     background: "white"
-  },
-  itemInWindow: {
-    paddingTop: 15,
-    paddingLeft: 15,
-    paddingRight: 15,
-    cursor: "pointer"
   },
   itemInWindowSub: {
     paddingTop: 15,
@@ -70,7 +64,7 @@ const styles = {
   },
   triangle: {
     position: "absolute",
-    top: -20,
+    top: -21,
     left: "40%",
     width: 0,
     right: "50%",
