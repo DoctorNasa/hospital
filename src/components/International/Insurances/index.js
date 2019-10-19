@@ -16,7 +16,8 @@ const Insurances = () => {
           <div
             style={{
               display: "flex",
-              justifyContent: "center"
+              justifyContent: "center",
+              marginTop: 30
             }}
           >
             <div>

@@ -64,6 +64,8 @@ const RelationCenter = () => {
           style={{
             width: "35%",
             height: "100%",
+
+            maxWidth: 600,
             right: 0,
             top: 0,
             position: "absolute",
@@ -82,12 +84,12 @@ const RelationCenter = () => {
       <div
         style={{
           position: "relative",
-          marginTop: 120,
+          marginTop: 150,
           display: "flex",
           justifyContent: "flex-end",
           textAlign: "right",
           height: "100%",
-          marginBottom: 100
+          marginBottom: 120
         }}
       >
         <div
@@ -98,7 +100,8 @@ const RelationCenter = () => {
             position: "absolute",
             display: "flex",
             alignItems: "center",
-            height: "100%"
+            height: "100%",
+            maxWidth: 600
           }}
         >
           <img

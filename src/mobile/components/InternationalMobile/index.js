@@ -18,7 +18,17 @@ const styles = {
 const InternationalMobile = ({ queries }) => {
   useEffect(() => window.scrollTo(0, 0), [])
 
-  if (Object.entries(queries).length === 0) return <Homepage />
+  if (
+    Object.entries(queries).length === 0 ||
+    (!queries.marketing &&
+      !queries.relationcenter &&
+      !queries.medicalcenter &&
+      !queries.corporatepartners &&
+      !queries.corporaterepresentative &&
+      !queries.insurances &&
+      !queries.insuranceguidance)
+  )
+    return <Homepage />
 
   return (
     <div style={styles.container}>

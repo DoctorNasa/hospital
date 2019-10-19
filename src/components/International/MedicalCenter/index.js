@@ -6,7 +6,7 @@ import BannerBottom1 from "../BannerBottom1"
 const MedicalCenter = () => {
   return (
     <div>
-      <Grid container justify="center">
+      <Grid container justify="center" style={{ marginBottom: 120 }}>
         <Grid item md={8} sm={11} xs={12}>
           <BlueTitleIcon
             text="INTERNATIONAL MEDICAL CENTER"

@@ -14,7 +14,17 @@ import Insuranceguidance from "./Insuranceguidance"
 const International = ({ queries }) => {
   useEffect(() => window.scrollTo(0, 0), [queries])
 
-  if (Object.entries(queries).length === 0) return <Homepage />
+  if (
+    Object.entries(queries).length === 0 ||
+    (!queries.marketing &&
+      !queries.relationcenter &&
+      !queries.medicalcenter &&
+      !queries.corporatepartners &&
+      !queries.corporaterepresentative &&
+      !queries.insurances &&
+      !queries.insuranceguidance)
+  )
+    return <Homepage />
 
   return (
     <div style={{ paddingTop: 30 }}>
