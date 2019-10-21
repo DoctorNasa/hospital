@@ -23,11 +23,6 @@ const PackagesContainer =
         loading: Loading
       })
 
-const AboutContainer = Loadable({
-  loader: () => import("./containers/AboutContainer"),
-  loading: Loading
-})
-
 const FooterContainer =
   deviceType === "mobile"
     ? Loadable({
@@ -149,9 +144,9 @@ const InternationalContainer =
         loading: Loading
       })
     : Loadable({
-      loader: () => import("./containers/InternationalContainer"),
-      loading: Loading
-    })
+        loader: () => import("./containers/InternationalContainer"),
+        loading: Loading
+      })
 
 const MedicalCenterContainer =
   deviceType === "mobile"
@@ -175,7 +170,10 @@ const FaqContainer =
         loader: () => import("./mobile/containers/FaqContainer"),
         loading: Loading
       })
-    : ""
+    : Loadable({
+        loader: () => import("./containers/FaqContainer"),
+        loading: Loading
+      })
 
 const Router = () => (
   <div>
@@ -204,7 +202,6 @@ const Router = () => (
       />
       <Route exact path="/articles" component={BlogContainer} />
       <Route exact path="/articles/post/:id" component={BlogPostContainer} />
-      <Route exact path="/aboutus" component={AboutContainer} />
       <Route exact path="/international" component={InternationalContainer} />
       <Route exact path="/medicalcenter" component={MedicalCenterContainer} />
       <Route

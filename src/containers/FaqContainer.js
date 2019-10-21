@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../"
-import About from "../components/About"
+import Faq from "../components/Faq"
 
-const AboutContainer = () => {
+const FaqContainer = () => {
   const { _actionRedux, stateRedux } = useContext(GlobalContext)
   const [active, setActive] = useState(true)
 
@@ -13,7 +13,7 @@ const AboutContainer = () => {
     }
   }, [active, _actionRedux])
 
-  return <About />
+  return <Faq />
 }
 
-export default AboutContainer
+export default FaqContainer
