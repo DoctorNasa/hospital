@@ -16,11 +16,11 @@ const arrayDb = [
   { title: "9", id: 9 }
 ]
 
-const styleContainer = (margin, isOpen) =>
+const styleContainer = (margin, isOpen, border) =>
   isOpen
     ? {
         margin,
-        border: "2px solid #30bfc5",
+        border,
         padding: 5,
         paddingRight: 30,
         paddingLeft: 30,
@@ -34,7 +34,7 @@ const styleContainer = (margin, isOpen) =>
       }
     : {
         margin,
-        border: "2px solid #30bfc5",
+        border,
         padding: 5,
         paddingRight: 30,
         paddingLeft: 30,
@@ -70,24 +70,32 @@ const styles = {
   }
 }
 
-const ZDropDown = ({ margin, placeholder, disable, _select, select }) => {
+const ZDropDown = ({
+  margin,
+  placeholder,
+  disable,
+  _select,
+  select,
+  border = "2px solid #30bfc5",
+  width
+}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", width }}>
       <div
         onClick={() => !disable && setIsOpen(!isOpen)}
-        style={styleContainer(margin, isOpen)}
+        style={styleContainer(margin, isOpen, border)}
       >
         <div>{select ? select : placeholder}</div>
 
         {isOpen ? (
           <div>
-            <KeyboardArrowUpIcon fontSize="large" />
+            <KeyboardArrowUpIcon />
           </div>
         ) : (
           <div>
-            <KeyboardArrowDownIcon fontSize="large" />
+            <KeyboardArrowDownIcon />
           </div>
         )}
       </div>

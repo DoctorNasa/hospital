@@ -8,7 +8,10 @@ const SearchBar = ({
   marginTop,
   marginBottom,
   padding,
-  noTitle
+  noTitle,
+  onChange = e => console.log(e.target.value),
+  onSubmit = () => console.log("submit"),
+  searchInput = ""
 }) => {
   return (
     <div
@@ -36,8 +39,12 @@ const SearchBar = ({
       )}
 
       <div className="searchContainer">
-        <input className="searchInput" />
-        <div className="bannerMenuSearch">
+        <input
+          onChange={e => onChange(e.target.value)}
+          className="searchInput"
+          value={searchInput}
+        />
+        <div className="bannerMenuSearch" onClick={onSubmit}>
           <Search className="bannerMenuIcon" />
         </div>
       </div>

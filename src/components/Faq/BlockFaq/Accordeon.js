@@ -30,14 +30,10 @@ export default function Accordeon({ list }) {
   return (
     <div className={classes.root}>
       {list.list.map((item, index) => (
-        <ExpansionPanel
-          className={classes.panel}
-          key={item.id}
-          defaultExpanded={index === opened}
-        >
+        <ExpansionPanel className={classes.panel} key={item.id}>
           <ExpansionPanelSummary
             ref={inputEl}
-            expandIcon={opened === index ? <Remove /> : <Add />}
+            expandIcon={opened === index ? <Add /> : <Add />}
             aria-controls="panel2a-content"
             id="panel2a-header"
             onClick={() => setopened(index === opened ? null : index)}

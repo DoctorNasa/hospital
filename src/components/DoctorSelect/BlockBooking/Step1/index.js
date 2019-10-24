@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import BtnBlue from "../../../BtnBlue"
 import Radios from "./Radios"
 import ZInputForm from "../../../ZInputForm"
+import ZTextArea from "../../../ZTextArea"
 import Capchta from "../../../Capchta"
 
 const styles = {
@@ -98,20 +99,7 @@ const Step1 = ({
           />
         </div>
       </div>
-      <textarea
-        style={{
-          width: "100%",
-          border: "2px solid #ebebeb",
-          padding: 10,
-          borderRadius: 10,
-          outline: "none",
-          fontSize: 15
-        }}
-        rows="4"
-        cols="50"
-      >
-        text area here
-      </textarea>
+      <ZTextArea />
       <div style={{ color: "#bfbfbf", marginTop: 30, marginBottom: 30 }}>
         ras eget feugiat risus. Sed porta justo et tellus fermentum, in viverra
         odio pulvinar. Cras vitae bibendum tellus, eget ultrices erat. Vivamus

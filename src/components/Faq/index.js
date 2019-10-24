@@ -3,10 +3,13 @@ import Grid from "@material-ui/core/Grid"
 import "./styles.css"
 import BreadCrumb from "../BreadCrumb"
 import ZSearchBar from "../ZSearchBar"
-import Accordeon from "./Accordeon"
+
 import BtnLeftPanel from "./BtnLeftPanel"
 import Success from "./Success"
 import axios from "axios"
+
+import BlockQuestion from "./BlockQuestion"
+import BlockFaq from "./BlockFaq"
 
 const styles = {
   container: {
@@ -16,7 +19,8 @@ const styles = {
     overflow: "hidden"
   },
   bgUncolored: {
-    paddingTop: 30
+    paddingTop: 30,
+    paddingBottom: 30
   },
   bookingContainer: {
     background: "white",
@@ -37,30 +41,58 @@ const Faq = ({}) => {
     ],
     total: 0
   })
+  const [currentPage, setCurrentPage] = useState(0)
   const [questionPage, setQuestionPage] = useState(false)
+  const [searchInput, setSearchInput] = useState("")
+  const [searchUpdate, setSearchUpdate] = useState(false)
 
   const _success = () => setSuccess(true)
   const _questionPage = bool => setQuestionPage(bool)
 
-  useEffect(() => {
+  const _searchOnchange = e => setSearchInput(e)
+  const _searchSubmit = () => {
+    setSearchUpdate(true)
+  }
+
+  const _page = page => {
     axios
-      .get("https://fenrir.studio/d/pht/faq/lists/th?limit=4")
+      .get(
+        `https://fenrir.studio/d/pht/faq/lists/th?limit=10&offset=${page * 10}`
+      )
       .then(response => {
-        console.log("this is ", response.data.result.data)
         setList(response.data.result.data)
+        setCurrentPage(page)
       })
       .catch(error => {
         // handle error
         console.log(error)
       })
-  }, [])
+  }
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://fenrir.studio/d/pht/faq/lists/th?limit=10&search=${
+          searchInput === "" ? null : searchInput
+        }`
+      )
+      .then(response => {
+        setList(response.data.result.data)
+        setSearchUpdate(false)
+        setSearchInput("")
+      })
+      .catch(error => {
+        // handle error
+        console.log(error)
+      })
+  }, [searchUpdate])
 
   if (success) return <Success />
 
   return (
     <Grid container justify="center" style={styles.bgUncolored}>
       <Grid item md={10} sm={12}>
-        <Grid container>
+        <Grid container justify="center">
           <Grid item sm={4}>
             <BreadCrumb
               paddingLeft={25}
@@ -72,19 +104,27 @@ const Faq = ({}) => {
                 questionPage={questionPage}
                 _questionPage={_questionPage}
               />
-              <ZSearchBar padding={16} noTitle />
+              <ZSearchBar
+                padding={16}
+                noTitle
+                searchInput={searchInput}
+                onChange={_searchOnchange}
+                onSubmit={_searchSubmit}
+              />
             </div>
           </Grid>
           {questionPage ? (
-            <Grid item sm={8}>
-              <div>questions</div>
+            <Grid item sm={7}>
+              <BlockQuestion />
             </Grid>
           ) : (
-            <Grid item sm={8}>
-              <h1 style={{ color: "#4d4d4d", padding: 16 }}>
-                แพคเกจและโปรโมชั่น
-              </h1>
-              <Accordeon list={list} />
+            <Grid item sm={7}>
+              <BlockFaq
+                list={list}
+                setList={setList}
+                currentPage={currentPage}
+                _page={_page}
+              />
             </Grid>
           )}
         </Grid>
