@@ -7,7 +7,7 @@ import BtnBlue from "../../BtnBlue"
 const blockLeft = " 7px 5px 7px 0px"
 const blockRight = " 7px 0px 7px 5px"
 
-const FormQuestion = () => {
+const FormQuestion = ({ _success }) => {
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -61,7 +61,10 @@ const FormQuestion = () => {
       <div style={{ flex: 1, width: "calc(100% - 20px)" }}>
         <ZTextArea />
       </div>
-      <div style={{ textAlign: "center", marginTop: 30, marginBottom: 30 }}>
+      <div
+        style={{ textAlign: "center", marginTop: 30, marginBottom: 30 }}
+        onClick={_success}
+      >
         <BtnBlue text="ตกลง" />
       </div>
     </div>

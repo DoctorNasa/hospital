@@ -50,7 +50,7 @@ const Faq = ({}) => {
   const _questionPage = bool => setQuestionPage(bool)
 
   const _searchOnchange = e => setSearchInput(e)
-  const _searchSubmit = () => {
+  const _searchSubmit = e => {
     setSearchUpdate(true)
   }
 
@@ -115,7 +115,7 @@ const Faq = ({}) => {
           </Grid>
           {questionPage ? (
             <Grid item sm={7}>
-              <BlockQuestion />
+              <BlockQuestion _success={_success} />
             </Grid>
           ) : (
             <Grid item sm={7}>

@@ -2,7 +2,7 @@ import React from "react"
 import BlueTitleIcon from "../../BlueTitleIcon"
 import FormQuestion from "./FormQuestion"
 
-const BlockQuestion = () => {
+const BlockQuestion = ({ _success }) => {
   return (
     <div style={{ marginLeft: "6%", color: "#4d4d4d" }}>
       <h1 style={{ padding: "16px 16px 0px 0px" }}>ปรึกษาแพทย์ออนไลน์</h1>
@@ -45,7 +45,7 @@ const BlockQuestion = () => {
           text="ข้อมูลการติดต่อ"
         />
       </div>
-      <FormQuestion />
+      <FormQuestion _success={_success} />
     </div>
   )
 }
